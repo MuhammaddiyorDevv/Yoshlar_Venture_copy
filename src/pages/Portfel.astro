@@ -1,0 +1,106 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Ebay from "../assets/ebay.svg";
+import Uram from "../assets/uram.svg";
+import Simidan from "../assets/simidan.svg";
+import Famir from "../assets/famir.svg";
+import LabSearch from "../assets/labsearch.svg";
+
+const cards = [
+  {
+    img: Ebay.src,
+    title: "Ebay",
+    desc: "Avtomobillarni qulay narxlarda ijaraga oling — ishonchli xizmat, tez rasmiylashtirish va keng tanlov.",
+  },
+  {
+    img: Uram.src,
+    title: "Uram avto",
+    desc: "Istagan mahsulotingizni dunyoning istalgan nuqtasidan tez va xavfsiz yetkazib beramiz.",
+  },
+  {
+    img: Simidan.src,
+    title: "Simidan",
+    desc: "Biz yuklaringizni ehtiyotkorlik bilan tashib, yangi joyingizga muammosiz ko‘chirishni ta'minlaymiz.",
+  },
+  {
+    img: Famir.src,
+    title: "Famir",
+    desc: "Biz yuklaringizni ehtiyotkorlik bilan tashib, yangi joyingizga muammosiz ko‘chirishni ta'minlaymiz.",
+  },
+  {
+    img: LabSearch.src,
+    title: "Labsearch",
+    desc: "Zamonaviy neyrotexnologiyalar asosida kerakli ma’lumot yoki mahsulotni tezda toping",
+  },
+  {
+    img: Uram.src,
+    title: "Uram avto",
+    desc: "Istagan mahsulotingizni dunyoning istalgan nuqtasidan tez va xavfsiz yetkazib beramiz.",
+  },
+
+  {
+    img: Ebay.src,
+    title: "Ebay",
+    desc: "Avtomobillarni qulay narxlarda ijaraga oling — ishonchli xizmat, tez rasmiylashtirish va keng tanlov.",
+  },
+  {
+    img: LabSearch.src,
+    title: "Labsearch",
+    desc: "Zamonaviy neyrotexnologiyalar asosida kerakli ma’lumot yoki mahsulotni tezda toping",
+  },
+];
+---
+
+<Layout title="Yoshlar Venture">
+  <h2
+    class="max-w-[600px] text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-8 border-l-4 border-[#F28E46] pl-4 mt-[53px]"
+  >
+    Biz ishongan g'oyalar — hozir kompaniyaga aylangan
+  </h2>
+
+  <div class="hidden sm:grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+    {
+      cards.map((item) => (
+        <div class="border rounded-2xl flex flex-col border-[#F0F0F0] h-[334px]">
+          <div class="w-full h-[203px] bg-[#F28E460A] flex items-center justify-center">
+            <img
+              src={item.img}
+              alt={item.title}
+              class="max-w-[100px] max-h-[100px] object-contain"
+            />
+          </div>
+          <div class="flex flex-col gap-[10px] pl-6 pt-3 pr-5 border-[#F0F0F0] border-t">
+            <p class="font-medium text-[28px]">{item.title}</p>
+            <p class="text-[14px] text-[#A6A9AE]">{item.desc}</p>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+
+  <div class="sm:hidden mt-4">
+    <marquee behavior="scroll" direction="left" scrollamount="5">
+      <div class="grid grid-cols-4 gap-4 w-max">
+        {
+          cards.map((item) => (
+            <div class="border rounded-2xl flex flex-col border-[#F0F0F0] h-[334px] w-[302px]">
+              <div class="w-full h-[203px] bg-[#F28E460A] flex items-center justify-center">
+                <img
+                  src={item.img}
+                  alt={item.title}
+                  class="max-w-[100px] max-h-[100px] object-contain"
+                />
+              </div>
+              <div class="flex flex-col gap-[10px] pl-6 pt-3 pr-5 border-[#F0F0F0] border-t outline-none">
+                <p class="font-medium text-[28px]">{item.title}</p>
+                <p class="text-[14px] text-[#A6A9AE] break-words whitespace-normal leading-snug">
+                  {item.desc}
+                </p>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </marquee>
+  </div>
+</Layout>
