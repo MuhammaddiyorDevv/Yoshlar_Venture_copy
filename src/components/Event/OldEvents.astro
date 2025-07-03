@@ -1,0 +1,23 @@
+---
+interface Props {
+  image: { src: string };
+  title: string;
+  date: string;
+}
+const { image, title, date, } = Astro.props as Props;
+---
+
+<article class="max-w-sm bg-white rounded-3xl shadow-lg overflow-hidden">
+  <!-- Image + Badge -->
+  <div class="relative">
+    <img src={image.src} alt={title} class="w-full h-auto object-cover" />
+  </div>
+
+  <!-- Content -->
+  <div class="px-6 py-4">
+    <div class="flex justify-between items-center">
+      <h3 class="text-lg font-bold text-black">{title}</h3>
+      <time class="text-sm text-gray-500">{date}</time>
+    </div>
+  </div>
+</article>

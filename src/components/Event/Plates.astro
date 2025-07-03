@@ -1,0 +1,31 @@
+---
+import EventCard from '../Event/OldEvents.astro';
+import StartupImg from '../../assets/images/Startup-arena.png';
+import TechMeetupImg from '../../assets/images/Startup-talks.png';
+import StartupPitchImg from '../../assets/images//Startup-starts.png';
+
+const events = [
+  { image: StartupImg, title: 'Startup Arena',    date: '6 iyun, 2025 -yil',  },
+  { image: TechMeetupImg, title: 'Startup Talks', date: '6-iyun, 2025 -yil',  },
+  { image: StartupPitchImg, title: 'She Starts', date: '6-iyun, 2025 -yil',  },
+  { image: StartupImg, title: 'Startup Arena',    date: '6 iyun, 2025 -yil',  },
+  { image: TechMeetupImg, title: 'Startup Talks', date: '6-iyun, 2025 -yil',  },
+  { image: StartupPitchImg, title: 'She Starts', date: '6-iyun, 2025 -yil',  },
+];
+---
+
+<div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+  <h2 class="max-w-[250px] text-2xl sm:text-3xl font-bold text-gray-900 mb-8 border-l-4 border-[#F28E46] pl-4 font-inter-tight">
+    Avvalgi tadbirlar
+  </h2>
+
+  <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+    {events.map(event => (
+      <EventCard
+        image={event.image}
+        title={event.title}
+        date={event.date}
+      />
+    ))}
+  </div>
+</div>
