@@ -58,7 +58,9 @@ const cards = [
     Biz ishongan g'oyalar — hozir kompaniyaga aylangan
   </h2>
 
-  <div class="hidden sm:grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+  <div
+    class="hidden sm:grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 mb-[50px] sm:mb-20"
+  >
     {
       cards.map((item) => (
         <div class="border rounded-2xl flex flex-col border-[#F0F0F0] h-[334px]">
@@ -78,7 +80,7 @@ const cards = [
     }
   </div>
 
-  <div class="sm:hidden mt-4">
+  <div class="sm:hidden mt-4 mb-[50px]">
     <marquee behavior="scroll" direction="left" scrollamount="5">
       <div class="grid grid-cols-4 gap-4 w-max">
         {
