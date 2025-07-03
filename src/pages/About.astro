@@ -1,0 +1,57 @@
+---
+import Layout from "../layouts/Layout.astro";
+import LabSearch from "../assets/labSearchWhite.svg";
+---
+
+<Layout title="Yoshlar Venture">
+  <div
+    class="w-full h-[330px] rounded-3xl flex items-center justify-center text-white mt-[50px]"
+    style="
+              background-image: url('/public/BgImg.png');
+              background-size: 100% 100%;
+              background-repeat: repeat-y;
+              background-color: #fb9c27;
+            "
+  >
+    <img src={LabSearch.src} alt="LabSearch" />
+  </div>
+  <h2
+    class="max-w-[600px] text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-8 border-l-4 border-[#F28E46] pl-4 mt-[53px]"
+  >
+    О компании
+  </h2>
+  <div class="ml-[40px] px-6 max-w-[1269px] mb-[110px]">
+    <p class="text-[28px] text-[#535862]">
+      Labsearch – Neyrotexnologiyalarga asoslangan aqlli qidiruv xizmati
+    </p>
+    <p class="text-[28px] text-[#535862]">
+      Labsearch — bu sun’iy intellekt va neyrosetlar asosida ishlaydigan
+      innovatsion qidiruv platformasi. Bizning tizim murakkab algoritmlar
+      yordamida siz izlayotgan mahsulot, xizmat yoki ma’lumotni aniq va tez
+      topishga yordam beradi.
+    </p>
+    <p class="text-[28px] text-[#535862]">Asosiy afzalliklar:</p>
+    <ul class="list-disc pl-4">
+      <li class="text-[28px] text-[#535862]">
+        Aqlli qidiruv: So‘rovlarni kontekst asosida tushunadi va eng dolzarb
+        natijalarni taqdim etadi
+      </li>
+      <li class="text-[28px] text-[#535862]">
+        Tezkorlik: Ma’lumotlar bazasi bilan real vaqt rejimida ishlaydi
+      </li>
+      <li class="text-[28px] text-[#535862]">
+        Moslashtirilgan natijalar: Har bir foydalanuvchining ehtiyojiga mos
+        tavsiyalar
+      </li>
+      <li class="text-[28px] text-[#535862]">
+        Keng imkoniyatlar: Ilmiy ishlar, mahsulotlar, xizmatlar, kompaniyalar
+        barchasini toping
+      </li>
+    </ul>
+    <p class="text-[28px] text-[#535862]">
+      Labsearch — bu oddiy qidiruvdan ko‘ra ko‘proq narsa. Bu sizga vaqtni
+      tejash, aniq ma’lumotga ega bo‘lish va qaror qabul qilishni
+      osonlashtiradigan sun’iy intellekt yordamchisidir.
+    </p>
+  </div>
+</Layout>
