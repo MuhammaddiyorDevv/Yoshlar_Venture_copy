@@ -5,6 +5,14 @@
   font-family: "InterTight", sans-serif;
 }
 
+body {
+  @apply bg-white;
+}
+
+.dark body {
+  @apply bg-black;
+}
+
 .container {
   max-width: 1440px;
   padding-left: 16px;
