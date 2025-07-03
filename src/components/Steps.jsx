@@ -1,8 +1,8 @@
-import React from 'react';
+import React from "react";
 
 const Steps = ({ currentStep = 1 }) => {
   const steps = [1, 2, 3, 4, 5];
-  
+
   const getStepStyle = (stepNumber) => {
     if (stepNumber <= currentStep) {
       return "w-12 h-12 bg-[#F28E46] text-[#fff] rounded-[28px] cursor-pointer";
@@ -15,9 +15,7 @@ const Steps = ({ currentStep = 1 }) => {
     <div className="flex items-center justify-center gap-2 sm:gap-6">
       {steps.map((step, index) => (
         <React.Fragment key={step}>
-          <button className={getStepStyle(step)}>
-            {step}
-          </button>
+          <button className={getStepStyle(step)}>{step}</button>
           {index < steps.length - 1 && (
             <hr className="w-6 sm:w-[53px] text-[#1B1A1959] dark:text-[#E3E3E3]" />
           )}
@@ -27,4 +25,4 @@ const Steps = ({ currentStep = 1 }) => {
   );
 };
 
-export default Steps; 
+export default Steps;

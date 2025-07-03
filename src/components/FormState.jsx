@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
-import Steps from "./Steps.jsx"
-import Profile from './Profile.jsx'
-import Stage from './Stage.jsx'
-import StageNow from './StageNow.jsx'
+import React, { useState } from "react";
+import Steps from "./Steps.jsx";
+import Profile from "./Profile.jsx";
+import Stage from "./Stage.jsx";
+import StageNow from "./StageNow.jsx";
 
 const InfoWrapper = () => (
   <div className="flex flex-col items-start w-[398px] sm:w-[628px]">
@@ -14,12 +14,12 @@ const InfoWrapper = () => (
         Akseleratsiya yoki inkubatsiya dasturida qatnashganmisiz?
       </p>
       <div className="flex gap-1">
-        <button
-          className="w-[50px] h-[50px] rounded-full text-[12px] border dark:border-[#535862] text-[#535862] dark:text-white"
-        >Ha</button>
-        <button
-          className="w-[50px] h-[50px] rounded-full text-[12px] border dark:border-[#535862] text-[#535862] dark:text-white"
-        >Yo'q</button>
+        <button className="w-[50px] h-[50px] rounded-full text-[12px] border dark:border-[#535862] text-[#535862] dark:text-white">
+          Ha
+        </button>
+        <button className="w-[50px] h-[50px] rounded-full text-[12px] border dark:border-[#535862] text-[#535862] dark:text-white">
+          Yo'q
+        </button>
       </div>
     </div>
   </div>
@@ -37,12 +37,12 @@ const AboutWrapper = () => (
           Akseleratsiya yoki inkubatsiya dasturida qatnashganmisiz?
         </p>
         <div className="flex gap-1">
-          <button
-            className="w-[50px] h-[50px] rounded-full bg-[#F28E46] text-white text-[12px]"
-          >Ha</button>
-          <button
-            className="border dark:border-[#535862] text-[12px] w-[50px] h-[50px] rounded-full text-[#535862] dark:text-white"
-          >Yo'q</button>
+          <button className="w-[50px] h-[50px] rounded-full bg-[#F28E46] text-white text-[12px]">
+            Ha
+          </button>
+          <button className="border dark:border-[#535862] text-[12px] w-[50px] h-[50px] rounded-full text-[#535862] dark:text-white">
+            Yo'q
+          </button>
         </div>
       </div>
 
@@ -66,24 +66,24 @@ const AboutWrapper = () => (
       <div className="flex flex-col gap-4 mt-6">
         <p className="font-medium">Muvofaqqiyatli bitirganmidingiz?</p>
         <div className="flex gap-1">
-          <button
-            className="w-[50px] h-[50px] rounded-full bg-[#F28E46] text-white text-[12px]"
-          >Ha</button>
-          <button
-            className="border dark:border-[#535862] text-[12px] w-[50px] h-[50px] rounded-full text-[#535862] dark:text-white"
-          >Yo'q</button>
+          <button className="w-[50px] h-[50px] rounded-full bg-[#F28E46] text-white text-[12px]">
+            Ha
+          </button>
+          <button className="border dark:border-[#535862] text-[12px] w-[50px] h-[50px] rounded-full text-[#535862] dark:text-white">
+            Yo'q
+          </button>
         </div>
       </div>
 
       <div className="flex flex-col gap-4 mt-6 mb-12">
         <p className="font-medium">Startap tanlovlarida qatnashganmisiz?</p>
         <div className="flex gap-1">
-          <button
-            className="w-[50px] h-[50px] rounded-full bg-[#F28E46] text-white text-[12px]"
-          >Ha</button>
-          <button
-            className="border dark:border-[#535862] text-[12px] w-[50px] h-[50px] rounded-full text-[#535862] dark:text-white"
-          >Yo'q</button>
+          <button className="w-[50px] h-[50px] rounded-full bg-[#F28E46] text-white text-[12px]">
+            Ha
+          </button>
+          <button className="border dark:border-[#535862] text-[12px] w-[50px] h-[50px] rounded-full text-[#535862] dark:text-white">
+            Yo'q
+          </button>
         </div>
       </div>
 
@@ -106,12 +106,12 @@ const AboutWrapper = () => (
       <div className="flex flex-col gap-4 mt-6">
         <p className="font-medium">Yuqori 3 likka kirdingizmi?</p>
         <div className="flex gap-1">
-          <button
-            className="w-[50px] h-[50px] rounded-full text-[12px] border dark:border-[#535862] text-[#535862] dark:text-white"
-          >Ha</button>
-          <button
-            className="w-[50px] h-[50px] rounded-full text-[12px] border dark:border-[#535862] text-[#535862] dark:text-white"
-          >Yo'q</button>
+          <button className="w-[50px] h-[50px] rounded-full text-[12px] border dark:border-[#535862] text-[#535862] dark:text-white">
+            Ha
+          </button>
+          <button className="w-[50px] h-[50px] rounded-full text-[12px] border dark:border-[#535862] text-[#535862] dark:text-white">
+            Yo'q
+          </button>
         </div>
       </div>
 
@@ -171,12 +171,12 @@ const AboutWrapper = () => (
           <div className="flex flex-col gap-4">
             <p className="font-medium">Hozirda ishchilar bormi?</p>
             <div className="flex gap-1">
-              <button
-                className="w-[50px] h-[50px] rounded-full bg-[#F28E46] text-white text-[12px]"
-              >Ha</button>
-              <button
-                className="border dark:border-[#535862] text-[12px] w-[50px] h-[50px] rounded-full text-[#535862] dark:text-white"
-              >Yo'q</button>
+              <button className="w-[50px] h-[50px] rounded-full bg-[#F28E46] text-white text-[12px]">
+                Ha
+              </button>
+              <button className="border dark:border-[#535862] text-[12px] w-[50px] h-[50px] rounded-full text-[#535862] dark:text-white">
+                Yo'q
+              </button>
             </div>
           </div>
           <div className="flex flex-col gap-1.5 mt-4">
@@ -200,12 +200,12 @@ const FinanceWrapper = () => (
       <div className="flex flex-col gap-4 mb-6">
         <p className="font-medium">Hozirda savdo bormi?</p>
         <div className="flex gap-1">
-          <button
-            className="border dark:border-[#535862] text-[12px] w-[50px] h-[50px] rounded-full text-[#535862] dark:text-white active:bg-[#F28E46] active:text-white active:border-[#F28E46] transition duration-300"
-          >Ha</button>
-          <button
-            className="border dark:border-[#535862] text-[12px] w-[50px] h-[50px] rounded-full text-[#535862] dark:text-white active:bg-[#F28E46] active:text-white active:border-[#F28E46] transition duration-300"
-          >Yo'q</button>
+          <button className="border dark:border-[#535862] text-[12px] w-[50px] h-[50px] rounded-full text-[#535862] dark:text-white active:bg-[#F28E46] active:text-white active:border-[#F28E46] transition duration-300">
+            Ha
+          </button>
+          <button className="border dark:border-[#535862] text-[12px] w-[50px] h-[50px] rounded-full text-[#535862] dark:text-white active:bg-[#F28E46] active:text-white active:border-[#F28E46] transition duration-300">
+            Yo'q
+          </button>
         </div>
       </div>
     </div>
@@ -228,12 +228,12 @@ const FinanceWrapper = () => (
       <div className="flex flex-col gap-4 mt-6">
         <p className="font-medium">Oldin investitsiya jalb qilganmisiz?</p>
         <div className="flex gap-1">
-          <button
-            className="w-[50px] h-[50px] rounded-full bg-[#F28E46] text-white text-[12px]"
-          >Ha</button>
-          <button
-            className="border dark:border-[#535862] text-[12px] w-[50px] h-[50px] rounded-full text-[#535862] dark:text-white active:bg-[#F28E46] active:text-white active:border-[#F28E46] transition duration-300"
-          >Yo'q</button>
+          <button className="w-[50px] h-[50px] rounded-full bg-[#F28E46] text-white text-[12px]">
+            Ha
+          </button>
+          <button className="border dark:border-[#535862] text-[12px] w-[50px] h-[50px] rounded-full text-[#535862] dark:text-white active:bg-[#F28E46] active:text-white active:border-[#F28E46] transition duration-300">
+            Yo'q
+          </button>
         </div>
       </div>
     </div>
@@ -330,7 +330,9 @@ const InvestmentWrapper = () => (
     </p>
 
     <div className="flex flex-col gap-1.5 w-full">
-      <p className="text-[12px] font-medium">Qancha investitsiya so'rayapsiz?</p>
+      <p className="text-[12px] font-medium">
+        Qancha investitsiya so'rayapsiz?
+      </p>
       <input
         type="text"
         className="bg-[#F8F8F7] dark:bg-inherit dark:border dark:border-[#535862] dark:text-white rounded-[12px] h-[50px] w-full p-4 outline-none"
@@ -339,15 +341,14 @@ const InvestmentWrapper = () => (
 
     <div className="flex flex-col gap-1.5 mt-6 font-medium w-full">
       <p className="text-[12px] font-medium">Iltimos ko'rsating</p>
-      <textarea
-        className="bg-[#F8F8F7] dark:bg-inherit dark:border dark:border-[#535862] dark:text-white rounded-xl h-[110px] p-4 w-[398px] sm:w-[628px] font-medium outline-none"
-      ></textarea>
+      <textarea className="bg-[#F8F8F7] dark:bg-inherit dark:border dark:border-[#535862] dark:text-white rounded-xl h-[110px] p-4 w-[398px] sm:w-[628px] font-medium outline-none"></textarea>
     </div>
 
     <p className="font-semibold">
-      Ushbu arizani yuborish investitsiya kafolatlamaydi. Yoshlar Ventures barcha
-      taqdim etilgan ma'lumotlarni maxfiylik bilan muomala qiladi va tanlangan
-      arizachilar bilan keyingi tekshiruv yoki suhbat uchun bog'lanadi.
+      Ushbu arizani yuborish investitsiya kafolatlamaydi. Yoshlar Ventures
+      barcha taqdim etilgan ma'lumotlarni maxfiylik bilan muomala qiladi va
+      tanlangan arizachilar bilan keyingi tekshiruv yoki suhbat uchun
+      bog'lanadi.
     </p>
   </div>
 );
@@ -358,9 +359,13 @@ const PATHS = {
 };
 
 const FormState = () => {
-  const [step, setStep] = useState(0); 
-  const [stageSelection, setStageSelection] = useState({ btn1: false, btn2: false, btn3: false });
-  const [flow, setFlow] = useState([]); 
+  const [step, setStep] = useState(0);
+  const [stageSelection, setStageSelection] = useState({
+    btn1: false,
+    btn2: false,
+    btn3: false,
+  });
+  const [flow, setFlow] = useState([]);
 
   const getStepsArray = () => {
     if (flow.length > 0) {
@@ -386,12 +391,16 @@ const FormState = () => {
         setFlow(PATHS.info);
         setStep((s) => s + 1);
         return;
-      } else if (!stageSelection.btn1 && !stageSelection.btn2 && stageSelection.btn3) {
+      } else if (
+        !stageSelection.btn1 &&
+        !stageSelection.btn2 &&
+        stageSelection.btn3
+      ) {
         setFlow(PATHS.finance);
         setStep((s) => s + 1);
         return;
       } else {
-        alert('Iltimos, to\'g\'ri bosqich(lar)ni tanlang.');
+        alert("Iltimos, to'g'ri bosqich(lar)ni tanlang.");
         return;
       }
     }
@@ -433,7 +442,7 @@ const FormState = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default FormState
+export default FormState;

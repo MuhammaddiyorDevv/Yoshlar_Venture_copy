@@ -1,5 +1,5 @@
-import React from 'react';
-import downloadIcon from '../assets/downloadIcon.svg';
+import React from "react";
+import downloadIcon from "../assets/downloadIcon.svg";
 
 const Profile = () => (
   <div className="flex flex-col w-full gap-6 mt-12 mb-10">
@@ -27,9 +27,7 @@ const Profile = () => (
       <p className="text-[12px] text-[#020202] dark:text-[#FFFFFF] font-medium">
         Havola ( Ixtiyoriy )
       </p>
-      <label
-        className="cursor-pointer w-[337px] h-[50px] mt-1.5 mb-2 border border-[#F28E46] rounded-xl px-6 py-[17.5px] flex items-center"
-      >
+      <label className="cursor-pointer w-[337px] h-[50px] mt-1.5 mb-2 border border-[#F28E46] rounded-xl px-6 py-[17.5px] flex items-center">
         <div className="flex items-center gap-2">
           <p className="text-[12px] text-[#F28E46] font-medium">Yuklash</p>
           <img src={downloadIcon} alt="" />
@@ -43,4 +41,4 @@ const Profile = () => (
   </div>
 );
 
-export default Profile; 
+export default Profile;
