@@ -1,0 +1,131 @@
+---
+import No_Suitcase from '../../assets/images/no-suitcase 1.svg';
+import Alone from '../../assets/images/alone 1.svg';
+import No_Money from '../../assets/images/no-money.svg';
+import Lamp from '../../assets/images/Lamp.svg';
+--- 
+ 
+ <section
+        class="relative rounded-3xl overflow-hidden mx-auto w-full px-6 sm:px-12 lg:px-[80px] py-8 sm:py-12 lg:py-[60px] mb-16"
+      >
+        <!-- Mobile uchun alohida CSS -->
+        <style>
+          .mobile-background {
+            background-image: url("/public/BgImg.png");
+            background-size: 100% 66.67%;
+            background-position: top center;
+            background-repeat: repeat-y;
+            background-color: #f28e46;
+          }
+
+          /* Mobile uchun alohida background */
+          @media (max-width: 640px) {
+            .mobile-background {
+              background-size: cover;
+              background-position: center center;
+              background-repeat: no-repeat;
+            }
+          }
+
+          /* Tablet uchun */
+          @media (min-width: 641px) and (max-width: 1024px) {
+            .mobile-background {
+              background-size: 100% 70%;
+              background-position: top center;
+              background-repeat: repeat-y;
+            }
+          }
+
+          /* Desktop uchun (asl holat) */
+          @media (min-width: 1025px) {
+            .mobile-background {
+              background-size: 100% 66.67%;
+              background-position: top center;
+              background-repeat: repeat-y;
+            }
+          }
+        </style>
+
+        <!-- Background with Image -->
+        <div
+          class="absolute inset-0 bg-gradient-to-br from-brand-orange-start to-brand-orange-end opacity-100 mobile-background"
+        ></div>
+
+        <!-- Content -->
+        <div class="relative z-10">
+          <!-- Top cards -->
+          <div
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-8 sm:mb-12"
+          >
+            <!-- Card 1 -->
+            <div
+              class="bg-white rounded-xl shadow-md flex flex-row sm:flex-col p-5 space-x-3 sm:space-x-0 sm:space-y-3 items-center sm:items-start"
+            >
+              <div class="bg-gray-100 rounded-[24px] p-3 w-fit flex-shrink-0">
+                <img
+                  src={ No_Suitcase.src }
+                  alt="tayyor emasman"
+                  class="w-6 h-6"
+                />
+              </div>
+              <p class="text-gray-800 font-medium font-inter-tight">
+                Xali tayyor emasman
+              </p>
+            </div>
+
+            <!-- Card 2 -->
+            <div
+              class="bg-white rounded-xl shadow-md flex flex-row sm:flex-col p-5 space-x-3 sm:space-x-0 sm:space-y-3 items-center sm:items-start"
+            >
+              <div class="bg-gray-100 rounded-[24px] p-3 w-fit flex-shrink-0">
+                <img
+                  src={Alone.src }
+                  alt="yolg'izman"
+                  class="w-6 h-6"
+                />
+              </div>
+              <p class="text-gray-800 font-medium font-inter-tight">
+                Yolg'izman
+              </p>
+            </div>
+
+            <!-- Card 3 -->
+            <div
+              class="bg-white rounded-xl shadow-md flex flex-row sm:flex-col p-5 space-x-3 sm:space-x-0 sm:space-y-3 items-center sm:items-start sm:col-span-2 lg:col-span-1"
+            >
+              <div class="bg-gray-100 rounded-[24px] p-3 w-fit flex-shrink-0">
+                <img
+                  src={ No_Money.src }
+                  alt="pul yo'q"
+                  class="w-6 h-6"
+                />
+              </div>
+              <p class="text-gray-800 font-medium font-inter-tight">Pul yo'q</p>
+            </div>
+          </div>
+
+          <!-- Big text & Button -->
+          <div class="flex flex-col items-start max-w-2xl mb-8">
+            <div class="border-l-4 border-white pl-6">
+              <p
+                class="text-white text-xl sm:text-2xl lg:text-3xl xl:text-4xl leading-tight font-semibold font-inter-tight"
+              >
+                Bu gaplar sizniki bo'lishi mumkin.<br />
+                Lekin biz uchun bu muhim emas.<br />
+                Biz tayyor reja emas, rost fikrni kutamiz.
+              </p>
+            </div>
+          </div>
+
+          <button
+            class="bg-white text-[#F28E46] font-semibold rounded-[24px] px-6 py-3 flex items-center space-x-3 shadow-lg font-inter-tight hover:shadow-xl transition-shadow"
+          >
+            <span>Ariza yuborish</span>
+            <img
+              src={ Lamp.src }
+              alt="icon"
+              class="w-8 h-8 lg:w-10 lg:h-10"
+            />
+          </button>
+        </div>
+      </section>
