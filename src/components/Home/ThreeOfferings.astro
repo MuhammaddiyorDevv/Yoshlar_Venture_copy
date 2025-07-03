@@ -1,0 +1,220 @@
+---
+import LogoYoshlar from "../../assets/images/LogoYoshlar.png";
+import Stars from "../../assets/images/Stars.svg";
+import Arena from "../../assets/images/Arena.svg";
+import Talks from "../../assets/images/Talks.svg";
+import Lamp from "../../assets/images/Lamp.svg";
+---
+
+<section
+  id="offerings"
+  class="relative w-full max-w-full mx-auto overflow-hidden mb-16 h-auto min-h-[600px] sm:h-[700px] lg:h-[924px] rounded-none lg:rounded-3xl px-4 lg:px-0 py-8 lg:py-0"
+>
+  <!-- Background - only on desktop -->
+  <div
+    class="hidden lg:block absolute inset-0 bg-[url('/public/RoundedBg.png')] bg-contain bg-center bg-no-repeat"
+  >
+  </div>
+
+  <!-- Mobile Layout -->
+  <div class="lg:hidden space-y-8">
+    <!-- 01 SheStars -->
+    <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
+      <div class="flex items-start justify-between mb-4">
+        <div class="flex items-center space-x-3">
+          <span class="text-2xl font-bold text-[#F28E46] font-inter-tight"
+            >01</span
+          >
+          <!-- Vertikal chiziq -->
+          <div class="w-px h-[52px] bg-[#F28E46]"></div>
+          <h3 class="text-xl font-semibold text-black font-inter-tight">
+            SheStars
+          </h3>
+        </div>
+        <img src={Stars.src} alt="" class="w-6 h-6" />
+      </div>
+      <div class="w-full h-px bg-[#F28E46] mb-4"></div>
+      <p class="text-gray-600 text-sm mb-6 font-inter-tight leading-relaxed">
+        Ayollar uchun platforma. Startap qilgan ayollar o'z tajribalari bilan
+        o'rtoqlashadi.
+      </p>
+      <button
+        class="inline-flex items-center text-[#F28E46] border border-[#F28E46] rounded-[12px] px-4 py-2 text-sm font-medium hover:bg-brand-orange-start hover:text-white transition font-inter-tight"
+      >
+        BARCHASINI O'QISH
+        <img src={Lamp.src} alt="" class="w-6 h-6 ml-2" />
+      </button>
+    </div>
+
+    <!-- 02 Startup Arena -->
+    <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
+      <div class="flex items-start justify-between mb-4">
+        <div class="flex items-center space-x-3">
+          <span class="text-2xl font-bold text-[#F28E46] font-inter-tight"
+            >02</span
+          >
+          <div class="w-px h-[52px] bg-[#F28E46]"></div>
+          <h3 class="text-xl font-semibold text-black font-inter-tight">
+            Startup Arena
+          </h3>
+        </div>
+        <img src={Arena.src} alt="" class="w-6 h-6" />
+      </div>
+      <div class="w-full h-px bg-[#F28E46] mb-4"></div>
+      <p class="text-gray-600 text-sm mb-6 font-inter-tight leading-relaxed">
+        Pitch va investitsiya kuni. Yoshlar o'z loyihalarini investorlar oldida
+        taqdim etadi.
+      </p>
+      <button
+        class="inline-flex items-center text-[#F28E46] border border-[#F28E46] rounded-[12px] px-4 py-2 text-sm font-medium hover:bg-[#F28E46] hover:text-white transition font-inter-tight"
+      >
+        BARCHASINI O'QISH
+        <img src={Lamp.src} alt="" class="w-6 h-6 ml-2" />
+      </button>
+    </div>
+
+    <!-- 03 StartupTalks -->
+    <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
+      <div class="flex items-start justify-between mb-4">
+        <div class="flex items-center space-x-3">
+          <span class="text-2xl font-bold text-[#F28E46] font-inter-tight"
+            >03</span
+          >
+          <div class="w-px h-[52px] bg-[#F28E46]"></div>
+          <h3 class="text-xl font-semibold text-black font-inter-tight">
+            StartupTalks
+          </h3>
+        </div>
+        <img src={Talks.src} alt="" class="w-6 h-6" />
+      </div>
+      <div class="w-full h-px bg-[#F28E46] mb-4"></div>
+      <p class="text-gray-600 text-sm mb-6 font-inter-tight leading-relaxed">
+        Pitch va investitsiya kuni. Yoshlar o'z loyihalarini investorlar oldida
+        taqdim etadi.
+      </p>
+      <button
+        class="inline-flex items-center text-[#F28E46] border border-[#F28E46] rounded-[12px] px-4 py-2 text-sm font-medium hover:bg-[#F28E46] hover:text-white transition font-inter-tight"
+      >
+        BARCHASINI O'QISH
+        <img src={Lamp.src} alt="" class="w-6 h-6 ml-2" />
+      </button>
+    </div>
+
+    <!-- Bottom Logo - Mobile (FAQAT BU QISM O'ZGARTIRILDI) -->
+    <div class="flex justify-center pt-8">
+      <div
+        class="w-full min-h-[300px] bg-[url('/public/RoundedBg.png')] bg-center bg-no-repeat bg-contain flex items-center justify-center"
+      >
+        <img class="w-[187px] h-[185px]" src={LogoYoshlar.src} alt="Logo" />
+      </div>
+    </div>
+  </div>
+  <!-- Desktop Layout -->
+  <div class="hidden lg:block relative h-full text-black">
+    <!-- Center Logo -->
+    <div
+      class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+    >
+      <img
+        class="w-32 h-32 sm:w-48 sm:h-48 lg:w-[345px] lg:h-[345px]"
+        src={LogoYoshlar.src}
+        alt="Logo"
+      />
+    </div>
+
+    <!-- 01 SheStars: top-right -->
+    <div
+      class="absolute top-8 sm:top-16 lg:top-[150px] right-4 sm:right-8 lg:right-[68px] flex flex-col items-start space-y-2 max-w-[240px]"
+    >
+      <div class="flex items-center space-x-2">
+        <span
+          class="text-xl sm:text-2xl lg:text-[32px] font-bold text-brand-orange-start font-inter-tight"
+          >01</span
+        >
+        <h3
+          class="text-lg sm:text-xl lg:text-[24px] font-semibold text-black font-inter-tight"
+        >
+          SheStars
+        </h3>
+      </div>
+      <img
+        class="absolute top-[60px] scale-150 right-[50px]"
+        src={Stars.src}
+        alt=""
+      />
+      <p class="text-gray-700 text-sm max-w-[240px] font-inter-tight">
+        Ayollar uchun platforma. Startap qilgan ayollar o'z tajribalari bilan
+        o'rtoqlashadi.
+      </p>
+      <a
+        href="#"
+        class="inline-flex items-center text-brand-orange-start border border-brand-orange-start rounded-full px-4 py-2 text-sm font-medium hover:bg-brand-orange-start hover:text-white transition font-inter-tight"
+      >
+        Barchasini o'qish
+        <img src={Lamp.src} alt="" class="w-6 h-6 ml-2" />
+      </a>
+    </div>
+
+    <!-- 02 Startup Arena: left-center -->
+    <div
+      class="absolute top-1/2 left-4 sm:left-8 lg:left-0 transform -translate-y-1/2 flex flex-col items-start space-y-2 max-w-[300px]"
+    >
+      <div class="flex items-center space-x-2">
+        <span
+          class="text-xl sm:text-2xl lg:text-[32px] font-bold text-brand-orange-start font-inter-tight"
+          >02</span
+        >
+        <h3
+          class="text-lg sm:text-xl lg:text-[24px] font-semibold text-black font-inter-tight"
+        >
+          Startup Arena
+        </h3>
+      </div>
+      <img class="absolute top-[60px] scale-150" src={Arena.src} alt="" />
+      <p class="text-gray-700 text-sm max-w-[300px] font-inter-tight">
+        Pitch va investitsiya kuni. Yoshlar o'z loyihalarini investorlar oldida
+        taqdim etadi.
+      </p>
+      <a
+        href="#"
+        class="inline-flex items-center text-brand-orange-start border border-brand-orange-start rounded-full px-4 py-2 text-sm font-medium hover:bg-brand-orange-start hover:text-white transition font-inter-tight"
+      >
+        Barchasini o'qish
+        <img src={Lamp.src} alt="" class="w-6 h-6 ml-2" />
+      </a>
+    </div>
+
+    <!-- 03 StartupTalks: bottom-right -->
+    <div
+      class="absolute bottom-8 sm:bottom-16 lg:bottom-[150px] right-4 sm:right-8 lg:right-[68px] flex flex-col items-start space-y-2 max-w-[240px]"
+    >
+      <div class="flex items-center space-x-2">
+        <span
+          class="text-xl sm:text-2xl lg:text-[32px] font-bold text-brand-orange-start font-inter-tight"
+          >03</span
+        >
+        <h3
+          class="text-lg sm:text-xl lg:text-[24px] font-semibold text-black font-inter-tight"
+        >
+          StartupTalks
+        </h3>
+      </div>
+      <img
+        class="absolute bottom-[120px] right-[70px] scale-150"
+        src={Talks.src}
+        alt=""
+      />
+      <p class="text-gray-700 text-sm max-w-[240px] font-inter-tight">
+        Pitch va investitsiya kuni. Yoshlar o'z loyihalarini investorlar oldida
+        taqdim etadi.
+      </p>
+      <a
+        href="#"
+        class="inline-flex items-center text-brand-orange-start border border-brand-orange-start rounded-full px-4 py-2 text-sm font-medium hover:bg-brand-orange-start hover:text-white transition font-inter-tight"
+      >
+        Barchasini o'qish
+        <img src={Lamp.src} alt="" class="w-6 h-6 ml-2" />
+      </a>
+    </div>
+  </div>
+</section>

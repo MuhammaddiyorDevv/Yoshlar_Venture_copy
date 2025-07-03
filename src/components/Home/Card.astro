@@ -1,0 +1,78 @@
+---
+import WalletCheck from '../../assets/images/wallet-check.svg';
+import MoneySend from '../../assets/images/money-send.svg';    
+import DeviceMessage from '../../assets/images/device-message.svg';
+import Wallet from '../../assets/images/wallet.svg';
+---      
+      
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-[16px] pt-16 sm:pt-24 lg:pt-[130px] pb-16 sm:pb-24 lg:pb-[138px]"
+      >
+        <!-- Card 1 -->
+        <div
+          class="w-full h-[150px] rounded-[24px] border border-white bg-[#E0FF00] flex flex-row sm:flex-col p-4 space-x-3 sm:space-x-0 sm:space-y-3 items-center sm:items-start"
+        >
+          <div
+            class="w-[60px] h-[60px] bg-white rounded-[20px] flex items-center justify-center flex-shrink-0"
+          >
+            <img
+              src={WalletCheck.src}
+              alt="icon"
+              class="w-8 h-8"
+            />
+          </div>
+          <p class="text-black text-base font-semibold font-inter-tight">
+            Startapingiz uchun 500 million so'mgacha investitsiya.
+          </p>
+        </div>
+
+        <!-- Card 2 -->
+        <div
+          class="w-full h-[150px] rounded-[24px] border border-white bg-[#E0FF00] flex flex-row sm:flex-col p-4 space-x-3 sm:space-x-0 sm:space-y-3 items-center sm:items-start"
+        >
+          <div
+            class="w-[60px] h-[60px] bg-white rounded-[20px] flex items-center justify-center flex-shrink-0"
+          >
+            <img
+              src={MoneySend.src}
+              alt="icon"
+              class="w-8 h-8"
+            />
+          </div>
+          <p class="text-black text-base font-semibold font-inter-tight">
+            Mahsulotingizni bozorga chiqarish uchun 1 milliard ....
+          </p>
+        </div>
+
+        <!-- Card 3 -->
+        <div
+          class="w-full h-[150px] rounded-[24px] border border-white bg-[#E0FF00] flex flex-row sm:flex-col p-4 space-x-3 sm:space-x-0 sm:space-y-3 items-center sm:items-start"
+        >
+          <div
+            class="w-[60px] h-[60px] bg-white rounded-[20px] flex items-center justify-center flex-shrink-0"
+          >
+            <img
+              src= {DeviceMessage.src}
+              alt="icon"
+              class="w-8 h-8"
+            />
+          </div>
+          <p class="text-black text-base font-semibold font-inter-tight">
+            Savollar uchun AI-bot kecha kunduz siz bilan.
+          </p>
+        </div>
+
+        <!-- Card 4 -->
+        <div
+          class="w-full h-[150px] rounded-[24px] border border-white bg-[#E0FF00] flex flex-row sm:flex-col p-4 space-x-3 sm:space-x-0 sm:space-y-3 items-center sm:items-start"
+        >
+          <div
+            class="w-[60px] h-[60px] bg-white rounded-[20px] flex items-center justify-center flex-shrink-0"
+          >
+            <img src= {Wallet.src} alt="icon" class="w-8 h-8" />
+          </div>
+          <p class="text-black text-base font-semibold font-inter-tight">
+            Dunyo bozoriga chiqish uchun 2 milliard so'mgacha.
+          </p>
+        </div>
+      </div>
