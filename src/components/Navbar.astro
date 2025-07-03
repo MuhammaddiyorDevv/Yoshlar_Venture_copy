@@ -4,6 +4,7 @@ import Logo from "../assets/images/Group.svg";
 import FlagUzb from "../assets/images/FlagUzb.svg";
 import FlagRus from "../assets/images/Flag_of_Russia.svg.webp";
 import FlagEng from "../assets/images/english_flag.png";
+import ToggleTheme from "./ToggleTheme.jsx";
 ---
 
 <nav
@@ -94,7 +95,7 @@ import FlagEng from "../assets/images/english_flag.png";
         ></span>
       </a>
       <a
-        href="#"
+        href="/Contact"
         class="text-[#535862] px-[14px] py-[6px] rounded-lg font-semibold text-[16px] transition duration-300 relative group font-inter-tight"
       >
         <span
@@ -174,6 +175,8 @@ import FlagEng from "../assets/images/english_flag.png";
           </div>
         </div>
       </div>
+      <!-- Dark Mode Toggle Button -->
+      <ToggleTheme client:load />
 
       <!-- Mobile Menu Button -->
       <button

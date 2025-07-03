@@ -16,9 +16,10 @@ const { title = "Yoshlar Venture", description } = Astro.props;
       href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
 
-  <body class="text-black bg-white">
+  <body class="dark:bg-black dark:text-white bg-white text-black">
     <Navbar />
     <main class="container">
       <slot />
