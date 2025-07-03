@@ -1,0 +1,35 @@
+---
+// src/pages/Partners.astro
+import EventCard from '../Event/NewEvent.astro';
+import StartupImg from '../../assets/images/startup-card.png';
+import TechMeetupImg from '../../assets/images/tech-meetup-card.png';
+import StartupPitchImg from '../../assets/images//startup-pitch-card.png';
+import LampIcon from '../../assets/images/Frame 1000005242.svg';
+
+const events = [
+  { image: StartupImg, title: 'She Starts',    date: '6 iyun, 2025 -yil', status: 'Yaqinda' },
+  { image: TechMeetupImg, title: 'She Starts', date: '6-iyun, 2025 -yil', status: 'Yaqinda' },
+  { image: StartupPitchImg, title: 'She Starts', date: '6-iyun, 2025 -yil', status: 'Yaqinda' },
+  { image: StartupImg, title: 'She Starts',    date: '6 iyun, 2025 -yil', status: 'Yaqinda' },
+  { image: TechMeetupImg, title: 'She Starts', date: '6-iyun, 2025 -yil', status: 'Yaqinda' },
+  { image: StartupPitchImg, title: 'She Starts', date: '6-iyun, 2025 -yil', status: 'Yaqinda' },
+];
+---
+
+<div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+  <h2 class="max-w-[250px] text-2xl sm:text-3xl font-bold text-gray-900 mb-8 border-l-4 border-[#F28E46] pl-4 font-inter-tight">
+    Bizga ishongan hamkorlarimiz
+  </h2>
+
+  <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+    {events.map(event => (
+      <EventCard
+        image={event.image}
+        title={event.title}
+        date={event.date}
+        status={event.status}
+        icon={LampIcon}
+      />
+    ))}
+  </div>
+</div>
