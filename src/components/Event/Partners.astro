@@ -12,42 +12,36 @@ const events = [
     title: "She Starts",
     date: "6 iyun, 2025 -yil",
     status: "Yaqinda",
-    icon: LampIcon,
   },
   {
     image: TechMeetupImg,
     title: "She Starts",
     date: "6-iyun, 2025 -yil",
     status: "Yaqinda",
-    icon: LampIcon,
   },
   {
     image: StartupPitchImg,
     title: "She Starts",
     date: "6-iyun, 2025 -yil",
     status: "Yaqinda",
-    icon: LampIcon,
   },
   {
     image: StartupImg,
     title: "She Starts",
     date: "6 iyun, 2025 -yil",
     status: "Yaqinda",
-    icon: LampIcon,
   },
   {
     image: TechMeetupImg,
     title: "She Starts",
     date: "6-iyun, 2025 -yil",
     status: "Yaqinda",
-    icon: LampIcon,
   },
   {
     image: StartupPitchImg,
     title: "She Starts",
     date: "6-iyun, 2025 -yil",
     status: "Yaqinda",
-    icon: LampIcon,
   },
 ];
 ---
@@ -59,36 +53,17 @@ const events = [
     Bizga ishongan hamkorlarimiz
   </h2>
 
-  <!-- Desktop: Normal grid layout -->
-  <!-- Desktop: Normal grid layout -->
-<div class="hidden sm:grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-  {events.map((event) => (
-    <a href="/EventDetail" class="block group hover:scale-105 transition-transform duration-200">
-      <EventCard
-        image={event.image}
-        title={event.title}
-        date={event.date}
-        status={event.status}
-        icon={event.icon}
-      />
-    </a>
-  ))}
-</div>
-  <!-- Mobile: Single column layout -->
-  <div class="sm:hidden grid gap-8">
-    {events.map((event) => (
-      <a href="/EventDetail" class="block group hover:scale-105 transition-transform duration-200">
+  <a href="/EventDetail" class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+    {
+      events.map((event) => (
         <EventCard
           image={event.image}
           title={event.title}
           date={event.date}
           status={event.status}
-          icon={event.icon}
+          icon={LampIcon}
         />
-      </a>
-    ))}
-  </div>
+      ))
+    }
+  </a>
 </div>
-
-
-
