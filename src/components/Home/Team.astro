@@ -1,4 +1,5 @@
 ---
+// src/components/TeamSection.astro
 import Abrorbek from "../../assets/images/Abrorbek.png";
 import Husniddin from "../../assets/images/Husniddin.png";
 import Mirovskiy from "../../assets/images/Mirovskiy.png";
@@ -7,148 +8,95 @@ import AlexandrMirovskiy from "../../assets/images/Alexandr Mirovskiy.png";
 ---
 
 <div class="py-12 sm:py-16 lg:py-[80px] mb-16 px-4">
-  <!-- Desktop Grid Layout (hidden on mobile) -->
+  <!-- Desktop Grid Layout -->
   <div class="hidden md:grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 lg:gap-[16px]">
-
-    <div class="flex flex-col items-center justify-between">
-      <div class="w-full aspect-[4/5] overflow-hidden mb-2">
-        <img
-          src={Abrorbek.src}
-          alt="Abrobek Ibrohimov"
-          class="w-full h-[250px] rounded-[24px] object-cover"
-        />
+    {[
+      { img: Abrorbek, name: 'Abrobek Ibrohimov', height: 'h-[250px]' },
+      { img: Husniddin, name: 'Husniddin Ahmadjonov', height: 'h-[311px]' },
+      { img: Mirovskiy, name: 'Aleksandr Mirovskiy', height: 'h-[288px]' },
+      { img: Alexandr, name: 'Aleksandr Mirovskiy', height: 'h-[254px]' },
+      { img: AlexandrMirovskiy, name: 'Aleksandr Mirovskiy', height: 'h-[311px]' }
+    ].map(({ img, name, height }) => (
+      <div class="flex flex-col items-center justify-between">
+        <div class={`w-full aspect-[4/5] overflow-hidden mb-2 ${height}`}>  
+          <img
+            src={img.src}
+            alt={name}
+            class="w-full rounded-[24px] object-cover"
+          />
+        </div>
+        <p class="text-center text-sm font-medium font-inter-tight">{name}</p>
       </div>
-      <p class="text-center text-sm font-medium font-inter-tight">Abrobek Ibrohimov</p>
-    </div>
-
-    <div class="flex flex-col items-center justify-between">
-      <div class="w-full aspect-[4/5] mb-2">
-        <img
-          src={Husniddin.src}
-          alt="Husniddin Ahmadjonov"
-          class="w-full h-[311px] rounded-[24px] object-cover"
-        />
-      </div>
-      <p class="text-center text-sm font-medium font-inter-tight">Husniddin Ahmadjonov</p>
-    </div>
-
-    <div class="flex flex-col items-center justify-between">
-      <div class="w-full aspect-[4/5] mb-2">
-        <img
-          src={Mirovskiy.src}
-          alt="Aleksandr Mirovskiy"
-          class="w-full h-[288px] rounded-[24px] object-cover"
-        />
-      </div>
-      <p class="text-center text-sm font-medium font-inter-tight">Aleksandr Mirovskiy</p>
-    </div>
-
-    <div class="flex flex-col items-center justify-between">
-      <div class="w-full aspect-[4/5] mb-2">
-        <img
-          src={Alexandr.src}
-          alt="Aleksandr Mirovskiy"
-          class="w-full h-[254px] rounded-[24px] object-cover"
-        />
-      </div>
-      <p class="text-center text-sm font-medium font-inter-tight">Aleksandr Mirovskiy</p>
-    </div>
-
-    <div class="flex flex-col items-center justify-between">
-      <div class="w-full aspect-[4/5] mb-2">
-        <img
-          src={AlexandrMirovskiy.src}
-          alt="Aleksandr Mirovskiy"
-          class="w-full h-[311px] rounded-[24px] object-cover"
-        />
-      </div>
-      <p class="text-center text-sm font-medium font-inter-tight">Aleksandr Mirovskiy</p>
-    </div>
-
+    ))}
   </div>
 
   <!-- Mobile Slider Layout -->
-  <div class="md:hidden">
-    <div class="relative">
-      <div id="slider" class="flex overflow-x-auto hide-scrollbar scroll-smooth gap-4 pb-4">
-
-        <div class="flex-none w-48 flex flex-col items-center">
-          <div class="w-full aspect-[4/5] overflow-hidden mb-2">
+  <div class="md:hidden relative">
+    <div id="slider" class="flex overflow-x-auto hide-scrollbar scroll-smooth gap-4 pb-4">
+      {[
+        { img: Abrorbek, name: 'Abrobek Ibrohimov', height: 'h-[250px]' },
+        { img: Husniddin, name: 'Husniddin Ahmadjonov', height: 'h-[311px]' },
+        { img: Mirovskiy, name: 'Aleksandr Mirovskiy', height: 'h-[288px]' },
+        { img: Alexandr, name: 'Aleksandr Mirovskiy', height: 'h-[254px]' },
+        { img: AlexandrMirovskiy, name: 'Aleksandr Mirovskiy', height: 'h-[311px]' }
+      ].map(({ img, name, height }, idx) => (
+        <div key={idx} class="flex-none w-48 flex flex-col items-center">
+          <div class={`w-full aspect-[4/5] mb-2 ${height}`}>  
             <img
-              src={Abrorbek.src}
-              alt="Abrobek Ibrohimov"
-              class="w-full h-[250px] rounded-[24px] object-cover"
+              src={img.src}
+              alt={name}
+              class="w-full rounded-[24px] object-cover"
             />
           </div>
-          <p class="text-center text-sm font-medium font-inter-tight">Abrobek Ibrohimov</p>
+          <p class="text-center text-sm font-medium font-inter-tight">{name}</p>
         </div>
-
-        <div class="flex-none w-48 flex flex-col items-center">
-          <div class="w-full aspect-[4/5] mb-2">
-            <img
-              src={Husniddin.src}
-              alt="Husniddin Ahmadjonov"
-              class="w-full h-[311px] rounded-[24px] object-cover"
-            />
-          </div>
-          <p class="text-center text-sm font-medium font-inter-tight">Husniddin Ahmadjonov</p>
-        </div>
-
-        <div class="flex-none w-48 flex flex-col items-center">
-          <div class="w-full aspect-[4/5] mb-2">
-            <img
-              src={Mirovskiy.src}
-              alt="Aleksandr Mirovskiy"
-              class="w-full h-[288px] rounded-[24px] object-cover"
-            />
-          </div>
-          <p class="text-center text-sm font-medium font-inter-tight">Aleksandr Mirovskiy</p>
-        </div>
-
-        <div class="flex-none w-48 flex flex-col items-center">
-          <div class="w-full aspect-[4/5] mb-2">
-            <img
-              src={Alexandr.src}
-              alt="Aleksandr Mirovskiy"
-              class="w-full h-[254px] rounded-[24px] object-cover"
-            />
-          </div>
-          <p class="text-center text-sm font-medium font-inter-tight">Aleksandr Mirovskiy</p>
-        </div>
-
-        <div class="flex-none w-48 flex flex-col items-center">
-          <div class="w-full aspect-[4/5] mb-2">
-            <img
-              src={AlexandrMirovskiy.src}
-              alt="Aleksandr Mirovskiy"
-              class="w-full h-[311px] rounded-[24px] object-cover"
-            />
-          </div>
-          <p class="text-center text-sm font-medium font-inter-tight">Aleksandr Mirovskiy</p>
-        </div>
-      </div>
-
-      <!-- Arrows -->
-      <button id="prevBtn" class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 bg-white rounded-full p-2 shadow-lg border border-gray-200 hover:bg-gray-50 transition-colors">
-        <svg class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-        </svg>
-      </button>
-
-      <button id="nextBtn" class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 bg-white rounded-full p-2 shadow-lg border border-gray-200 hover:bg-gray-50 transition-colors">
-        <svg class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-        </svg>
-      </button>
+      ))}
     </div>
+
+    <!-- Navigation Arrows -->
+    <button id="prevBtn" class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 bg-white rounded-full p-2 shadow-lg border border-gray-200 hover:bg-gray-50 transition-colors">
+      <svg class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+      </svg>
+    </button>
+    <button id="nextBtn" class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 bg-white rounded-full p-2 shadow-lg border border-gray-200 hover:bg-gray-50 transition-colors">
+      <svg class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+      </svg>
+    </button>
 
     <!-- Dots -->
     <div class="flex justify-center mt-6 space-x-2">
-      <button class="dot w-2 h-2 rounded-full bg-blue-500 transition-colors" data-slide="0"></button>
-      <button class="dot w-2 h-2 rounded-full bg-gray-300 hover:bg-gray-400 transition-colors" data-slide="1"></button>
-      <button class="dot w-2 h-2 rounded-full bg-gray-300 hover:bg-gray-400 transition-colors" data-slide="2"></button>
-      <button class="dot w-2 h-2 rounded-full bg-gray-300 hover:bg-gray-400 transition-colors" data-slide="3"></button>
-      <button class="dot w-2 h-2 rounded-full bg-gray-300 hover:bg-gray-400 transition-colors" data-slide="4"></button>
+      {Array.from({ length: 5 }).map((_, i) => (
+        <button key={i} class="dot w-2 h-2 rounded-full bg-gray-300 hover:bg-gray-400 transition-colors" data-slide={i}></button>
+      ))}
     </div>
   </div>
+
+  <script is:inline>
+    const slider = document.getElementById('slider');
+    const dots   = Array.from(document.querySelectorAll('.dot'));
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    let currentSlide = 0;
+    const slideWidth = 200; // w-48 (192px) + gap (8px)
+    const totalSlides = 5;
+
+    function updateDots() {
+      dots.forEach((dot, idx) => {
+        dot.classList.toggle('bg-blue-500', idx === currentSlide);
+        dot.classList.toggle('bg-gray-300', idx !== currentSlide);
+      });
+    }
+    function goToSlide(index) {
+      currentSlide = index;
+      slider.scrollTo({ left: index * slideWidth, behavior: 'smooth' });
+      updateDots();
+    }
+    nextBtn.addEventListener('click', () => goToSlide((currentSlide + 1) % totalSlides));
+    prevBtn.addEventListener('click', () => goToSlide((currentSlide - 1 + totalSlides) % totalSlides));
+    dots.forEach((dot, idx) => dot.addEventListener('click', () => goToSlide(idx)));
+
+    // Swipe Support & Auto-play can be added similarly if needed
+  </script>
 </div>
