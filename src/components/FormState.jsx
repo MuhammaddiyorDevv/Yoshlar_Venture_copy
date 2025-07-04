@@ -18,7 +18,7 @@ const FormState = () => {
   });
 
   const isWithSubSteps = stageSelection.idea && stageSelection.mvpInProgress;
-  ``;
+
   const handleBack = () => {
     if (step === 3 && isWithSubSteps && subStep > 0) {
       setSubStep(subStep - 1);
@@ -44,9 +44,10 @@ const FormState = () => {
     console.log("Selected:", selection);
   };
 
-  const handleSubmit = () => {
-    console.log("Submitting:", stageSelection);
-  };
+const handleSubmit = () => {
+  console.log("Submitting:", stageSelection);
+  window.location.href = "/";
+};
 
   return (
     <div className="max-w-[628px] mx-auto w-full mb-[55px] sm:mb-20">
@@ -79,10 +80,10 @@ const FormState = () => {
           </button>
         )}
         <button
-          onClick={handleNext}
+          onClick={step === 5 ? handleSubmit : handleNext}
           className="bg-[#F28E46] text-white h-[50px] px-6 rounded-xl cursor-pointer flex-1 w-full mt-4"
         >
-          Davom etish
+          {step === 5 ? "Tugatish" : "Davom etish"}
         </button>
       </div>
     </div>
