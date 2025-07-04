@@ -9,25 +9,30 @@ import ToggleTheme from "./ToggleTheme.jsx";
 
 <nav
   client:load
-  class="bg-white container shadow-sm bordered-[#EBEBEB] py-[15px] px-[38px] rounded-tl-3xl rounded-br-3xl mt-[14px]"
+  class="sticky top-0 left-0 right-0 z-50 bg-white dark:bg-gray-900 container shadow-sm bordered-[#EBEBEB] py-[15px] px-[38px] rounded-tl-3xl rounded-br-3xl"
 >
-  <div class="w-full mx-auto flex justify-between items-center h-16">
+  <div class="w-full container mx-auto flex justify-between items-center h-16">
     <!-- Logo -->
     <div class="flex items-center space-x-2">
-      <img src={Logo.src} alt="Yoshlar Ventures" class="h-8 w-auto" />
-      <span class="font-bold text-xs sm:text-sm text-black font-inter-tight">
+      <img
+        src={Logo.src || "/placeholder.svg"}
+        alt="Yoshlar Ventures"
+        class="h-8 w-auto"
+      />
+      <span
+        class="font-bold text-xs sm:text-sm text-black font-inter-tight dark:text-white"
+      >
         YOSHLAR<br />VENTURES
       </span>
     </div>
-
     <!-- Desktop Menu -->
     <div class="hidden lg:flex space-x-6 text-sm font-medium">
       <a
         href="/"
-        class="text-[#535862] px-[14px] py-[6px] rounded-lg font-semibold text-[16px] transition duration-300 relative group font-inter-tight"
+        class="text-[#535862] dark:text-white px-[14px] py-[6px] rounded-lg font-semibold text-[16px] transition duration-300 relative group font-inter-tight"
       >
         <span
-          class="relative z-10 group-hover:text-transparent bg-clip-text group-hover:bg-gradient-to-r group-hover:from-[#F9B513] group-hover:to-[#EA601E]"
+          class="relative font-medium z-10 group-hover:text-transparent bg-clip-text group-hover:bg-gradient-to-r group-hover:from-[#F9B513] group-hover:to-[#EA601E]"
           >Asosiy</span
         >
         <span
@@ -36,10 +41,10 @@ import ToggleTheme from "./ToggleTheme.jsx";
       </a>
       <a
         href="#"
-        class="text-[#535862] px-[14px] py-[6px] rounded-lg font-semibold text-[16px] transition duration-300 relative group font-inter-tight"
+        class="text-[#535862] dark:text-white px-[14px] py-[6px] rounded-lg font-semibold text-[16px] transition duration-300 relative group font-inter-tight"
       >
         <span
-          class="relative z-10 group-hover:text-transparent bg-clip-text group-hover:bg-gradient-to-r group-hover:from-[#F9B513] group-hover:to-[#EA601E]"
+          class="relative z-10 group-hover:text-transparent bg-clip-text group-hover:bg-gradient-to-r group-hover:from-[#F9B513] group-hover:to-[#EA601E] font-medium"
           >Biz haqimizda</span
         >
         <span
@@ -48,10 +53,10 @@ import ToggleTheme from "./ToggleTheme.jsx";
       </a>
       <a
         href="/Event"
-        class="text-[#535862] px-[14px] py-[6px] rounded-lg font-semibold text-[16px] transition duration-300 relative group font-inter-tight"
+        class="text-[#535862] dark:text-white px-[14px] py-[6px] rounded-lg font-semibold text-[16px] transition duration-300 relative group font-inter-tight"
       >
         <span
-          class="relative z-10 group-hover:text-transparent bg-clip-text group-hover:bg-gradient-to-r group-hover:from-[#F9B513] group-hover:to-[#EA601E]"
+          class="relative font-medium z-10 group-hover:text-transparent bg-clip-text group-hover:bg-gradient-to-r group-hover:from-[#F9B513] group-hover:to-[#EA601E]"
           >Tadbirlar</span
         >
         <span
@@ -60,10 +65,10 @@ import ToggleTheme from "./ToggleTheme.jsx";
       </a>
       <a
         href="/Portfel"
-        class="text-[#535862] px-[14px] py-[6px] rounded-lg font-semibold text-[16px] transition duration-300 relative group font-inter-tight"
+        class="text-[#535862] dark:text-white px-[14px] py-[6px] rounded-lg font-semibold text-[16px] transition duration-300 relative group font-inter-tight"
       >
         <span
-          class="relative z-10 group-hover:text-transparent bg-clip-text group-hover:bg-gradient-to-r group-hover:from-[#F9B513] group-hover:to-[#EA601E]"
+          class="relative font-medium z-10 group-hover:text-transparent bg-clip-text group-hover:bg-gradient-to-r group-hover:from-[#F9B513] group-hover:to-[#EA601E]"
           >Startuplar</span
         >
         <span
@@ -72,10 +77,10 @@ import ToggleTheme from "./ToggleTheme.jsx";
       </a>
       <a
         href="#"
-        class="text-[#535862] px-[14px] py-[6px] rounded-lg font-semibold text-[16px] transition duration-300 relative group font-inter-tight"
+        class="text-[#535862] dark:text-white px-[14px] py-[6px] rounded-lg font-semibold text-[16px] transition duration-300 relative group font-inter-tight"
       >
         <span
-          class="relative z-10 group-hover:text-transparent bg-clip-text group-hover:bg-gradient-to-r group-hover:from-[#F9B513] group-hover:to-[#EA601E]"
+          class="relative z-10 font-medium group-hover:text-transparent bg-clip-text group-hover:bg-gradient-to-r group-hover:from-[#F9B513] group-hover:to-[#EA601E]"
           >Hamkorlar</span
         >
         <span
@@ -84,10 +89,10 @@ import ToggleTheme from "./ToggleTheme.jsx";
       </a>
       <a
         href="#"
-        class="text-[#535862] px-[14px] py-[6px] rounded-lg font-semibold text-[16px] transition duration-300 relative group font-inter-tight"
+        class="text-[#535862] dark:text-white px-[14px] py-[6px] rounded-lg font-semibold text-[16px] transition duration-300 relative group font-inter-tight"
       >
         <span
-          class="relative z-10 group-hover:text-transparent bg-clip-text group-hover:bg-gradient-to-r group-hover:from-[#F9B513] group-hover:to-[#EA601E]"
+          class="relative z-10 font-medium group-hover:text-transparent bg-clip-text group-hover:bg-gradient-to-r group-hover:from-[#F9B513] group-hover:to-[#EA601E]"
           >Youtube blog</span
         >
         <span
@@ -96,10 +101,10 @@ import ToggleTheme from "./ToggleTheme.jsx";
       </a>
       <a
         href="/Contact"
-        class="text-[#535862] px-[14px] py-[6px] rounded-lg font-semibold text-[16px] transition duration-300 relative group font-inter-tight"
+        class="text-[#535862] dark:text-white px-[14px] py-[6px] rounded-lg font-semibold text-[16px] transition duration-300 relative group font-inter-tight"
       >
         <span
-          class="relative z-10 group-hover:text-transparent bg-clip-text group-hover:bg-gradient-to-r group-hover:from-[#F9B513] group-hover:to-[#EA601E]"
+          class="relative z-10 font-medium group-hover:text-transparent bg-clip-text group-hover:bg-gradient-to-r group-hover:from-[#F9B513] group-hover:to-[#EA601E]"
           >Kontaktlar</span
         >
         <span
@@ -107,12 +112,10 @@ import ToggleTheme from "./ToggleTheme.jsx";
         ></span>
       </a>
     </div>
-
     <!-- Dark/Light Toggle -->
     <!-- <button onclick="toggleDarkMode()" class="border px-3 py-1 text-sm font-inter-tight ">
       Dark
     </button> -->
-
     <!-- Language Selector & Mobile Menu Button -->
     <div class="flex items-center space-x-2">
       <!-- Language Selector -->
@@ -120,12 +123,12 @@ import ToggleTheme from "./ToggleTheme.jsx";
         <button
           id="languageButton"
           onclick="document.getElementById('languageDropdown').classList.toggle('hidden')"
-          class="rounded px-2 py-1 text-sm focus:outline-none font-inter-tight bg-white flex items-center space-x-2 min-w-[80px] justify-between hover:border-gray-400 transition"
+          class="rounded px-2 py-1 text-sm focus:outline-none font-inter-tight flex items-center space-x-2 min-w-[80px] justify-between hover:border-gray-400 transition"
         >
           <div class="flex items-center space-x-2">
             <img
               id="selectedFlag"
-              src={FlagUzb.src}
+              src={FlagUzb.src || "/placeholder.svg"}
               alt="UZB"
               class="w-4 h-3"
             />
@@ -147,41 +150,48 @@ import ToggleTheme from "./ToggleTheme.jsx";
         </button>
         <div
           id="languageDropdown"
-          class="absolute top-full left-0 mt-1 w-full bg-white border border-gray-300 rounded shadow-lg z-10 hidden"
+          class="absolute top-full left-0 mt-1 w-full border border-gray-300 rounded shadow-lg z-10 hidden bg-white dark:bg-gray-800"
         >
           <div class="py-1">
             <button
-              class="w-full px-2 py-1 text-left hover:bg-gray-100 flex items-center space-x-2 text-sm font-inter-tight"
+              class="w-full px-2 py-1 text-left hover:bg-gray-100 dark:hover:bg-gray-700 flex items-center space-x-2 text-sm font-inter-tight"
               onclick="selectLanguage('uz', FlagUzb, 'O\'zb')"
             >
-              <img src={FlagUzb.src} alt="UZB" class="w-4 h-3" /><span
-                >O'zb</span
-              >
+              <img
+                src={FlagUzb.src || "/placeholder.svg"}
+                alt="UZB"
+                class="w-4 h-3"
+              /><span>O'zb</span>
             </button>
             <button
-              class="w-full px-2 py-1 text-left hover:bg-gray-100 flex items-center space-x-2 text-sm font-inter-tight"
+              class="w-full px-2 py-1 text-left hover:bg-gray-100 dark:hover:bg-gray-700 flex items-center space-x-2 text-sm font-inter-tight"
               onclick="selectLanguage('ru', FlagRus, 'Рус')"
             >
-              <img src={FlagRus.src} alt="RUS" class="w-4 h-3" /><span>Рус</span
-              >
+              <img
+                src={FlagRus.src || "/placeholder.svg"}
+                alt="RUS"
+                class="w-4 h-3"
+              /><span>Рус</span>
             </button>
             <button
-              class="w-full px-2 py-1 text-left hover:bg-gray-100 flex items-center space-x-2 text-sm font-inter-tight"
+              class="w-full px-2 py-1 text-left hover:bg-gray-100 dark:hover:bg-gray-700 flex items-center space-x-2 text-sm font-inter-tight"
               onclick="selectLanguage('en', FlagEng, 'Eng')"
             >
-              <img src={FlagEng.src} alt="ENG" class="w-4 h-3" /><span>Eng</span
-              >
+              <img
+                src={FlagEng.src || "/placeholder.svg"}
+                alt="ENG"
+                class="w-4 h-3"
+              /><span>Eng</span>
             </button>
           </div>
         </div>
       </div>
       <!-- Dark Mode Toggle Button -->
       <ToggleTheme client:load />
-
       <!-- Mobile Menu Button -->
       <button
         id="mobile-menu-button"
-        class="lg:hidden p-2 hover:bg-gray-100 rounded-md transition-colors relative"
+        class="lg:hidden p-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md transition-colors relative"
       >
         <svg
           id="menu-icon"
@@ -211,75 +221,71 @@ import ToggleTheme from "./ToggleTheme.jsx";
         </svg>
       </button>
     </div>
-  </div>
-
-  <!-- Mobile Menu -->
-  <div
-    id="mobile-menu"
-    class="hidden lg:hidden bg-white border-t border-gray-200"
-  >
-    <div class="px-4 py-2 space-y-1">
-      <a
-        href="/index"
-        class="block text-[#535862] px-4 py-3 rounded-lg font-semibold text-[16px] transition duration-300 hover:bg-[#FFF1E6] hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#F9B513] hover:to-[#EA601E] font-inter-tight"
-        >Asosiy</a
-      >
-      <a
-        href="#"
-        class="block text-[#535862] px-4 py-3 rounded-lg font-semibold text-[16px] transition duration-300 hover:bg-[#FFF1E6] hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#F9B513] hover:to-[#EA601E] font-inter-tight"
-        >Biz haqimizda</a
-      >
-      <a
-        href="#"
-        class="block text-[#535862] px-4 py-3 rounded-lg font-semibold text-[16px] transition duration-300 hover:bg-[#FFF1E6] hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#F9B513] hover:to-[#EA601E] font-inter-tight"
-        >Tadbirlar</a
-      >
-      <a
-        href="#"
-        class="block text-[#535862] px-4 py-3 rounded-lg font-semibold text-[16px] transition duration-300 hover:bg-[#FFF1E6] hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#F9B513] hover:to-[#EA601E] font-inter-tight"
-        >Startuplar</a
-      >
-      <a
-        href="#"
-        class="block text-[#535862] px-4 py-3 rounded-lg font-semibold text-[16px] transition duration-300 hover:bg-[#FFF1E6] hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#F9B513] hover:to-[#EA601E] font-inter-tight"
-        >Hamkorlar</a
-      >
-      <a
-        href="#"
-        class="block text-[#535862] px-4 py-3 rounded-lg font-semibold text-[16px] transition duration-300 hover:bg-[#FFF1E6] hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#F9B513] hover:to-[#EA601E] font-inter-tight"
-        >Youtube blog</a
-      >
-      <a
-        href="#"
-        class="block text-[#535862] px-4 py-3 rounded-lg font-semibold text-[16px] transition duration-300 hover:bg-[#FFF1E6] hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#F9B513] hover:to-[#EA601E] font-inter-tight"
-        >Kontaktlar</a
-      >
+    <!-- Mobile Menu -->
+    <div
+      id="mobile-menu"
+      class="hidden lg:hidden bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700"
+    >
+      <div class="px-4 py-2 space-y-1">
+        <a
+          href="/index"
+          class="block text-[#535862] font-medium dark:text-white px-4 py-3 rounded-lg text-[32px] transition duration-300 hover:bg-[#FFF1E6] hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#F9B513] hover:to-[#EA601E] font-inter-tight"
+          >Asosiy</a
+        >
+        <a
+          href="#"
+          class="block text-[#535862] font-medium dark:text-white px-4 py-3 rounded-lg text-[32px] transition duration-300 hover:bg-[#FFF1E6] hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#F9B513] hover:to-[#EA601E] font-inter-tight"
+          >Biz haqimizda</a
+        >
+        <a
+          href="#"
+          class="block text-[#535862] font-medium dark:text-white px-4 py-3 rounded-lg text-[32px] transition duration-300 hover:bg-[#FFF1E6] hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#F9B513] hover:to-[#EA601E] font-inter-tight"
+          >Tadbirlar</a
+        >
+        <a
+          href="#"
+          class="block text-[#535862] font-medium dark:text-white px-4 py-3 rounded-lg text-[32px] transition duration-300 hover:bg-[#FFF1E6] hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#F9B513] hover:to-[#EA601E] font-inter-tight"
+          >Startuplar</a
+        >
+        <a
+          href="#"
+          class="block text-[#535862] font-medium dark:text-white px-4 py-3 rounded-lg text-[32px] transition duration-300 hover:bg-[#FFF1E6] hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#F9B513] hover:to-[#EA601E] font-inter-tight"
+          >Hamkorlar</a
+        >
+        <a
+          href="#"
+          class="block text-[#535862] font-medium dark:text-white px-4 py-3 rounded-lg text-[32px] transition duration-300 hover:bg-[#FFF1E6] hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#F9B513] hover:to-[#EA601E] font-inter-tight"
+          >Youtube blog</a
+        >
+        <a
+          href="#"
+          class="block text-[#535862] font-medium dark:text-white px-4 py-3 rounded-lg text-[32px] transition duration-300 hover:bg-[#FFF1E6] hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#F9B513] hover:to-[#EA601E] font-inter-tight"
+          >Kontaktlar</a
+        >
+      </div>
     </div>
   </div>
+
+  <script is:inline>
+    function toggleDarkMode() {
+      document.documentElement.classList.toggle("dark");
+      localStorage.theme = document.documentElement.classList.contains("dark")
+        ? "dark"
+        : "light";
+    }
+    function selectLanguage(code, flagSrc, label) {
+      document.getElementById("selectedFlag").src = flagSrc;
+      document.getElementById("selectedText").textContent = label;
+      document.getElementById("languageDropdown").classList.add("hidden");
+    }
+    const mobileBtn = document.getElementById("mobile-menu-button");
+    const mobileMenu = document.getElementById("mobile-menu");
+    const menuIcon = document.getElementById("menu-icon");
+    const closeIcon = document.getElementById("close-icon");
+    mobileBtn.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+      menuIcon.classList.toggle("hidden");
+      closeIcon.classList.toggle("hidden");
+    });
+  </script>
 </nav>
-
-<script is:inline>
-  function toggleDarkMode() {
-    document.documentElement.classList.toggle("dark");
-    localStorage.theme = document.documentElement.classList.contains("dark")
-      ? "dark"
-      : "light";
-  }
-
-  function selectLanguage(code, flagSrc, label) {
-    document.getElementById("selectedFlag").src = flagSrc;
-    document.getElementById("selectedText").textContent = label;
-    document.getElementById("languageDropdown").classList.add("hidden");
-  }
-
-  const mobileBtn = document.getElementById("mobile-menu-button");
-  const mobileMenu = document.getElementById("mobile-menu");
-  const menuIcon = document.getElementById("menu-icon");
-  const closeIcon = document.getElementById("close-icon");
-
-  mobileBtn.addEventListener("click", () => {
-    mobileMenu.classList.toggle("hidden");
-    menuIcon.classList.toggle("hidden");
-    closeIcon.classList.toggle("hidden");
-  });
-</script>

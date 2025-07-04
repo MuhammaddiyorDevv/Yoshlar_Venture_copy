@@ -6,7 +6,7 @@ import Lamp from '../../assets/images/Lamp.svg';
 --- 
  
  <section
-        class="relative rounded-3xl overflow-hidden mx-auto w-full px-6 sm:px-12 lg:px-[80px] py-8 sm:py-12 lg:py-[60px] mb-16"
+        class="relative rounded-[32px] overflow-hidden mx-auto w-full px-6 sm:px-12 lg:px-[80px] py-8 sm:py-12 lg:py-[60px] mb-16"
       >
         <!-- Mobile uchun alohida CSS -->
         <style>
@@ -59,13 +59,13 @@ import Lamp from '../../assets/images/Lamp.svg';
           >
             <!-- Card 1 -->
             <div
-              class="bg-white rounded-xl shadow-md flex flex-row sm:flex-col p-5 space-x-3 sm:space-x-0 sm:space-y-3 items-center sm:items-start"
+              class="bg-white rounded-[24px] shadow-md flex flex-row sm:flex-col p-5 space-x-3 sm:space-x-0 sm:space-y-3 items-center sm:items-start"
             >
-              <div class="bg-gray-100 rounded-[24px] p-3 w-fit flex-shrink-0">
+              <div class="border-[#E3E3E3] border-[1px] rounded-[16px] p-[9px] w-fit flex-shrink-0">
                 <img
                   src={ No_Suitcase.src }
                   alt="tayyor emasman"
-                  class="w-6 h-6"
+                  class="w-[30px] h-[30px]"
                 />
               </div>
               <p class="text-gray-800 font-medium font-inter-tight">
@@ -75,13 +75,13 @@ import Lamp from '../../assets/images/Lamp.svg';
 
             <!-- Card 2 -->
             <div
-              class="bg-white rounded-xl shadow-md flex flex-row sm:flex-col p-5 space-x-3 sm:space-x-0 sm:space-y-3 items-center sm:items-start"
+              class="bg-white rounded-[24px] shadow-md flex flex-row sm:flex-col p-5 space-x-3 sm:space-x-0 sm:space-y-3 items-center sm:items-start"
             >
-              <div class="bg-gray-100 rounded-[24px] p-3 w-fit flex-shrink-0">
+              <div class=" border-[#E3E3E3] border-[1px] rounded-[16px] p-[9px] w-fit flex-shrink-0">
                 <img
                   src={Alone.src }
                   alt="yolg'izman"
-                  class="w-6 h-6"
+                  class="w-[30px] h-[30px]"
                 />
               </div>
               <p class="text-gray-800 font-medium font-inter-tight">
@@ -91,16 +91,16 @@ import Lamp from '../../assets/images/Lamp.svg';
 
             <!-- Card 3 -->
             <div
-              class="bg-white rounded-xl shadow-md flex flex-row sm:flex-col p-5 space-x-3 sm:space-x-0 sm:space-y-3 items-center sm:items-start sm:col-span-2 lg:col-span-1"
+              class="bg-white rounded-[24px] shadow-md flex flex-row sm:flex-col p-5 space-x-3 sm:space-x-0 sm:space-y-3 items-center sm:items-start sm:col-span-2 lg:col-span-1"
             >
-              <div class="bg-gray-100 rounded-[24px] p-3 w-fit flex-shrink-0">
+              <div class="border-[#E3E3E3] border-[1px] rounded-[16px] p-[9px] w-fit flex-shrink-0">
                 <img
                   src={ No_Money.src }
                   alt="pul yo'q"
-                  class="w-6 h-6"
+                  class="w-[30px] h-[30px]"
                 />
               </div>
-              <p class="text-gray-800 font-medium font-inter-tight">Pul yo'q</p>
+              <p class="text-gray-800 font-medium font-inter-tight text-500">Pul yo'q</p>
             </div>
           </div>
 
@@ -117,15 +117,15 @@ import Lamp from '../../assets/images/Lamp.svg';
             </div>
           </div>
 
-          <button
-            class="bg-white text-[#F28E46] font-semibold rounded-[24px] px-6 py-3 flex items-center space-x-3 shadow-lg font-inter-tight hover:shadow-xl transition-shadow"
-          >
-            <span>Ariza yuborish</span>
-            <img
-              src={ Lamp.src }
-              alt="icon"
-              class="w-8 h-8 lg:w-10 lg:h-10"
-            />
-          </button>
+          <a href="/Form"
+              class="bg-white w-[245px] font-semibold cursor-pointer rounded-[16px] px-1 py-1 flex items-center justify-between space-x-3 shadow-lg hover:opacity-90 transition font-inter-tight"
+            >
+              <span class="ml-8 text-[20px]">Ariza yuborish</span>
+              <img
+                src={Lamp.src}
+                alt="lightbulb icon"
+                class="w-8 h-8 lg:w-10 lg:h-10"
+              />
+            </a>
         </div>
       </section>
