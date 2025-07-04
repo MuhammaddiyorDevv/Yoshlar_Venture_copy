@@ -7,7 +7,7 @@ const Steps = ({ currentStep = 1 }) => {
     if (stepNumber <= currentStep) {
       return "w-12 h-12 bg-[#F28E46] text-[#fff] rounded-[28px] cursor-pointer";
     } else {
-      return "w-12 h-12 rounded-[28px] border dark:border-[#535862] border-[#F8F8F8] bg-white dark:bg-[#111111] dark:text-[#FFFFFF] cursor-pointer";
+      return "w-12 h-12 rounded-[28px] border dark:border-[#535862] border-[#F8F8F8] bg-inherit dark:text-[#FFFFFF] cursor-pointer";
     }
   };
 
@@ -17,7 +17,7 @@ const Steps = ({ currentStep = 1 }) => {
         <React.Fragment key={step}>
           <button className={getStepStyle(step)}>{step}</button>
           {index < steps.length - 1 && (
-            <hr className="w-6 sm:w-[53px] text-[#1B1A1959] dark:text-[#E3E3E3]" />
+            <hr className="w-6 sm:w-[53px]  dark:text-[#E3E3E3] text-[#1B1A1959]" />
           )}
         </React.Fragment>
       ))}
