@@ -10,7 +10,7 @@ const CustomCheckbox = ({ id, checked, onChange, label }) => {
           id={id}
           checked={checked}
           onChange={(e) => onChange(e.target.checked)}
-          className="sr-only" // Hide the default checkbox
+          className="sr-only"
         />
         <div
           className={`
