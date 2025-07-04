@@ -1,0 +1,76 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Plates from "../components/Event/Plates.astro";
+import Lamp from "../assets/images/Frame 1000005242.svg";
+---
+
+<Layout>
+  <div
+    class="w-full mt-[50px] h-[287px] rounded-3xl flex items-center justify-center
+         bg-no-repeat bg-cover sm:bg-[length:100%_100%] bg-center"
+    style="background-image: url('/DetailBg.png');"
+  >
+    <p class="font-bold text-[30px] sm:text-5xl text-white">SheStars</p>
+  </div>
+  <h2
+    class="max-w-[600px] text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-8 border-l-4 border-[#F28E46] pl-4 mt-[53px]"
+  >
+    Tadbir xaqida
+  </h2>
+  <div class="ml-[40px] px-6 max-w-[1269px] text-[#535862] dark:text-white">
+    <p class="text-[16px] sm:text-[28px]">
+      Labsearch – Neyrotexnologiyalarga asoslangan aqlli qidiruv xizmati
+    </p>
+    <p class="text-[16px] sm:text-[28px]">
+      Labsearch — bu sun’iy intellekt va neyrosetlar asosida ishlaydigan
+      innovatsion qidiruv platformasi. Bizning tizim murakkab algoritmlar
+      yordamida siz izlayotgan mahsulot, xizmat yoki ma’lumotni aniq va tez
+      topishga yordam beradi.
+    </p>
+    <p class="text-[16px] sm:text-[28px]">Asosiy afzalliklar:</p>
+    <ul class="list-disc pl-4">
+      <li class="text-[16px] sm:text-[28px]">
+        Aqlli qidiruv: So‘rovlarni kontekst asosida tushunadi va eng dolzarb
+        natijalarni taqdim etadi
+      </li>
+      <li class="text-[16px] sm:text-[28px]">
+        Tezkorlik: Ma’lumotlar bazasi bilan real vaqt rejimida ishlaydi
+      </li>
+      <li class="text-[16px] sm:text-[28px]">
+        Moslashtirilgan natijalar: Har bir foydalanuvchining ehtiyojiga mos
+        tavsiyalar
+      </li>
+      <li class="text-[16px] sm:text-[28px]">
+        Keng imkoniyatlar: Ilmiy ishlar, mahsulotlar, xizmatlar, kompaniyalar
+        barchasini toping
+      </li>
+    </ul>
+    <p class="text-[16px] sm:text-[28px]">
+      Labsearch — bu oddiy qidiruvdan ko‘ra ko‘proq narsa. Bu sizga vaqtni
+      tejash, aniq ma’lumotga ega bo‘lish va qaror qabul qilishni
+      osonlashtiradigan sun’iy intellekt yordamchisidir.
+    </p>
+  </div>
+  <div class="flex justify-center mt-[32px] sm:mt-20 mb-[38px] sm:mb-20">
+    <a
+      href="/Form"
+      class="inline-flex items-center justify-center
+                 bg-gradient-to-r from-[#EA601E]
+                 to-[#F9B513] text-white text-[16px]
+                 sm:text-xl font-semibold rounded-2xl
+                 pl-8 pr-1.5 py-1.5 gap-2 sm:gap-4
+                 shadow-lg hover:opacity-95 transition
+                 font-inter-tight"
+    >
+      Ariza yuborish
+      <img
+        src={Lamp.src}
+        alt="arrow icon"
+        class="w-[38px] h-[19px]
+                   sm:w-[50px] sm:h-[52px]
+                   lg:w-10 lg:h-10"
+      />
+    </a>
+  </div>
+  <Plates />
+</Layout>
