@@ -13,12 +13,5 @@ export default function ToggleTheme() {
     localStorage.setItem("theme", isDark ? "dark" : "light");
   };
 
-  return (
-    <button
-      onClick={toggleDarkMode}
-      className="px-4 py-2 rounded bg-gray-800 text-white dark:bg-yellow-300 dark:text-black transition"
-    >
-      Dark Mode
-    </button>
-  );
+  return null
 }
