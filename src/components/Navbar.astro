@@ -1,321 +1,153 @@
 ---
 // src/components/NavBar.astro
-import Logo from "../assets/images/Group.svg";
-import FlagUzb from "../assets/images/FlagUzb.svg";
-import FlagRus from "../assets/images/Flag_of_Russia.svg.webp";
-import FlagEng from "../assets/images/english_flag.png";
+import Logo        from "../assets/images/Group.svg";
+import FlagUzb     from "../assets/images/FlagUzb.svg";
+import FlagRus     from "../assets/images/Flag_of_Russia.svg.webp";
+import FlagEng     from "../assets/images/english_flag.png";
 import ToggleTheme from "./ToggleTheme.jsx";
 
-// Current page URL ni olish
 const currentPath = Astro.url.pathname;
 ---
 
-<nav
-  client:load
-  class="sticky top-0 left-0 right-0 z-50 bg-white dark:bg-[#0D0D0D] border border-[#EBEBEB] dark:border-[#535862] container shadow-sm bordered-[#EBEBEB] py-[15px] px-[38px] rounded-tl-3xl rounded-br-3xl"
->
-  <div class="w-full container mx-auto flex justify-between items-center h-16">
+<nav client:load class="sticky top-0 left-0 right-0 z-50 bg-white dark:bg-[#0D0D0D] border border-[#EBEBEB] dark:border-[#535862] container mx-auto shadow-sm py-[15px] px-[38px] rounded-tl-3xl rounded-br-3xl">
+  <div class="w-full flex justify-between items-center h-16">
     <!-- Logo -->
     <div class="flex items-center space-x-2">
-      <img
-        src={Logo.src || "/placeholder.svg"}
-        alt="Yoshlar Ventures"
-        class="h-8 w-auto"
-      />
-      <span
-        class="font-bold text-xs sm:text-sm text-black font-inter-tight dark:text-white"
-      >
-        YOSHLAR<br />VENTURES
+      <img src={Logo.src} alt="Yoshlar Ventures" class="h-8 w-auto" />
+      <span class="font-bold text-xs sm:text-sm text-black dark:text-white font-inter-tight">
+        YOSHLAR<br/>VENTURES
       </span>
     </div>
-    
+
     <!-- Desktop Menu -->
     <div class="hidden lg:flex space-x-6 text-sm font-medium">
-      <a
-        href="/"
-        class="text-[#535862] dark:text-white px-[14px] py-[6px] rounded-lg font-semibold text-[16px] transition duration-300 relative group font-inter-tight"
-      >
-        <span
-          class={`relative font-medium z-10 group-hover:text-transparent bg-clip-text group-hover:bg-gradient-to-r group-hover:from-[#F9B513] group-hover:to-[#EA601E] ${currentPath === '/' ? 'text-transparent bg-gradient-to-r from-[#F9B513] to-[#EA601E]' : ''}`}
-          >Asosiy</span
+      {[
+        { href: '/',        label: 'Asosiy' },
+        { href: '/about',   label: 'Biz haqimizda' },
+        { href: '/events',  label: 'Tadbirlar' },
+        { href: '/portfolio', label: 'Startuplar' },
+        { href: '/partners', label: 'Hamkorlar' },
+        { href: '/blog',    label: 'Youtube blog' },
+        { href: '/contact', label: 'Kontaktlar' }
+      ].map(({ href, label }) => (
+        <a
+          href={href}
+          class="relative px-[14px] py-[6px] rounded-lg transition duration-300 group"
         >
-        <span
-          class={`absolute inset-0 group-hover:bg-[#FFF1E6] rounded-lg z-0 transition duration-300 ${currentPath === '/' ? 'bg-[#FFF1E6]' : ''}`}
-        ></span>
-      </a>
-      <a
-        href="/"
-        class="text-[#535862] dark:text-white px-[14px] py-[6px] rounded-lg font-semibold text-[16px] transition duration-300 relative group font-inter-tight"
-      >
-        <span
-          class={`relative z-10 group-hover:text-transparent bg-clip-text group-hover:bg-gradient-to-r group-hover:from-[#F9B513] group-hover:to-[#EA601E] font-medium ${currentPath === '/about' ? 'text-transparent bg-gradient-to-r from-[#F9B513] to-[#EA601E]' : ''}`}
-          >Biz haqimizda</span
-        >
-        <span
-          class={`absolute inset-0 group-hover:bg-[#FFF1E6] rounded-lg z-0 transition duration-300 ${currentPath === '/about' ? 'bg-[#FFF1E6]' : ''}`}
-        ></span>
-      </a>
-      <a
-        href="/Event"
-        class="text-[#535862] dark:text-white px-[14px] py-[6px] rounded-lg font-semibold text-[16px] transition duration-300 relative group font-inter-tight"
-      >
-        <span
-          class={`relative font-medium z-10 group-hover:text-transparent bg-clip-text group-hover:bg-gradient-to-r group-hover:from-[#F9B513] group-hover:to-[#EA601E] ${currentPath === '/Event' ? 'text-transparent bg-gradient-to-r from-[#F9B513] to-[#EA601E]' : ''}`}
-          >Tadbirlar</span
-        >
-        <span
-          class={`absolute inset-0 group-hover:bg-[#FFF1E6] rounded-lg z-0 transition duration-300 ${currentPath === '/Event' ? 'bg-[#FFF1E6]' : ''}`}
-        ></span>
-      </a>
-      <a
-        href="/Portfel"
-        class="text-[#535862] dark:text-white px-[14px] py-[6px] rounded-lg font-semibold text-[16px] transition duration-300 relative group font-inter-tight"
-      >
-        <span
-          class={`relative font-medium z-10 group-hover:text-transparent bg-clip-text group-hover:bg-gradient-to-r group-hover:from-[#F9B513] group-hover:to-[#EA601E] ${currentPath === '/Portfel' ? 'text-transparent bg-gradient-to-r from-[#F9B513] to-[#EA601E]' : ''}`}
-          >Startuplar</span
-        >
-        <span
-          class={`absolute inset-0 group-hover:bg-[#FFF1E6] rounded-lg z-0 transition duration-300 ${currentPath === '/Portfel' ? 'bg-[#FFF1E6]' : ''}`}
-        ></span>
-      </a>
-      <a
-        href="/"
-        class="text-[#535862] dark:text-white px-[14px] py-[6px] rounded-lg font-semibold text-[16px] transition duration-300 relative group font-inter-tight"
-      >
-        <span
-          class={`relative z-10 font-medium group-hover:text-transparent bg-clip-text group-hover:bg-gradient-to-r group-hover:from-[#F9B513] group-hover:to-[#EA601E] ${currentPath === '/partners' ? 'text-transparent bg-gradient-to-r from-[#F9B513] to-[#EA601E]' : ''}`}
-          >Hamkorlar</span
-        >
-        <span
-          class={`absolute inset-0 group-hover:bg-[#FFF1E6] rounded-lg z-0 transition duration-300 ${currentPath === '/partners' ? 'bg-[#FFF1E6]' : ''}`}
-        ></span>
-      </a>
-      <a
-        href="/"
-        class="text-[#535862] dark:text-white px-[14px] py-[6px] rounded-lg font-semibold text-[16px] transition duration-300 relative group font-inter-tight"
-      >
-        <span
-          class={`relative z-10 font-medium group-hover:text-transparent bg-clip-text group-hover:bg-gradient-to-r group-hover:from-[#F9B513] group-hover:to-[#EA601E] ${currentPath === '/blog' ? 'text-transparent bg-gradient-to-r from-[#F9B513] to-[#EA601E]' : ''}`}
-          >Youtube blog</span
-        >
-        <span
-          class={`absolute inset-0 group-hover:bg-[#FFF1E6] rounded-lg z-0 transition duration-300 ${currentPath === '/blog' ? 'bg-[#FFF1E6]' : ''}`}
-        ></span>
-      </a>
-      <a
-        href="/Contact"
-        class="text-[#535862] dark:text-white px-[14px] py-[6px] rounded-lg font-semibold text-[16px] transition duration-300 relative group font-inter-tight"
-      >
-        <span
-          class={`relative z-10 font-medium group-hover:text-transparent bg-clip-text group-hover:bg-gradient-to-r group-hover:from-[#F9B513] group-hover:to-[#EA601E] ${currentPath === '/Contact' ? 'text-transparent bg-gradient-to-r from-[#F9B513] to-[#EA601E]' : ''}`}
-          >Kontaktlar</span
-        >
-        <span
-          class={`absolute inset-0 group-hover:bg-[#FFF1E6] rounded-lg z-0 transition duration-300 ${currentPath === '/Contact' ? 'bg-[#FFF1E6]' : ''}`}
-        ></span>
-      </a>
+          <span
+            class={`relative z-10 font-medium bg-clip-text transition-colors
+              group-hover:text-transparent group-hover:bg-gradient-to-r
+              group-hover:from-[#F9B513] group-hover:to-[#EA601E]
+              ${currentPath === href
+                ? 'text-transparent bg-gradient-to-r from-[#F9B513] to-[#EA601E]'
+                : 'text-[#535862] dark:text-white'
+              }`}
+          >{label}</span>
+          <span
+            class={`absolute inset-0 rounded-lg transition-colors
+              group-hover:bg-[#FFF1E6]
+              ${currentPath === href ? 'bg-[#FFF1E6]' : ''}`}
+          ></span>
+        </a>
+      ))}
     </div>
 
-    <!-- Language Selector & Mobile Menu Button -->
+    <!-- Language & Controls -->
     <div class="flex items-center space-x-2">
       <!-- Language Selector -->
       <div class="relative inline-block">
         <button
           id="languageButton"
-          onclick="document.getElementById('languageDropdown').classList.toggle('hidden')"
-          class="rounded px-2 py-1 text-sm focus:outline-none font-inter-tight flex items-center space-x-2 min-w-[80px] justify-between hover:border-gray-400 transition"
+          on:click={() => document.getElementById('languageDropdown').classList.toggle('hidden')}
+          class="flex items-center justify-between min-w-[80px] px-2 py-1 rounded font-inter-tight text-sm border border-gray-300 dark:border-gray-700 hover:border-gray-400 transition"
         >
           <div class="flex items-center space-x-2">
-            <img
-              id="selectedFlag"
-              src={FlagUzb.src || "/placeholder.svg"}
-              alt="UZB"
-              class="w-4 h-3"
-            />
+            <img id="selectedFlag" src={FlagUzb.src} alt="UZB" class="w-4 h-3" />
             <span id="selectedText">O'zb</span>
           </div>
-          <svg
-            class="w-3 h-3 transition-transform"
-            id="dropdownArrow"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M19 9l-7 7-7-7"></path>
+          <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
           </svg>
         </button>
-        <div
-          id="languageDropdown"
-          class="absolute top-full left-0 mt-1 w-full border border-gray-300 rounded shadow-lg z-10 hidden bg-white dark:bg-gray-800"
-        >
-          <div class="py-1">
+        <div id="languageDropdown" class="hidden absolute top-full left-0 mt-1 w-full bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded shadow-lg z-10">
+          {[
+            { code: 'uz', flag: FlagUzb.src, label: "O'zb" },
+            { code: 'ru', flag: FlagRus.src, label: 'Рус' },
+            { code: 'en', flag: FlagEng.src, label: 'Eng' }
+          ].map(lang => (
             <button
-              class="w-full px-2 py-1 text-left hover:bg-gray-100 dark:hover:bg-gray-700 flex items-center space-x-2 text-sm font-inter-tight"
-              onclick="selectLanguage('uz', FlagUzb, 'O\'zb')"
+              class="w-full px-2 py-1 flex items-center space-x-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-700 transition"
+              on:click={() => selectLanguage(lang.code, lang.flag, lang.label)}
             >
-              <img
-                src={FlagUzb.src || "/placeholder.svg"}
-                alt="UZB"
-                class="w-4 h-3"
-              /><span>O'zb</span>
+              <img src={lang.flag} alt={lang.code.toUpperCase()} class="w-4 h-3" />
+              <span>{lang.label}</span>
             </button>
-            <button
-              class="w-full px-2 py-1 text-left hover:bg-gray-100 dark:hover:bg-gray-700 flex items-center space-x-2 text-sm font-inter-tight"
-              onclick="selectLanguage('ru', FlagRus, 'Рус')"
-            >
-              <img
-                src={FlagRus.src || "/placeholder.svg"}
-                alt="RUS"
-                class="w-4 h-3"
-              /><span>Рус</span>
-            </button>
-            <button
-              class="w-full px-2 py-1 text-left hover:bg-gray-100 dark:hover:bg-gray-700 flex items-center space-x-2 text-sm font-inter-tight"
-              onclick="selectLanguage('en', FlagEng, 'Eng')"
-            >
-              <img
-                src={FlagEng.src || "/placeholder.svg"}
-                alt="ENG"
-                class="w-4 h-3"
-              /><span>Eng</span>
-            </button>
-          </div>
+          ))}
         </div>
       </div>
-      <!-- Dark Mode Toggle Button -->
+
+      <!-- Dark Mode Toggle -->
       <ToggleTheme client:load />
+
       <!-- Mobile Menu Button -->
-      <button
-        id="mobile-menu-button"
-        class="lg:hidden p-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md transition-colors relative"
-      >
-        <svg
-          id="menu-icon"
-          class="w-6 h-6"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M4 6h16M4 12h16M4 18h16"></path>
+      <button id="mobile-menu-button" class="lg:hidden p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 transition relative">
+        <svg id="menu-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
         </svg>
-        <svg
-          id="close-icon"
-          class="w-6 h-6 hidden"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M6 18L18 6M6 6l12 12"></path>
+        <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
         </svg>
       </button>
     </div>
   </div>
 
-  <!-- Mobile Menu - navbar ostida -->
+  <!-- Mobile Menu -->
   <div
     id="mobile-menu"
-    class="lg:hidden bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700 transform transition-all duration-150 ease-in-out -translate-y-full opacity-0 scale-y-0 origin-top absolute left-0 right-0 top-full"
+    class="lg:hidden absolute left-0 right-0 top-full bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700 transform -translate-y-full opacity-0 scale-y-0 origin-top transition-all duration-150 ease-in-out"
   >
     <div class="px-4 py-2 space-y-1">
-      <a
-        href="/"
-        class="block text-[#535862] font-medium dark:text-white px-4 py-3 rounded-lg text-[20px] transition duration-300 hover:bg-[#FFF1E6] hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#F9B513] hover:to-[#EA601E] font-inter-tight"
-        >Asosiy</a
-      >
-      <a
-        href="/"
-        class="block text-[#535862] font-medium dark:text-white px-4 py-3 rounded-lg text-[20px] transition duration-300 hover:bg-[#FFF1E6] hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#F9B513] hover:to-[#EA601E] font-inter-tight"
-        >Biz haqimizda</a
-      >
-      <a
-        href="/Event"
-        class="block text-[#535862] font-medium dark:text-white px-4 py-3 rounded-lg text-[20px] transition duration-300 hover:bg-[#FFF1E6] hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#F9B513] hover:to-[#EA601E] font-inter-tight"
-        >Tadbirlar</a
-      >
-      <a
-        href="/Portfel"
-        class="block text-[#535862] font-medium dark:text-white px-4 py-3 rounded-lg text-[20px] transition duration-300 hover:bg-[#FFF1E6] hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#F9B513] hover:to-[#EA601E] font-inter-tight"
-        >Startuplar</a
-      >
-      <a
-        href="/"
-        class="block text-[#535862] font-medium dark:text-white px-4 py-3 rounded-lg text-[20px] transition duration-300 hover:bg-[#FFF1E6] hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#F9B513] hover:to-[#EA601E] font-inter-tight"
-        >Hamkorlar</a
-      >
-      <a
-        href="/"
-        class="block text-[#535862] font-medium dark:text-white px-4 py-3 rounded-lg text-[20px] transition duration-300 hover:bg-[#FFF1E6] hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#F9B513] hover:to-[#EA601E] font-inter-tight"
-        >Youtube blog</a
-      >
-      <a
-        href="/Contact"
-        class="block text-[#535862] font-medium dark:text-white px-4 py-3 rounded-lg text-[20px] transition duration-300 hover:bg-[#FFF1E6] hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#F9B513] hover:to-[#EA601E] font-inter-tight"
-        >Kontaktlar</a
-      >
+      {['Asosiy','Biz haqimizda','Tadbirlar','Startuplar','Hamkorlar','Youtube blog','Kontaktlar'].map((label, i) => (
+        <a
+          href={['/','/about','/events','/portfolio','/partners','/blog','/contact'][i]}
+          class="block text-[#535862] dark:text-white font-medium text-[20px] px-4 py-3 rounded-lg hover:bg-[#FFF1E6] hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#F9B513] hover:to-[#EA601E] transition"
+        >{label}</a>
+      ))}
     </div>
   </div>
 </nav>
 
 <script is:inline>
-  function toggleDarkMode() {
-    document.documentElement.classList.toggle("dark");
-    localStorage.theme = document.documentElement.classList.contains("dark")
-      ? "dark"
-      : "light";
-  }
   function selectLanguage(code, flagSrc, label) {
     document.getElementById("selectedFlag").src = flagSrc;
     document.getElementById("selectedText").textContent = label;
-    document.getElementById("languageDropdown").classList.add("hidden");
+    document.getElementById('languageDropdown').classList.add('hidden');
   }
-  
-  document.addEventListener('DOMContentLoaded', function() {
-    const mobileBtn = document.getElementById("mobile-menu-button");
+  document.addEventListener('DOMContentLoaded', () => {
+    const mobileBtn  = document.getElementById("mobile-menu-button");
     const mobileMenu = document.getElementById("mobile-menu");
-    const menuIcon = document.getElementById("menu-icon");
-    const closeIcon = document.getElementById("close-icon");
-    
-    if (!mobileBtn || !mobileMenu || !menuIcon || !closeIcon) return;
-    
+    const menuIcon   = document.getElementById("menu-icon");
+    const closeIcon  = document.getElementById("close-icon");
     let isOpen = false;
-    
     mobileBtn.addEventListener("click", () => {
       isOpen = !isOpen;
-      
       if (isOpen) {
-        // Menu ochish - navbar ostidan pastga slide
-        mobileMenu.classList.remove("-translate-y-full", "opacity-0", "scale-y-0");
-        mobileMenu.classList.add("translate-y-0", "opacity-100", "scale-y-100");
+        mobileMenu.classList.remove("-translate-y-full","opacity-0","scale-y-0");
+        mobileMenu.classList.add("translate-y-0","opacity-100","scale-y-100");
         menuIcon.classList.add("hidden");
         closeIcon.classList.remove("hidden");
       } else {
-        // Menu yopish - navbar ostiga qaytish
-        mobileMenu.classList.remove("translate-y-0", "opacity-100", "scale-y-100");
-        mobileMenu.classList.add("-translate-y-full", "opacity-0", "scale-y-0");
+        mobileMenu.classList.remove("translate-y-0","opacity-100","scale-y-100");
+        mobileMenu.classList.add("-translate-y-full","opacity-0","scale-y-0");
         menuIcon.classList.remove("hidden");
         closeIcon.classList.add("hidden");
       }
     });
-    
-    // Menu tashqarisiga bosilganda yopish
-    document.addEventListener('click', (e) => {
+    document.addEventListener('click', e => {
       if (!mobileBtn.contains(e.target) && !mobileMenu.contains(e.target) && isOpen) {
         isOpen = false;
-        mobileMenu.classList.remove("translate-y-0", "opacity-100", "scale-y-100");
-        mobileMenu.classList.add("-translate-y-full", "opacity-0", "scale-y-0");
+        mobileMenu.classList.remove("translate-y-0","opacity-100","scale-y-100");
+        mobileMenu.classList.add("-translate-y-full","opacity-0","scale-y-0");
         menuIcon.classList.remove("hidden");
         closeIcon.classList.add("hidden");
       }
