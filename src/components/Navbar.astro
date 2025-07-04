@@ -5,11 +5,14 @@ import FlagUzb from "../assets/images/FlagUzb.svg";
 import FlagRus from "../assets/images/Flag_of_Russia.svg.webp";
 import FlagEng from "../assets/images/english_flag.png";
 import ToggleTheme from "./ToggleTheme.jsx";
+
+// Current page URL ni olish
+const currentPath = Astro.url.pathname;
 ---
 
 <nav
   client:load
-  class="sticky top-0 left-0 right-0 z-50 bg-white dark:bg-gray-900 container shadow-sm bordered-[#EBEBEB] py-[15px] px-[38px] rounded-tl-3xl rounded-br-3xl"
+  class="sticky top-0 left-0 right-0 z-50 bg-white dark:bg-[#0D0D0D] border border-[#EBEBEB] dark:border-[#535862] container shadow-sm bordered-[#EBEBEB] py-[15px] px-[38px] rounded-tl-3xl rounded-br-3xl"
 >
   <div class="w-full container mx-auto flex justify-between items-center h-16">
     <!-- Logo -->
@@ -25,6 +28,7 @@ import ToggleTheme from "./ToggleTheme.jsx";
         YOSHLAR<br />VENTURES
       </span>
     </div>
+    
     <!-- Desktop Menu -->
     <div class="hidden lg:flex space-x-6 text-sm font-medium">
       <a
@@ -32,23 +36,23 @@ import ToggleTheme from "./ToggleTheme.jsx";
         class="text-[#535862] dark:text-white px-[14px] py-[6px] rounded-lg font-semibold text-[16px] transition duration-300 relative group font-inter-tight"
       >
         <span
-          class="relative font-medium z-10 group-hover:text-transparent bg-clip-text group-hover:bg-gradient-to-r group-hover:from-[#F9B513] group-hover:to-[#EA601E]"
+          class={`relative font-medium z-10 group-hover:text-transparent bg-clip-text group-hover:bg-gradient-to-r group-hover:from-[#F9B513] group-hover:to-[#EA601E] ${currentPath === '/' ? 'text-transparent bg-gradient-to-r from-[#F9B513] to-[#EA601E]' : ''}`}
           >Asosiy</span
         >
         <span
-          class="absolute inset-0 group-hover:bg-[#FFF1E6] rounded-lg z-0 transition duration-300"
+          class={`absolute inset-0 group-hover:bg-[#FFF1E6] rounded-lg z-0 transition duration-300 ${currentPath === '/' ? 'bg-[#FFF1E6]' : ''}`}
         ></span>
       </a>
       <a
-        href="#"
+        href="/"
         class="text-[#535862] dark:text-white px-[14px] py-[6px] rounded-lg font-semibold text-[16px] transition duration-300 relative group font-inter-tight"
       >
         <span
-          class="relative z-10 group-hover:text-transparent bg-clip-text group-hover:bg-gradient-to-r group-hover:from-[#F9B513] group-hover:to-[#EA601E] font-medium"
+          class={`relative z-10 group-hover:text-transparent bg-clip-text group-hover:bg-gradient-to-r group-hover:from-[#F9B513] group-hover:to-[#EA601E] font-medium ${currentPath === '/about' ? 'text-transparent bg-gradient-to-r from-[#F9B513] to-[#EA601E]' : ''}`}
           >Biz haqimizda</span
         >
         <span
-          class="absolute inset-0 group-hover:bg-[#FFF1E6] rounded-lg z-0 transition duration-300"
+          class={`absolute inset-0 group-hover:bg-[#FFF1E6] rounded-lg z-0 transition duration-300 ${currentPath === '/about' ? 'bg-[#FFF1E6]' : ''}`}
         ></span>
       </a>
       <a
@@ -56,11 +60,11 @@ import ToggleTheme from "./ToggleTheme.jsx";
         class="text-[#535862] dark:text-white px-[14px] py-[6px] rounded-lg font-semibold text-[16px] transition duration-300 relative group font-inter-tight"
       >
         <span
-          class="relative font-medium z-10 group-hover:text-transparent bg-clip-text group-hover:bg-gradient-to-r group-hover:from-[#F9B513] group-hover:to-[#EA601E]"
+          class={`relative font-medium z-10 group-hover:text-transparent bg-clip-text group-hover:bg-gradient-to-r group-hover:from-[#F9B513] group-hover:to-[#EA601E] ${currentPath === '/Event' ? 'text-transparent bg-gradient-to-r from-[#F9B513] to-[#EA601E]' : ''}`}
           >Tadbirlar</span
         >
         <span
-          class="absolute inset-0 group-hover:bg-[#FFF1E6] rounded-lg z-0 transition duration-300"
+          class={`absolute inset-0 group-hover:bg-[#FFF1E6] rounded-lg z-0 transition duration-300 ${currentPath === '/Event' ? 'bg-[#FFF1E6]' : ''}`}
         ></span>
       </a>
       <a
@@ -68,35 +72,35 @@ import ToggleTheme from "./ToggleTheme.jsx";
         class="text-[#535862] dark:text-white px-[14px] py-[6px] rounded-lg font-semibold text-[16px] transition duration-300 relative group font-inter-tight"
       >
         <span
-          class="relative font-medium z-10 group-hover:text-transparent bg-clip-text group-hover:bg-gradient-to-r group-hover:from-[#F9B513] group-hover:to-[#EA601E]"
+          class={`relative font-medium z-10 group-hover:text-transparent bg-clip-text group-hover:bg-gradient-to-r group-hover:from-[#F9B513] group-hover:to-[#EA601E] ${currentPath === '/Portfel' ? 'text-transparent bg-gradient-to-r from-[#F9B513] to-[#EA601E]' : ''}`}
           >Startuplar</span
         >
         <span
-          class="absolute inset-0 group-hover:bg-[#FFF1E6] rounded-lg z-0 transition duration-300"
+          class={`absolute inset-0 group-hover:bg-[#FFF1E6] rounded-lg z-0 transition duration-300 ${currentPath === '/Portfel' ? 'bg-[#FFF1E6]' : ''}`}
         ></span>
       </a>
       <a
-        href="#"
+        href="/"
         class="text-[#535862] dark:text-white px-[14px] py-[6px] rounded-lg font-semibold text-[16px] transition duration-300 relative group font-inter-tight"
       >
         <span
-          class="relative z-10 font-medium group-hover:text-transparent bg-clip-text group-hover:bg-gradient-to-r group-hover:from-[#F9B513] group-hover:to-[#EA601E]"
+          class={`relative z-10 font-medium group-hover:text-transparent bg-clip-text group-hover:bg-gradient-to-r group-hover:from-[#F9B513] group-hover:to-[#EA601E] ${currentPath === '/partners' ? 'text-transparent bg-gradient-to-r from-[#F9B513] to-[#EA601E]' : ''}`}
           >Hamkorlar</span
         >
         <span
-          class="absolute inset-0 group-hover:bg-[#FFF1E6] rounded-lg z-0 transition duration-300"
+          class={`absolute inset-0 group-hover:bg-[#FFF1E6] rounded-lg z-0 transition duration-300 ${currentPath === '/partners' ? 'bg-[#FFF1E6]' : ''}`}
         ></span>
       </a>
       <a
-        href="#"
+        href="/"
         class="text-[#535862] dark:text-white px-[14px] py-[6px] rounded-lg font-semibold text-[16px] transition duration-300 relative group font-inter-tight"
       >
         <span
-          class="relative z-10 font-medium group-hover:text-transparent bg-clip-text group-hover:bg-gradient-to-r group-hover:from-[#F9B513] group-hover:to-[#EA601E]"
+          class={`relative z-10 font-medium group-hover:text-transparent bg-clip-text group-hover:bg-gradient-to-r group-hover:from-[#F9B513] group-hover:to-[#EA601E] ${currentPath === '/blog' ? 'text-transparent bg-gradient-to-r from-[#F9B513] to-[#EA601E]' : ''}`}
           >Youtube blog</span
         >
         <span
-          class="absolute inset-0 group-hover:bg-[#FFF1E6] rounded-lg z-0 transition duration-300"
+          class={`absolute inset-0 group-hover:bg-[#FFF1E6] rounded-lg z-0 transition duration-300 ${currentPath === '/blog' ? 'bg-[#FFF1E6]' : ''}`}
         ></span>
       </a>
       <a
@@ -104,18 +108,15 @@ import ToggleTheme from "./ToggleTheme.jsx";
         class="text-[#535862] dark:text-white px-[14px] py-[6px] rounded-lg font-semibold text-[16px] transition duration-300 relative group font-inter-tight"
       >
         <span
-          class="relative z-10 font-medium group-hover:text-transparent bg-clip-text group-hover:bg-gradient-to-r group-hover:from-[#F9B513] group-hover:to-[#EA601E]"
+          class={`relative z-10 font-medium group-hover:text-transparent bg-clip-text group-hover:bg-gradient-to-r group-hover:from-[#F9B513] group-hover:to-[#EA601E] ${currentPath === '/Contact' ? 'text-transparent bg-gradient-to-r from-[#F9B513] to-[#EA601E]' : ''}`}
           >Kontaktlar</span
         >
         <span
-          class="absolute inset-0 group-hover:bg-[#FFF1E6] rounded-lg z-0 transition duration-300"
+          class={`absolute inset-0 group-hover:bg-[#FFF1E6] rounded-lg z-0 transition duration-300 ${currentPath === '/Contact' ? 'bg-[#FFF1E6]' : ''}`}
         ></span>
       </a>
     </div>
-    <!-- Dark/Light Toggle -->
-    <!-- <button onclick="toggleDarkMode()" class="border px-3 py-1 text-sm font-inter-tight ">
-      Dark
-    </button> -->
+
     <!-- Language Selector & Mobile Menu Button -->
     <div class="flex items-center space-x-2">
       <!-- Language Selector -->
@@ -221,71 +222,103 @@ import ToggleTheme from "./ToggleTheme.jsx";
         </svg>
       </button>
     </div>
-    <!-- Mobile Menu -->
-    <div
-      id="mobile-menu"
-      class="hidden lg:hidden bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700"
-    >
-      <div class="px-4 py-2 space-y-1">
-        <a
-          href="/index"
-          class="block text-[#535862] font-medium dark:text-white px-4 py-3 rounded-lg text-[32px] transition duration-300 hover:bg-[#FFF1E6] hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#F9B513] hover:to-[#EA601E] font-inter-tight"
-          >Asosiy</a
-        >
-        <a
-          href="#"
-          class="block text-[#535862] font-medium dark:text-white px-4 py-3 rounded-lg text-[32px] transition duration-300 hover:bg-[#FFF1E6] hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#F9B513] hover:to-[#EA601E] font-inter-tight"
-          >Biz haqimizda</a
-        >
-        <a
-          href="#"
-          class="block text-[#535862] font-medium dark:text-white px-4 py-3 rounded-lg text-[32px] transition duration-300 hover:bg-[#FFF1E6] hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#F9B513] hover:to-[#EA601E] font-inter-tight"
-          >Tadbirlar</a
-        >
-        <a
-          href="#"
-          class="block text-[#535862] font-medium dark:text-white px-4 py-3 rounded-lg text-[32px] transition duration-300 hover:bg-[#FFF1E6] hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#F9B513] hover:to-[#EA601E] font-inter-tight"
-          >Startuplar</a
-        >
-        <a
-          href="#"
-          class="block text-[#535862] font-medium dark:text-white px-4 py-3 rounded-lg text-[32px] transition duration-300 hover:bg-[#FFF1E6] hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#F9B513] hover:to-[#EA601E] font-inter-tight"
-          >Hamkorlar</a
-        >
-        <a
-          href="#"
-          class="block text-[#535862] font-medium dark:text-white px-4 py-3 rounded-lg text-[32px] transition duration-300 hover:bg-[#FFF1E6] hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#F9B513] hover:to-[#EA601E] font-inter-tight"
-          >Youtube blog</a
-        >
-        <a
-          href="#"
-          class="block text-[#535862] font-medium dark:text-white px-4 py-3 rounded-lg text-[32px] transition duration-300 hover:bg-[#FFF1E6] hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#F9B513] hover:to-[#EA601E] font-inter-tight"
-          >Kontaktlar</a
-        >
-      </div>
-    </div>
   </div>
 
-  <script is:inline>
-    function toggleDarkMode() {
-      document.documentElement.classList.toggle("dark");
-      localStorage.theme = document.documentElement.classList.contains("dark")
-        ? "dark"
-        : "light";
-    }
-    function selectLanguage(code, flagSrc, label) {
-      document.getElementById("selectedFlag").src = flagSrc;
-      document.getElementById("selectedText").textContent = label;
-      document.getElementById("languageDropdown").classList.add("hidden");
-    }
+  <!-- Mobile Menu - navbar ostida -->
+  <div
+    id="mobile-menu"
+    class="lg:hidden bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700 transform transition-all duration-150 ease-in-out -translate-y-full opacity-0 scale-y-0 origin-top absolute left-0 right-0 top-full"
+  >
+    <div class="px-4 py-2 space-y-1">
+      <a
+        href="/"
+        class="block text-[#535862] font-medium dark:text-white px-4 py-3 rounded-lg text-[20px] transition duration-300 hover:bg-[#FFF1E6] hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#F9B513] hover:to-[#EA601E] font-inter-tight"
+        >Asosiy</a
+      >
+      <a
+        href="/"
+        class="block text-[#535862] font-medium dark:text-white px-4 py-3 rounded-lg text-[20px] transition duration-300 hover:bg-[#FFF1E6] hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#F9B513] hover:to-[#EA601E] font-inter-tight"
+        >Biz haqimizda</a
+      >
+      <a
+        href="/Event"
+        class="block text-[#535862] font-medium dark:text-white px-4 py-3 rounded-lg text-[20px] transition duration-300 hover:bg-[#FFF1E6] hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#F9B513] hover:to-[#EA601E] font-inter-tight"
+        >Tadbirlar</a
+      >
+      <a
+        href="/Portfel"
+        class="block text-[#535862] font-medium dark:text-white px-4 py-3 rounded-lg text-[20px] transition duration-300 hover:bg-[#FFF1E6] hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#F9B513] hover:to-[#EA601E] font-inter-tight"
+        >Startuplar</a
+      >
+      <a
+        href="/"
+        class="block text-[#535862] font-medium dark:text-white px-4 py-3 rounded-lg text-[20px] transition duration-300 hover:bg-[#FFF1E6] hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#F9B513] hover:to-[#EA601E] font-inter-tight"
+        >Hamkorlar</a
+      >
+      <a
+        href="/"
+        class="block text-[#535862] font-medium dark:text-white px-4 py-3 rounded-lg text-[20px] transition duration-300 hover:bg-[#FFF1E6] hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#F9B513] hover:to-[#EA601E] font-inter-tight"
+        >Youtube blog</a
+      >
+      <a
+        href="/Contact"
+        class="block text-[#535862] font-medium dark:text-white px-4 py-3 rounded-lg text-[20px] transition duration-300 hover:bg-[#FFF1E6] hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#F9B513] hover:to-[#EA601E] font-inter-tight"
+        >Kontaktlar</a
+      >
+    </div>
+  </div>
+</nav>
+
+<script is:inline>
+  function toggleDarkMode() {
+    document.documentElement.classList.toggle("dark");
+    localStorage.theme = document.documentElement.classList.contains("dark")
+      ? "dark"
+      : "light";
+  }
+  function selectLanguage(code, flagSrc, label) {
+    document.getElementById("selectedFlag").src = flagSrc;
+    document.getElementById("selectedText").textContent = label;
+    document.getElementById("languageDropdown").classList.add("hidden");
+  }
+  
+  document.addEventListener('DOMContentLoaded', function() {
     const mobileBtn = document.getElementById("mobile-menu-button");
     const mobileMenu = document.getElementById("mobile-menu");
     const menuIcon = document.getElementById("menu-icon");
     const closeIcon = document.getElementById("close-icon");
+    
+    if (!mobileBtn || !mobileMenu || !menuIcon || !closeIcon) return;
+    
+    let isOpen = false;
+    
     mobileBtn.addEventListener("click", () => {
-      mobileMenu.classList.toggle("hidden");
-      menuIcon.classList.toggle("hidden");
-      closeIcon.classList.toggle("hidden");
+      isOpen = !isOpen;
+      
+      if (isOpen) {
+        // Menu ochish - navbar ostidan pastga slide
+        mobileMenu.classList.remove("-translate-y-full", "opacity-0", "scale-y-0");
+        mobileMenu.classList.add("translate-y-0", "opacity-100", "scale-y-100");
+        menuIcon.classList.add("hidden");
+        closeIcon.classList.remove("hidden");
+      } else {
+        // Menu yopish - navbar ostiga qaytish
+        mobileMenu.classList.remove("translate-y-0", "opacity-100", "scale-y-100");
+        mobileMenu.classList.add("-translate-y-full", "opacity-0", "scale-y-0");
+        menuIcon.classList.remove("hidden");
+        closeIcon.classList.add("hidden");
+      }
     });
-  </script>
-</nav>
+    
+    // Menu tashqarisiga bosilganda yopish
+    document.addEventListener('click', (e) => {
+      if (!mobileBtn.contains(e.target) && !mobileMenu.contains(e.target) && isOpen) {
+        isOpen = false;
+        mobileMenu.classList.remove("translate-y-0", "opacity-100", "scale-y-100");
+        mobileMenu.classList.add("-translate-y-full", "opacity-0", "scale-y-0");
+        menuIcon.classList.remove("hidden");
+        closeIcon.classList.add("hidden");
+      }
+    });
+  });
+</script>

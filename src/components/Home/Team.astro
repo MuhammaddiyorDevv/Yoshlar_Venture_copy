@@ -6,7 +6,7 @@ import Alexandr from '../../assets/images/Alexandr.png';
 import AlexandrMirovskiy from '../../assets/images/Alexandr Mirovskiy.png';
 --- 
  
- <div class="py-12 sm:py-16 lg:py-[80px] mb-16 px-4">
+ <div client:load class="py-12 sm:py-16 lg:py-[80px] mb-16 px-4">
         <!-- Desktop Grid Layout (hidden on mobile) -->
         <div
           class="hidden md:grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 lg:gap-[16px]"
@@ -227,3 +227,111 @@ import AlexandrMirovskiy from '../../assets/images/Alexandr Mirovskiy.png';
           </div>
         </div>
       </div>
+
+
+ <script>
+  let currentSlide = 0;
+const slideWidth = 200; // 192px (w-48) + 16px gap
+const totalSlides = 5;
+
+// Update dots
+function updateDots() {
+  dots.forEach((dot, index) => {
+    if (index === currentSlide) {
+      dot.classList.remove("bg-gray-300");
+      dot.classList.add("bg-blue-500");
+    } else {
+      dot.classList.remove("bg-blue-500");
+      dot.classList.add("bg-gray-300");
+    }
+  });
+}
+
+// Go to specific slide
+function goToSlide(slideIndex) {
+  currentSlide = slideIndex;
+  slider.scrollTo({
+    left: slideIndex * slideWidth,
+    behavior: "smooth",
+  });
+  updateDots();
+}
+
+// Next slide
+function nextSlide() {
+  if (currentSlide < totalSlides - 1) {
+    currentSlide++;
+  } else {
+    currentSlide = 0;
+  }
+  goToSlide(currentSlide);
+}
+
+// Previous slide
+function prevSlide() {
+  if (currentSlide > 0) {
+    currentSlide--;
+  } else {
+    currentSlide = totalSlides - 1;
+  }
+  goToSlide(currentSlide);
+}
+
+// Event listeners
+nextBtn.addEventListener("click", nextSlide);
+prevBtn.addEventListener("click", prevSlide);
+
+// Dot navigation
+dots.forEach((dot, index) => {
+  dot.addEventListener("click", () => {
+    goToSlide(index);
+  });
+});
+
+// Touch/swipe support
+let startX = 0;
+let scrollLeft = 0;
+
+slider.addEventListener("touchstart", (e) => {
+  startX = e.touches[0].pageX - slider.offsetLeft;
+  scrollLeft = slider.scrollLeft;
+});
+
+slider.addEventListener("touchmove", (e) => {
+  e.preventDefault();
+  const x = e.touches[0].pageX - slider.offsetLeft;
+  const walk = (x - startX) * 2;
+  slider.scrollLeft = scrollLeft - walk;
+});
+
+slider.addEventListener("touchend", () => {
+  const newSlide = Math.round(slider.scrollLeft / slideWidth);
+  currentSlide = Math.max(0, Math.min(newSlide, totalSlides - 1));
+  goToSlide(currentSlide);
+});
+
+// Auto-play (optional)
+let autoPlayInterval;
+
+function startAutoPlay() {
+  autoPlayInterval = setInterval(nextSlide, 4000);
+}
+
+function stopAutoPlay() {
+  clearInterval(autoPlayInterval);
+}
+
+// Start auto-play
+startAutoPlay();
+
+// Pause auto-play on hover
+slider.addEventListener("mouseenter", stopAutoPlay);
+slider.addEventListener("mouseleave", startAutoPlay);
+
+// Pause auto-play on touch
+slider.addEventListener("touchstart", stopAutoPlay);
+slider.addEventListener("touchend", () => {
+  setTimeout(startAutoPlay, 3000);
+});
+  </script>     
+
