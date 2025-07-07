@@ -12,12 +12,11 @@ import HighlightBanner from ".././components/Home/HighlightBanner.astro";
 import Team from ".././components/Home/Team.astro";
 import MissionStatement from ".././components/Home/MissionStatement.astro";
 import Featured from ".././components/Home/Featured.astro";
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout>
-  <div class="container">
+  <!-- Container ichidagi componentlar -->
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
     <Hero />
     <Card />
     <Feedback />
@@ -25,8 +24,14 @@ import Featured from ".././components/Home/Featured.astro";
     <ThreeOfferings />
     <Stories />
   </div>
-  <LogosSlider />
-  <div class="container">
+  
+  <!-- LogosSlider - to'liq ekran kengligi -->
+  <div class="w-full overflow-hidden">
+    <LogosSlider />
+  </div>
+  
+  <!-- Container ichidagi qolgan componentlar -->
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
     <Mission />
     <HighlightBanner />
     <Team />
@@ -34,3 +39,14 @@ import Featured from ".././components/Home/Featured.astro";
     <Featured />
   </div>
 </Layout>
+
+<style>
+  .w-full {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+  }
+  
+  body {
+    overflow-x: hidden;
+  }
+</style>
