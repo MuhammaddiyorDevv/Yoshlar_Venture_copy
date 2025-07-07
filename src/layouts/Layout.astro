@@ -1,5 +1,5 @@
 ---
-import Navbar from "../components/Navbar.astro";
+import Navbar from "../components/Navbar.jsx";
 import Footer from "../components/Footer.astro";
 
 const { title = "Yoshlar Venture", description } = Astro.props;
@@ -16,7 +16,7 @@ const { title = "Yoshlar Venture", description } = Astro.props;
   </head>
 
   <body class="dark:bg-[#111111] dark:text-white bg-white text-black">
-    <Navbar />
+    <Navbar client:load />
     <main class="container">
       <slot />
     </main>
