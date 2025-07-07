@@ -1,24 +1,38 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export default function ToggleTheme() {
+  const [isDark, setIsDark] = useState(false);
+
   useEffect(() => {
-    if (localStorage.getItem("theme") === "dark") {
+    const theme = localStorage.getItem("theme");
+    if (theme === "dark") {
       document.documentElement.classList.add("dark");
+      setIsDark(true);
+    } else {
+      document.documentElement.classList.remove("dark");
+      setIsDark(false);
     }
   }, []);
 
   const toggleDarkMode = () => {
     const html = document.documentElement;
-    const isDark = html.classList.toggle("dark");
-    localStorage.setItem("theme", isDark ? "dark" : "light");
+    const newIsDark = html.classList.toggle("dark");
+    setIsDark(newIsDark);
+    localStorage.setItem("theme", newIsDark ? "dark" : "light");
   };
 
   return (
     <button
       onClick={toggleDarkMode}
-      className="px-4 py-2 rounded bg-gray-800 text-white dark:bg-yellow-300 dark:text-black transition"
+      className={`w-12 h-6 flex items-center rounded-full px-1 transition-colors ${
+        isDark ? "bg-gray-700" : "bg-[#F28E46]"
+      }`}
     >
-      Dark Mode
+      <div
+        className={`w-4 h-4 bg-white rounded-full shadow-md transform transition-transform ${
+          isDark ? "translate-x-6" : "translate-x-0"
+        }`}
+      ></div>
     </button>
   );
 }
