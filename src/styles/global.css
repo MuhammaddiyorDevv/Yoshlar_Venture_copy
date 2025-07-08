@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
 
 * {
   box-sizing: border-box;
@@ -14,12 +15,32 @@ body {
   @apply bg-black;
 }
 
+.logo{
+  width: 240px;
+  height: 85px;
+  /* border: 2px solid red; */
+  padding: 10px 10px;
+  border-radius: 16px;
+  background-color: #F9F9F9;
+}
+
+.logo img{
+  width: 150px;
+  height: 20px;
+}
 .container {
   max-width: 1440px;
-  padding-left: 16px;
-  padding-right: 16px;
+  padding-left: 40px;
+  padding-right: 40px;
   margin: 0 auto;
 }
+
+@media (max-width: 639px) {
+  .container {
+    padding: 0 16px;  /* mobile override */
+  }
+}
+
 
 @font-face {
   font-family: "InterTight";
@@ -127,6 +148,10 @@ body {
   background-position: top center;
   background-repeat: repeat-y;
   background-color: #F9F9F9;
+}
+
+.dark .mobile-card-bg{
+  background-color: black;
 }
 
 @media (max-width: 640px) {

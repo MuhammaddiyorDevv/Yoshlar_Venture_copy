@@ -36,8 +36,9 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="sticky top-0 z-50 bg-white dark:bg-gray-900 shadow-sm py-[15px] px-[38px] rounded-tl-3xl rounded-br-3xl">
-      <div className="container mx-auto flex justify-between items-center h-16">
+    <section className="sticky top-2  container z-50 px-[40px]">
+      <nav className="   bg-white dark:bg-gray-900 shadow-sm py-[15px] px-[38px] rounded-tl-3xl rounded-br-3xl dark:border border-[#535862]">
+      <div className="mx-auto flex justify-between items-center h-16">
         {/* Logo */}
         <div className="flex items-center space-x-2">
           <img src={Logo.src} alt="Yoshlar Ventures" className="h-8 w-auto" />
@@ -151,6 +152,8 @@ const Navbar = () => {
         )}
       </AnimatePresence>
     </nav>
+    </section>
+
   );
 };
 
