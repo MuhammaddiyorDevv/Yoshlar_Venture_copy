@@ -15,19 +15,19 @@ body {
   @apply bg-black;
 }
 
-.logo{
-  width: 240px;
-  height: 85px;
-  /* border: 2px solid red; */
+.logo {
+  width: 240px!important;
+  height: 85px!important;
   padding: 10px 10px;
   border-radius: 16px;
   background-color: #F9F9F9;
 }
 
-.logo img{
+.logo img {
   width: 150px;
-  height: 20px;
+  height: 30px;
 }
+
 .container {
   max-width: 1440px;
   padding-left: 40px;
@@ -37,7 +37,8 @@ body {
 
 @media (max-width: 639px) {
   .container {
-    padding: 0 16px;  /* mobile override */
+    padding: 0 16px;
+    /* mobile override */
   }
 }
 
@@ -150,7 +151,7 @@ body {
   background-color: #F9F9F9;
 }
 
-.dark .mobile-card-bg{
+.dark .mobile-card-bg {
   background-color: black;
 }
 
