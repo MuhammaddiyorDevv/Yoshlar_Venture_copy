@@ -5,53 +5,56 @@ import No_Money from "../../assets/images/no-money.svg";
 import Lamp from "../../assets/images/Lamp.svg";
 ---
 
-<section
-  class="relative rounded-[32px] overflow-hidden mx-auto w-full px-6 sm:px-12 lg:px-[80px] py-8 sm:py-12 lg:py-[60px] mb-[50px] sm:mb-20"
->
-  <!-- Mobile uchun alohida CSS -->
-  <style>
-    .mobile-background {
-      background-image: url("/public/BgImg.png");
+<style>
+  .mobile-background {
+    position: relative;
+    z-index: 0;
+    background: linear-gradient(to bottom right, #F9B513, #EA601E); /* gradient to‘liq fon */
+    border-radius: 32px;
+    overflow: hidden;
+  }
+
+  .mobile-background::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("/public/BgImg.png");
+    background-size: 100% 66.67%;
+    background-position: top center;
+    background-repeat: repeat-y;
+    z-index: -1;
+    opacity: 1;
+    border-radius: 32px;
+  }
+
+  @media (max-width: 640px) {
+    .mobile-background::before {
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+    }
+  }
+
+  @media (min-width: 641px) and (max-width: 1024px) {
+    .mobile-background::before {
+      background-size: 100% 70%;
+      background-position: top center;
+      background-repeat: repeat-y;
+    }
+  }
+
+  @media (min-width: 1025px) {
+    .mobile-background::before {
       background-size: 100% 66.67%;
       background-position: top center;
       background-repeat: repeat-y;
-      background-color: #f89d25;
     }
+  }
+</style>
 
-    /* Mobile uchun alohida background */
-    @media (max-width: 640px) {
-      .mobile-background {
-        background-size: cover;
-        background-position: center center;
-        background-repeat: no-repeat;
-      }
-    }
-
-    /* Tablet uchun */
-    @media (min-width: 641px) and (max-width: 1024px) {
-      .mobile-background {
-        background-size: 100% 70%;
-        background-position: top center;
-        background-repeat: repeat-y;
-      }
-    }
-
-    /* Desktop uchun (asl holat) */
-    @media (min-width: 1025px) {
-      .mobile-background {
-        background-size: 100% 66.67%;
-        background-position: top center;
-        background-repeat: repeat-y;
-      }
-    }
-  </style>
-
-  <!-- Background with Image -->
-  <div
-    class="absolute inset-0 bg-gradient-to-br from-brand-orange-start to-brand-orange-end opacity-100 mobile-background rounded-4xl"
-  >
-  </div>
-
+<section
+  class="mobile-background mx-auto w-full px-6 sm:px-12 lg:px-[80px] py-8 sm:py-12 lg:py-[60px] mb-[50px] sm:mb-20"
+>
   <!-- Content -->
   <div class="relative z-10">
     <!-- Top cards -->
