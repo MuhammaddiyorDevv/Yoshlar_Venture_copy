@@ -9,7 +9,7 @@ import Stories from ".././components/Home/Stories.astro";
 import LogosSlider from ".././components/Home/LogosSlider.astro";
 import Mission from ".././components/Home/Mission.astro";
 import HighlightBanner from ".././components/Home/HighlightBanner.astro";
-import Team from ".././components/Home/Team.astro";
+import Team from "../components/Home/Team.astro";
 import MissionStatement from ".././components/Home/MissionStatement.astro";
 import Featured from ".././components/Home/Featured.astro";
 ---
@@ -34,7 +34,7 @@ import Featured from ".././components/Home/Featured.astro";
   <div class="container mx-auto px-4 sm:px-6 lg:px-8">
     <Mission />
     <HighlightBanner />
-    <Team />
+    <Team client:load />
     <MissionStatement />
     <Featured />
   </div>

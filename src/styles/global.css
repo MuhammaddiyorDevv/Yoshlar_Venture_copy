@@ -147,10 +147,20 @@ body {
   box-shadow: 0px 3px 6px 0px #94370533;
 }
 
+/*Three Offering*/
+.pattern-div {
+  background-image: url('/RoundedBg.png');
+}
+
+/* Dark mode — when you have <html class="dark">… */
+.dark .pattern-div {
+  background-image: url('/RoundedBgDark.png');
+}
+
 /* Mobile uchun background responsive */
 .mobile-card-bg {
   background-image: url("/public/BgImg.png");
-  background-size: 100% 100%;
+  background-size: 200% 100%;
   background-position: top center;
   background-repeat: repeat-y;
   background-color: #F9F9F9;
@@ -158,6 +168,10 @@ body {
 
 .dark .mobile-card-bg {
   background-color: black;
+  background-image: url("/public/PartnerBgimgDark.png");
+  background-size: 100% 100%;
+  background-position: top center;
+  background-repeat: repeat-y;
 }
 
 @media (max-width: 640px) {
@@ -192,3 +206,46 @@ body {
     background-repeat: repeat-y;
   }
 }
+
+.pattern-section{
+  background-image: url('/public/Background pattern.png');
+    background-size: cover;
+    background-repeat: repeat-x;
+    background-position: center;
+}
+
+.dark .pattern-section {
+  background-image: url('/public/Background\ patternDark.png');
+}
+
+
+
+/*footer*/
+.map-container {
+  position: relative;
+}
+
+/* keep your existing iframe styles */
+.map-container iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* overlay a marker icon at the exact center */
+.map-container::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 32px;           /* size of your marker */
+  height: 40px;
+  background: url('/assets/images/marker.svg') no-repeat center center;
+  background-size: contain;
+  transform: translate(-50%, -100%);  /* pull it up so the tip sits on the point */
+  pointer-events: none;               /* let clicks go “through” to the map */
+}
+
+
+.map-container { position: relative; }
+.map-container iframe { display: block; width:100%; height:100%; border:0; }
