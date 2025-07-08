@@ -44,10 +44,10 @@ const FormState = () => {
     console.log("Selected:", selection);
   };
 
-const handleSubmit = () => {
-  console.log("Submitting:", stageSelection);
-  window.location.href = "/";
-};
+  const handleSubmit = () => {
+    console.log("Submitting:", stageSelection);
+    window.location.href = "/";
+  };
 
   return (
     <div className="max-w-[628px] mx-auto w-full mb-[55px] sm:mb-20">

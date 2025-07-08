@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import mail from "../assets/mail.svg";
 import build from "../assets/build.svg";
 import call from "../assets/call.svg";
+import Marker from "../assets/images/marker.svg.svg";
 ---
 
 <Layout title="Yoshlar Venture">
@@ -38,13 +39,25 @@ import call from "../assets/call.svg";
         <p class="text-[18px]">+998 99 445 5566</p>
       </div>
     </div>
-    <iframe
-      src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d47957.4376758804!2d69.25377351118344!3d41.30146971801885!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2s!4v1750851818511!5m2!1sen!2s"
-      class="max-w-[835px] w-full h-[347px] sm:h-[436px] rounded-2xl"
-      style="border: 0"
-      allowfullscreen=""
-      loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade"
-      aria-label="Yoshlar Ventures location on map"></iframe>
+
+    <div class="map-container overflow-hidden
+max-w-[835px] w-full h-[347px] sm:h-[436px] rounded-2xl">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d47957.4376758804!2d69.25377351118344!3d41.30146971801885!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2s!4v1750851818511!5m2!1sen!2s"
+      class="w-full "
+        style="border:0"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        aria-label="Yoshlar Ventures
+location on map"></iframe>
+      <img
+        src={Marker.src}
+        alt=""
+        class="absolute top-1/2
+left-1/2 w-8 h-10 -translate-x-1/2 -translate-y-full pointer-events-none"
+      />
+    </div>
   </div>
 </Layout>
+

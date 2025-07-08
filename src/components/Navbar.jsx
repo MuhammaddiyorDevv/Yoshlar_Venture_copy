@@ -37,19 +37,24 @@ const Navbar = () => {
   };
 
   return (
-
     <section className="sticky top-2  container z-50 px-[40px]">
       <nav className="   bg-white dark:bg-[#111111] shadow-sm py-[15px] px-[38px] rounded-tl-3xl rounded-br-3xl dark:border border-[#535862]">
-      <div className="mx-auto flex justify-between items-center h-16">
-        {/* Logo */}
-        <div className="flex items-center space-x-2">
-          <a href="/">
-          <img src={Logo.src} alt="Yoshlar Ventures" className="h-8 w-auto" />
-          </a>
-          <span className="font-bold text-xs sm:text-sm text-black dark:text-white font-inter-tight">
-            YOSHLAR<br />VENTURES
-          </span>
-        </div>
+        <div className="mx-auto flex justify-between items-center h-16">
+          {/* Logo */}
+          <div className="flex items-center space-x-2">
+            <a href="/">
+              <img
+                src={Logo.src}
+                alt="Yoshlar Ventures"
+                className="h-8 w-auto"
+              />
+            </a>
+            <span className="font-bold text-xs sm:text-sm text-black dark:text-white font-inter-tight">
+              YOSHLAR
+              <br />
+              VENTURES
+            </span>
+          </div>
 
           {/* Desktop Menu */}
           <div className="hidden lg:flex space-x-6 text-sm font-medium">
@@ -76,7 +81,11 @@ const Navbar = () => {
                 className="rounded px-2 py-1 text-sm font-inter-tight flex items-center space-x-2 min-w-[80px] justify-between hover:border-gray-400 transition"
               >
                 <div className="flex items-center space-x-2">
-                  <img src={selectedLang.flag.src} alt="Flag" className="w-4 h-3" />
+                  <img
+                    src={selectedLang.flag.src}
+                    alt="Flag"
+                    className="w-4 h-3"
+                  />
                   <span>{selectedLang.label}</span>
                 </div>
                 <svg
@@ -85,7 +94,12 @@ const Navbar = () => {
                   stroke="currentColor"
                   viewBox="0 0 24 24"
                 >
-                  <path d="M19 9l-7 7-7-7" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
+                  <path
+                    d="M19 9l-7 7-7-7"
+                    strokeWidth={2}
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
                 </svg>
               </button>
 
@@ -95,19 +109,22 @@ const Navbar = () => {
                     className="w-full px-2 py-1 text-left hover:bg-gray-100 dark:hover:bg-gray-700 flex items-center space-x-2 text-sm font-inter-tight"
                     onClick={() => handleLanguageSelect(FlagUzb, "O'zb")}
                   >
-                    <img src={FlagUzb.src} className="w-4 h-3" /><span>O'zb</span>
+                    <img src={FlagUzb.src} className="w-4 h-3" />
+                    <span>O'zb</span>
                   </button>
                   <button
                     className="w-full px-2 py-1 text-left hover:bg-gray-100 dark:hover:bg-gray-700 flex items-center space-x-2 text-sm font-inter-tight"
                     onClick={() => handleLanguageSelect(FlagRus, "Рус")}
                   >
-                    <img src={FlagRus.src} className="w-4 h-3" /><span>Рус</span>
+                    <img src={FlagRus.src} className="w-4 h-3" />
+                    <span>Рус</span>
                   </button>
                   <button
                     className="w-full px-2 py-1 text-left hover:bg-gray-100 dark:hover:bg-gray-700 flex items-center space-x-2 text-sm font-inter-tight"
                     onClick={() => handleLanguageSelect(FlagEng, "Eng")}
                   >
-                    <img src={FlagEng.src} className="w-4 h-3" /><span>Eng</span>
+                    <img src={FlagEng.src} className="w-4 h-3" />
+                    <span>Eng</span>
                   </button>
                 </div>
               )}
@@ -121,11 +138,26 @@ const Navbar = () => {
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="lg:hidden p-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md transition-colors"
             >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
                 {isMenuOpen ? (
-                  <path d="M6 18L18 6M6 6l12 12" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
+                  <path
+                    d="M6 18L18 6M6 6l12 12"
+                    strokeWidth={2}
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
                 ) : (
-                  <path d="M4 6h16M4 12h16M4 18h16" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
+                  <path
+                    d="M4 6h16M4 12h16M4 18h16"
+                    strokeWidth={2}
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
                 )}
               </svg>
             </button>

@@ -20,7 +20,7 @@ body {
   height: 85px !important;
   padding: 10px 10px;
   border-radius: 16px;
-  background-color: #F9F9F9;
+  background-color: #f9f9f9;
 }
 
 .dark .logo {
@@ -46,7 +46,6 @@ body {
     /* mobile override */
   }
 }
-
 
 @font-face {
   font-family: "InterTight";
@@ -149,12 +148,12 @@ body {
 
 /*Three Offering*/
 .pattern-div {
-  background-image: url('/RoundedBg.png');
+  background-image: url("/RoundedBg.png");
 }
 
 /* Dark mode — when you have <html class="dark">… */
 .dark .pattern-div {
-  background-image: url('/RoundedBgDark.png');
+  background-image: url("/RoundedBgDark.png");
 }
 
 /* Mobile uchun background responsive */
@@ -163,7 +162,7 @@ body {
   background-size: 200% 100%;
   background-position: top center;
   background-repeat: repeat-y;
-  background-color: #F9F9F9;
+  background-color: #f9f9f9;
 }
 
 .dark .mobile-card-bg {
@@ -207,18 +206,16 @@ body {
   }
 }
 
-.pattern-section{
-  background-image: url('/public/Background pattern.png');
-    background-size: cover;
-    background-repeat: repeat-x;
-    background-position: center;
+.pattern-section {
+  background-image: url("/public/Background pattern.png");
+  background-size: cover;
+  background-repeat: repeat-x;
+  background-position: center;
 }
 
 .dark .pattern-section {
-  background-image: url('/public/Background\ patternDark.png');
+  background-image: url("/public/Background\ patternDark.png");
 }
-
-
 
 /*footer*/
 .map-container {
@@ -234,18 +231,27 @@ body {
 
 /* overlay a marker icon at the exact center */
 .map-container::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 32px;           /* size of your marker */
+  width: 32px; /* size of your marker */
   height: 40px;
-  background: url('/assets/images/marker.svg') no-repeat center center;
+  background: url("/assets/images/marker.svg") no-repeat center center;
   background-size: contain;
-  transform: translate(-50%, -100%);  /* pull it up so the tip sits on the point */
-  pointer-events: none;               /* let clicks go “through” to the map */
+  transform: translate(
+    -50%,
+    -100%
+  ); /* pull it up so the tip sits on the point */
+  pointer-events: none; /* let clicks go “through” to the map */
 }
 
-
-.map-container { position: relative; }
-.map-container iframe { display: block; width:100%; height:100%; border:0; }
+.map-container {
+  position: relative;
+}
+.map-container iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
