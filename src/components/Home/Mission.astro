@@ -1,5 +1,8 @@
 ---
 import TelegramDark from "../../assets/images/telegramDark.svg";
+import darkTelegram from "../../assets/images/darkTelegram.svg";
+import darkInstagram from "../../assets/images/darkInstagram.svg"
+import darkYoutube from "../../assets/images/darkYoutube.svg";
 import InstagramDark from "../../assets/images/instagramDark.svg";
 import YouTubeDark from "../../assets/images/youtubeDark.svg";
 ---
@@ -34,13 +37,16 @@ import YouTubeDark from "../../assets/images/youtubeDark.svg";
   <!-- Social Icons -->
   <div class="mt-6 flex justify-start space-x-4">
     <a href="#" aria-label="Telegram" class="hover:opacity-75">
-      <img src={TelegramDark.src} alt="Telegram" class="w-8 h-8" />
+      <img src={TelegramDark.src} alt="Telegram" class="w-8 h-8 flex dark:hidden" />
+      <img src={darkTelegram.src} alt="Telegram" class="w-8 h-8 hidden dark:flex" />
     </a>
     <a href="#" aria-label="Instagram" class="hover:opacity-75">
-      <img src={InstagramDark.src} alt="Instagram" class="w-8 h-8" />
+      <img src={InstagramDark.src} alt="Instagram" class="w-8 h-8 flex dark:hidden" />
+      <img src={darkInstagram.src} alt="Instagram" class="w-8 h-8 hidden dark:flex" />
     </a>
     <a href="#" aria-label="YouTube" class="hover:opacity-75">
-      <img src={YouTubeDark.src} alt="YouTube" class="w-8 h-8" />
+      <img src={YouTubeDark.src} alt="YouTube" class="w-8 h-8 flex dark:hidden" />
+      <img src={darkYoutube.src} alt="YouTube" class="w-8 h-8 hidden dark:flex" />
     </a>
   </div>
 </section>
