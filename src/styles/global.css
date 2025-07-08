@@ -16,11 +16,16 @@ body {
 }
 
 .logo {
-  width: 240px!important;
-  height: 85px!important;
+  width: 240px !important;
+  height: 85px !important;
   padding: 10px 10px;
   border-radius: 16px;
   background-color: #F9F9F9;
+}
+
+.dark .logo {
+  background-color: #111111;
+  border: 1px solid #535862;
 }
 
 .logo img {

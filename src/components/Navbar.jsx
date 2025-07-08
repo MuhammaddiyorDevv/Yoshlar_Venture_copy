@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import Logo from "../assets/images/Group.svg";
 import FlagUzb from "../assets/images/FlagUzb.svg";
 import FlagRus from "../assets/images/Flag_of_Russia.svg.webp";
-import FlagEng from "../assets/images/english_flag.png";
+import FlagEng from "../assets/images/engFlag.webp";
 import ToggleTheme from "./ToggleTheme";
 
 const Navbar = () => {
@@ -37,16 +37,19 @@ const Navbar = () => {
   };
 
   return (
-    <section className="sticky top-2 container z-50 px-[40px] bg-transparent">
-      <nav className="bg-white dark:bg-gray-900 shadow-sm py-[15px] px-[38px] rounded-tl-3xl rounded-br-3xl dark:border border-[#535862]">
-        <div className="mx-auto flex justify-between items-center h-16">
-          {/* Logo */}
-          <a href="/" className="flex items-center space-x-2">
-            <img src={Logo.src} alt="Yoshlar Ventures" className="h-8 w-auto" />
-            <span className="font-bold text-xs sm:text-sm text-black dark:text-white font-inter-tight">
-              YOSHLAR<br />VENTURES
-            </span>
+
+    <section className="sticky top-2  container z-50 px-[40px]">
+      <nav className="   bg-white dark:bg-[#111111] shadow-sm py-[15px] px-[38px] rounded-tl-3xl rounded-br-3xl dark:border border-[#535862]">
+      <div className="mx-auto flex justify-between items-center h-16">
+        {/* Logo */}
+        <div className="flex items-center space-x-2">
+          <a href="/">
+          <img src={Logo.src} alt="Yoshlar Ventures" className="h-8 w-auto" />
           </a>
+          <span className="font-bold text-xs sm:text-sm text-black dark:text-white font-inter-tight">
+            YOSHLAR<br />VENTURES
+          </span>
+        </div>
 
           {/* Desktop Menu */}
           <div className="hidden lg:flex space-x-6 text-sm font-medium">
