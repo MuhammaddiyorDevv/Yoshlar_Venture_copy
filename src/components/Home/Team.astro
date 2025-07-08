@@ -1,222 +1,82 @@
 ---
-import Abrorbek from "../../assets/images/Abrorbek.png";
-import Husniddin from "../../assets/images/Husniddin.png";
-import Mirovskiy from "../../assets/images/Mirovskiy.png";
-import Alexandr from "../../assets/images/Alexandr.png";
-import AlexandrMirovskiy from "../../assets/images/Alexandr Mirovskiy.png";
+import Abrorbek from "../../assets/images/Team/Abdulaziz.jpg";
+import Husniddin from "../../assets/images/Team/Sardor.jpg";
+import Mirovskiy from "../../assets/images/Team/Shahzodbek.jpg";
+import Alexandr from "../../assets/images/Team/Firdavs.jpg";
+import AlexandrMirovskiy from "../../assets/images/Team/Rustambek.jpg";
+import Jamshid from "../../assets/images/Team/Jamshid.jpg";
 ---
 
+<!-- Universal Infinite Carousel (all screen sizes) -->
 <div class="py-12 sm:py-16 lg:py-[80px] mb-16 px-4">
-  <!-- Desktop Grid Layout (hidden on mobile) -->
-  <div
-    class="hidden md:grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 lg:gap-[16px]"
-  >
-    <!-- Member 1 -->
-      <div class="flex flex-col items-start ">
-      <div class="w-full aspect-[5/5] overflow-hidden mb-2">
-        <img
-          src={Abrorbek.src}
-          alt="Abrobek Ibrohimov"
-          class="w-full h-[250px] rounded-[24px] object-cover"
-        />
-      </div>
-      <p class="text-center text-sm font-medium font-inter-tight">
-        Abrobek Ibrohimov
-      </p>
-    </div>
-
-    <!-- Member 2 -->
-    <div class="flex flex-col items-start ">
-      <div class="w-full aspect-[5/5] mb-2">
-        <img
-          src={Husniddin.src}
-          alt="Husniddin Ahmadjonov"
-          class="w-full h-[311px] rounded-[24px] object-cover"
-        />
-      </div>
-      <p class="text-center text-sm font-medium font-inter-tight">
-        Husniddin Ahmadjonov
-      </p>
-    </div>
-
-    <!-- Member 3 -->
-    <div class="flex flex-col items-start ">
-      <div class="w-full aspect-[5/5] mb-2">
-        <img
-          src={Mirovskiy.src}
-          alt="Aleksandr Mirovskiy"
-          class="w-full h-[288px] rounded-[24px] object-cover"
-        />
-      </div>
-      <p class="text-center text-sm font-medium font-inter-tight">
-        Aleksandr Mirovskiy
-      </p>
-    </div>
-
-    <!-- Member 4 -->
-    <div class="flex flex-col items-start ">
-      <div class="w-full aspect-[5/5] mb-2">
-        <img
-          src={Alexandr.src}
-          alt="Aleksandr Mirovskiy"
-          class="w-full h-[254px] rounded-[24px] object-cover"
-        />
-      </div>
-      <p class="text-center text-sm font-medium font-inter-tight">
-        Aleksandr Mirovskiy
-      </p>
-    </div>
-
-    <!-- Member 5 -->
-    <div class="flex flex-col items-start ">
-      <div class="w-full aspect-[4/5] mb-2">
-        <img
-          src={AlexandrMirovskiy.src}
-          alt="Aleksandr Mirovskiy"
-          class="w-full h-[311px] rounded-[24px] object-cover"
-        />
-      </div>
-      <p class="text-center text-sm font-medium font-inter-tight">
-        Aleksandr Mirovskiy
-      </p>
-    </div>
-  </div>
-
-  <!-- Mobile Slider Layout (visible only on mobile) -->
-  <div class="md:hidden">
-    <!-- Slider Container -->
-    <div class="relative">
-      <!-- Slider Wrapper -->
-      <div
-        id="slider"
-        class="flex overflow-x-auto hide-scrollbar scroll-smooth gap-4 pb-4"
-      >
-        <!-- Member 1 -->
-        <div class="flex-none w-48 flex flex-col items-center">
-          <div class="w-full aspect-[4/5] overflow-hidden mb-2">
-            <img
-              src={Abrorbek.src}
-              alt="Abrobek Ibrohimov"
-              class="w-full h-[250px] rounded-[24px] object-cover"
-            />
-          </div>
-          <p class="text-center text-sm font-medium font-inter-tight">
-            Abrobek Ibrohimov
-          </p>
+  <div class="relative">
+    <div
+      id="slider"
+      class="flex overflow-x-auto hide-scrollbar gap-4 pb-4"
+    >
+      <!-- Member 1 -->
+      <div class="flex-none w-48 md:w-1/5 flex flex-col items-start">
+        <div class="w-full aspect-[5/5]  mb-2">
+          <img src={Abrorbek.src} alt="Abdulaziz Yakubov" class="w-full h-[250px] rounded-[24px] object-cover" />
         </div>
-
-        <!-- Member 2 -->
-        <div class="flex-none w-48 flex flex-col items-center">
-          <div class="w-full aspect-[4/5] mb-2">
-            <img
-              src={Husniddin.src}
-              alt="Husniddin Ahmadjonov"
-              class="w-full h-[311px] rounded-[24px] object-cover"
-            />
-          </div>
-          <p class="text-center text-sm font-medium font-inter-tight">
-            Husniddin Ahmadjonov
-          </p>
-        </div>
-
-        <!-- Member 3 -->
-        <div class="flex-none w-48 flex flex-col items-center">
-          <div class="w-full aspect-[4/5] mb-2">
-            <img
-              src={Mirovskiy.src}
-              alt="Aleksandr Mirovskiy"
-              class="w-full h-[288px] rounded-[24px] object-cover"
-            />
-          </div>
-          <p class="text-center text-sm font-medium font-inter-tight">
-            Aleksandr Mirovskiy
-          </p>
-        </div>
-
-        <!-- Member 4 -->
-        <div class="flex-none w-48 flex flex-col items-center">
-          <div class="w-full aspect-[4/5] mb-2">
-            <img
-              src={Alexandr.src}
-              alt="Aleksandr Mirovskiy"
-              class="w-full h-[254px] rounded-[24px] object-cover"
-            />
-          </div>
-          <p class="text-center text-sm font-medium font-inter-tight">
-            Aleksandr Mirovskiy
-          </p>
-        </div>
-
-        <!-- Member 5 -->
-        <div class="flex-none w-48 flex flex-col items-center">
-          <div class="w-full aspect-[4/5] mb-2">
-            <img
-              src={AlexandrMirovskiy.src}
-              alt="Aleksandr Mirovskiy"
-              class="w-full h-[311px] rounded-[24px] object-cover"
-            />
-          </div>
-          <p class="text-center text-sm font-medium font-inter-tight">
-            Aleksandr Mirovskiy
-          </p>
-        </div>
+        <p class="text-center text-sm font-medium font-inter-tight">Abdulaziz Yakubov</p>
       </div>
-
-      <!-- Navigation Arrows -->
-      <button
-        id="prevBtn"
-        class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 bg-white rounded-full p-2 shadow-lg border border-gray-200 hover:bg-gray-50 transition-colors"
-      >
-        <svg
-          class="w-5 h-5 text-gray-600"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M15 19l-7-7 7-7"></path>
-        </svg>
-      </button>
-
-      <button
-        id="nextBtn"
-        class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 bg-white rounded-full p-2 shadow-lg border border-gray-200 hover:bg-gray-50 transition-colors"
-      >
-        <svg
-          class="w-5 h-5 text-gray-600"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M9 5l7 7-7 7"></path>
-        </svg>
-      </button>
-    </div>
-
-    <!-- Dots Indicator -->
-    <div class="flex justify-center mt-6 space-x-2">
-      <button
-        class="dot w-2 h-2 rounded-full bg-blue-500 transition-colors"
-        data-slide="0"></button>
-      <button
-        class="dot w-2 h-2 rounded-full bg-gray-300 hover:bg-gray-400 transition-colors"
-        data-slide="1"></button>
-      <button
-        class="dot w-2 h-2 rounded-full bg-gray-300 hover:bg-gray-400 transition-colors"
-        data-slide="2"></button>
-      <button
-        class="dot w-2 h-2 rounded-full bg-gray-300 hover:bg-gray-400 transition-colors"
-        data-slide="3"></button>
-      <button
-        class="dot w-2 h-2 rounded-full bg-gray-300 hover:bg-gray-400 transition-colors"
-        data-slide="4"></button>
+      <!-- Member 2 -->
+      <div class="flex-none w-48 md:w-1/5 flex flex-col items-start">
+        <div class="w-full aspect-[5/5]  mb-2">
+          <img src={Husniddin.src} alt="Sardor Ochilov" class="w-full h-[311px] rounded-[24px] object-cover" />
+        </div>
+        <p class="text-center text-sm font-medium font-inter-tight">Sardor Ochilov</p>
+      </div>
+      <!-- Member 3 -->
+      <div class="flex-none w-48 md:w-1/5 flex flex-col items-start">
+        <div class="w-full aspect-[5/5]  mb-2">
+          <img src={Mirovskiy.src} alt="Shaxzodbek Isroilov" class="w-full h-[288px] rounded-[24px] object-cover" />
+        </div>
+        <p class="text-center text-sm font-medium font-inter-tight">Shaxzodbek Isroilov</p>
+      </div>
+      <!-- Member 4 -->
+      <div class="flex-none w-48 md:w-1/5 flex flex-col items-start">
+        <div class="w-full aspect-[5/5]  mb-2">
+          <img src={Alexandr.src} alt="Firdavs Urinov" class="w-full h-[254px] rounded-[24px] object-cover" />
+        </div>
+        <p class="text-center text-sm font-medium font-inter-tight">Firdavs Urinov</p>
+      </div>
+      <!-- Member 5 -->
+      <div class="flex-none w-48 md:w-1/5 flex flex-col items-start">
+        <div class="w-full aspect-[5/5]  mb-2">
+          <img src={Jamshid.src} alt="Jamshid Shoimurodov" class="w-full h-[311px] rounded-[24px] object-cover" />
+        </div>
+        <p class="text-center text-sm font-medium font-inter-tight">Jamshid Shoimurodov</p>
+      </div>
+      <!-- Member 6 -->
+      <div class="flex-none w-48 md:w-1/5 flex flex-col items-start">
+        <div class="w-full aspect-[5/5]  mb-2">
+          <img src={AlexandrMirovskiy.src} alt="Rustambek Abakulov" class="w-full h-[311px] rounded-[24px] object-cover" />
+        </div>
+        <p class="text-center text-sm font-medium font-inter-tight">Rustambek Abakulov</p>
+      </div>
     </div>
   </div>
 </div>
+
+<script type="module" client:load>
+  const slider = document.getElementById('slider');
+  const items = Array.from(slider.children);
+  items.forEach(item => slider.appendChild(item.cloneNode(true)));
+
+  let pos = 0;
+  const speed = 0.5;
+  let animId;
+
+  function loop() {
+    pos += speed;
+    if (pos >= slider.scrollWidth / 2) pos -= slider.scrollWidth / 2;
+    slider.scrollLeft = pos;
+    animId = requestAnimationFrame(loop);
+  }
+
+  animId = requestAnimationFrame(loop);
+  slider.addEventListener('mouseenter', () => cancelAnimationFrame(animId));
+  slider.addEventListener('mouseleave', () => (animId = requestAnimationFrame(loop)));
+</script>
