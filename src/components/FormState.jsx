@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Profile from "./Profile";
 import Steps from "./Steps";
 import Stage from "./Stage";
@@ -121,6 +121,10 @@ const FormState = () => {
     investitsiyaMiqdori: "",
     mablagniSarflash: "",
   });
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [step, subStep]);
 
   return (
     <div className="max-w-[628px] mx-auto w-full mb-[55px] sm:mb-20">
