@@ -2,10 +2,16 @@
 
 import CustomCheckbox from "./CustomCheckbox";
 
-const Stage = ({ selection, onSelectionChange }) => {
+const Stage = ({ formData, setFormData, selection, onSelectionChange }) => {
   const handleCheckboxChange = (key, checked) => {
-    onSelectionChange({
+    const newSelection = {
       ...selection,
+      [key]: checked,
+    };
+
+    onSelectionChange(newSelection);
+    setFormData({
+      ...formData,
       [key]: checked,
     });
   };

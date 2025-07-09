@@ -17,7 +17,7 @@ const FormState = () => {
     postMvp: false,
   });
 
-  const isWithSubSteps = stageSelection.idea && stageSelection.mvpInProgress;
+  const isWithSubSteps = stageSelection.idea || stageSelection.mvpInProgress;
 
   const handleBack = () => {
     if (step === 3 && isWithSubSteps && subStep > 0) {
@@ -29,46 +29,131 @@ const FormState = () => {
   };
 
   const handleNext = () => {
-    if (step === 3 && isWithSubSteps) {
-      if (subStep < 2) {
-        setSubStep(subStep + 1);
+    if (step === 2) {
+      if (!stageSelection.idea && !stageSelection.mvpInProgress && !stageSelection.postMvp) {
+        alert("Iltimos, kamida bitta bosqichni tanlang!");
         return;
       }
     }
+
+    if (step === 3 && isWithSubSteps) {
+      if (subStep === 0) {
+        if (formData.rozilik === "yoq") {
+          setStep(4);
+          setSubStep(0);
+          return;
+        } else if (formData.rozilik === "ha") {
+          setSubStep(1);
+          return;
+        } else {
+          alert("Iltimos, Ha yoki Yo‘q ni tanlang.");
+          return;
+        }
+      }
+
+      if (subStep === 1) {
+        setSubStep(2);
+        return;
+      }
+
+      if (subStep === 2) {
+        setStep(4);
+        setSubStep(0);
+        return;
+      }
+    }
+
     setStep(step + 1);
     setSubStep(0);
   };
 
   const handleStageSelectionChange = (selection) => {
     setStageSelection(selection);
-    console.log("Selected:", selection);
+    setFormData((prev) => ({
+      ...prev,
+      bosqichIdea: selection.idea,
+      bosqichMvpJarayoni: selection.mvpInProgress,
+      bosqichPostMvp: selection.postMvp,
+    }));
   };
 
   const handleSubmit = () => {
-    console.log("Submitting:", stageSelection);
+    alert(
+      "Barcha kiritilgan ma'lumotlar:\n" + JSON.stringify(formData, null, 2)
+    );
     window.location.href = "/";
   };
+
+  const [formData, setFormData] = useState({
+    startupNomi: "",
+    startupTavsifi: "",
+    havolaFayl: null,
+
+    bosqichIdea: false,
+    bosqichMvpJarayoni: false,
+    bosqichPostMvp: false,
+
+    rozilik: "",
+    dasturNomi: "",
+    dasturYili: "",
+    dasturBitirganmi: "",
+    tanlovdaQatnashganmi: "",
+    tanlovNomi: "",
+    tanlovYili: "",
+    uchlikkaKirdingizmi: "",
+
+    arizachiIsmi: "",
+    arizachiToliqIsmi: "",
+
+    yoshi: "",
+    roli: "",
+    vazifalar: "",
+    hamtasischilarSoni: "",
+
+    ishchilarBormi: "",
+    nechtaIshchi: "",
+
+    ismi: "",
+    telRaqami: "",
+    email: "",
+    ijtimoiyTarmoqlar: "",
+
+    investitsiyaMiqdori: "",
+    mablagniSarflash: "",
+  });
 
   return (
     <div className="max-w-[628px] mx-auto w-full mb-[55px] sm:mb-20">
       <Steps currentStep={step} />
 
-      {step === 1 && <Profile />}
+      {step === 1 && <Profile formData={formData} setFormData={setFormData} />}
 
       {step === 2 && (
         <Stage
+          formData={formData}
+          setFormData={setFormData}
           selection={stageSelection}
           onSelectionChange={handleStageSelectionChange}
         />
       )}
 
-      {step === 3 && isWithSubSteps && subStep === 0 && <StageInfo />}
-      {step === 3 && isWithSubSteps && subStep === 1 && <StageNow />}
-      {step === 3 && isWithSubSteps && subStep === 2 && <StageAbout />}
-      {step === 3 && !isWithSubSteps && <StageAbout />}
+      {step === 3 && isWithSubSteps && subStep === 0 && (
+        <StageInfo formData={formData} setFormData={setFormData} />
+      )}
+      {step === 3 && isWithSubSteps && subStep === 1 && (
+        <StageNow formData={formData} setFormData={setFormData} />
+      )}
+      {step === 3 && subStep === 2 && (
+        <StageAbout formData={formData} setFormData={setFormData} />
+      )}
+      {step === 3 && !isWithSubSteps && (
+        <StageAbout formData={formData} setFormData={setFormData} />
+      )}
 
-      {step === 4 && <Contact />}
-      {step === 5 && <Investment />}
+      {step === 4 && <Contact formData={formData} setFormData={setFormData} />}
+      {step === 5 && (
+        <Investment formData={formData} setFormData={setFormData} />
+      )}
 
       <div className="flex gap-4">
         {step > 1 && (
