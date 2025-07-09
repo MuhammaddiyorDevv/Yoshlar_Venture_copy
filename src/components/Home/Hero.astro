@@ -16,7 +16,9 @@ import Lamp from "../../assets/images/Frame 1000005242.svg";
     </p>
 
     <!-- Heading with typewriter effect -->
-    <h1 class="text-3xl sm:text-6xl font-semibold leading-tight text-black dark:text-white">
+    <h1
+      class="text-3xl sm:text-6xl font-semibold leading-tight text-black dark:text-white"
+    >
       <span id="typewriter"></span><span class="cursor">&nbsp;</span>
     </h1>
 
@@ -49,8 +51,13 @@ import Lamp from "../../assets/images/Frame 1000005242.svg";
     animation: blink 0.7s step-end infinite;
   }
   @keyframes blink {
-    from, to { opacity: 1; }
-    50% { opacity: 0; }
+    from,
+    to {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
   }
 </style>
 
@@ -58,17 +65,17 @@ import Lamp from "../../assets/images/Frame 1000005242.svg";
   // Matn ichida \n bilan yangi qatordan boshlash
   const fullText = `G'oyangiz bor, lekin hali hech
 kim eshitmaganmı?`;
-  const el = document.getElementById('typewriter');
+  const el = document.getElementById("typewriter");
   let idx = 0;
 
   function typeChar() {
     if (idx < fullText.length) {
       const ch = fullText[idx++];
-      el.innerHTML += ch === '\n' ? '<br/>' : ch;
+      el.innerHTML += ch === "\n" ? "<br/>" : ch;
       // Harflar orasidagi kechikma 50 ms qilib o'zgartirildi
       setTimeout(typeChar, 50);
     }
   }
 
-  document.addEventListener('DOMContentLoaded', typeChar);
+  document.addEventListener("DOMContentLoaded", typeChar);
 </script>
