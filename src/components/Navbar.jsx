@@ -41,20 +41,15 @@ const Navbar = () => {
       <nav className="   bg-white dark:bg-[#111111] shadow-sm py-[15px] px-[38px] rounded-tl-3xl rounded-br-3xl dark:border border-[#535862]">
         <div className="mx-auto flex justify-between items-center h-16">
           {/* Logo */}
-          <div className="flex items-center space-x-2">
-            <a href="/">
-              <img
-                src={Logo.src}
-                alt="Yoshlar Ventures"
-                className="h-8 w-auto"
-              />
-            </a>
+          <a href="/" className="flex items-center space-x-2">
+            <img src={Logo.src} alt="Yoshlar Ventures" className="h-8 w-auto" />
+
             <span className="font-bold text-xs sm:text-sm text-black dark:text-white font-inter-tight">
               YOSHLAR
               <br />
               VENTURES
             </span>
-          </div>
+          </a>
 
           {/* Desktop Menu */}
           <div className="hidden lg:flex space-x-6 text-sm font-medium">

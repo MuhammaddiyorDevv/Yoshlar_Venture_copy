@@ -10,7 +10,7 @@ const { image, title, date, status, icon } = Astro.props as Props;
 ---
 
 <article
-  class="max-w-sm bg-white dark:bg-black dark:border dark:border-[#535862] rounded-3xl shadow-lg overflow-hidden"
+  class="w-full sm:max-w-sm bg-white dark:bg-black dark:border dark:border-[#535862] rounded-3xl shadow-lg overflow-hidden"
 >
   <!-- Image + Badge -->
   <div class="relative">
@@ -23,7 +23,7 @@ const { image, title, date, status, icon } = Astro.props as Props;
   </div>
 
   <!-- Content -->
-  <div class="px-6 py-4 borderbg-white dark:bg-black">
+  <div class="px-6 py-4 bg-white dark:bg-black">
     <div class="flex justify-between items-center">
       <h3 class="text-lg font-bold text-black dark:text-white">{title}</h3>
       <time class="text-sm text-gray-500">{date}</time>
@@ -37,3 +37,4 @@ const { image, title, date, status, icon } = Astro.props as Props;
     </button>
   </div>
 </article>
+

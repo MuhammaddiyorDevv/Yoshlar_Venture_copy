@@ -27,31 +27,38 @@ sm:space-y-[44px]">
           >YOSHLAR VENTURES</span
         >
       </a>
-      <div class="flex flex-col gap-4 sm:gap-[24px] text-sm">
-        <div class="flex items-start space-x-3">
-          <img src={Email.src} alt="Email" class="w-6 h-6 mt-1" />
-          <a
-            href="mailto:support@yoshlarventures.com"
-            class="hover:underline font-inter-tight"
-          >
-            support@yoshlarventures.com
-          </a>
-        </div>
-        <div class="flex items-start space-x-3">
-          <img src={Company.src} alt="Address" class="w-6 h-6 mt-1" />
-          <address class="not-italic
-font-inter-tight">
-            12720 Hillcrest Road Suite 980,<br />Dallas, TX 75230
-          </address>
-        </div>
-        <div class="flex items-center space-x-3">
-          <img src={Call.src} alt="Phone" class="w-6 h-6" />
-          <a href="tel:+99899445566" class="hover:underline
-font-inter-tight"
-            >+998 99 445 5566</a
-          >
-        </div>
-      </div>
+<div class="flex flex-col gap-4 sm:gap-[24px] text-sm">
+  <a
+    href="mailto:support@yoshlarventures.com"
+    class="flex items-center gap-[15px] space-x-3 font-inter-tight cursor-auto"
+  >
+    <img src={Email.src} alt="Email" class="w-6 h-6 mt-1" />
+    <span class="hover:underline cursor-pointer">
+      support@yoshlarventures.com
+    </span>
+  </a>
+
+  <address class="flex items-center gap-[15px] space-x-3 not-italic font-inter-tight">
+    <img src={Company.src} alt="Address" class="w-6 h-6 mt-1" />
+    <div>
+      12720 Hillcrest Road Suite 980,<br />
+      Dallas, TX 75230
+    </div>
+  </address>
+
+  <a
+    href="tel:+99899445566"
+    class="flex items-center gap-[15px] space-x-3 font-inter-tight cursor-auto"
+  >
+    <img src={Call.src} alt="Phone" class="w-6 h-6" />
+    <span class="hover:underline cursor-pointer">
+      +998 99 445 5566
+    </span>
+  </a>
+</div>
+
+
+
       <div class="flex
 space-x-4 sm:space-x-[24px]">
         <a href="#" aria-label="Telegram" class="hover:text-gray-400">
@@ -67,40 +74,61 @@ h-8" />
       </div>
     </div>
     <!-- Middle: Navigation -->
-    <nav
-      aria-label="Footer navigation"
-      class="flex flex-col gap-6 sm:gap-[53px]
-text-sm"
+<nav
+  aria-label="Footer navigation"
+  class="flex flex-col gap-6 sm:gap-[53px] text-sm"
+>
+  <div class="flex flex-col gap-3 sm:gap-[16px]">
+    <a
+      href="#"
+      class="inline-block w-fit hover:underline font-inter-tight"
     >
-      <a
-        class="flex items-center cursor-pointer justify-center gap-2
-px-[14px] py-[6px] w-[78px] h-[31px] bg-white text-black rounded-lg
-font-inter-tight"
-      >
-        Menyu
-      </a>
-      <div class="flex flex-col gap-3 sm:gap-[16px]">
-        <a href="#" class="block hover:underline font-inter-tight">Asosiy</a>
-        <a href="#" class="block hover:underline font-inter-tight"
-          >Biz haqimizda</a
-        >
-        <a href="#" class="block hover:underline font-inter-tight">Tadbirlar</a>
-        <a href="#" class="block hover:underline font-inter-tight"
-          >Startuplar (Portfel)</a
-        >
-        <a href="#" class="block hover:underline font-inter-tight">Hamkorlar</a>
-        <a href="#" class="block hover:underline font-inter-tight"
-          >Youtube blog</a
-        >
-        <a href="#" class="block hover:underline font-inter-tight">Kontaktlar</a
-        >
-      </div>
-    </nav>
+      Asosiy
+    </a>
+    <a
+      href="#"
+      class="inline-block w-fit hover:underline font-inter-tight"
+    >
+      Biz haqimizda
+    </a>
+    <a
+      href="#"
+      class="inline-block w-fit hover:underline font-inter-tight"
+    >
+      Tadbirlar
+    </a>
+    <a
+      href="#"
+      class="inline-block w-fit hover:underline font-inter-tight"
+    >
+      Startuplar (Portfel)
+    </a>
+    <a
+      href="#"
+      class="inline-block w-fit hover:underline font-inter-tight"
+    >
+      Hamkorlar
+    </a>
+    <a
+      href="#"
+      class="inline-block w-fit hover:underline font-inter-tight"
+    >
+      Youtube blog
+    </a>
+    <a
+      href="#"
+      class="inline-block w-fit hover:underline font-inter-tight"
+    >
+      Kontaktlar
+    </a>
+  </div>
+</nav>
+
     <!-- Right: Embedded Map -->
     <div class="map-container overflow-hidden
 rounded-2xl h-64 lg:h-full">
       <iframe
-        src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d47957.4376758804!2d69.25377351118344!3d41.30146971801885!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2s!4v1750851818511!5m2!1sen!2s"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d888.9600286984446!2d69.28792460134275!3d41.351793836518105!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38aef36188549229%3A0x2fa1693f3df577df!2sDream%20study!5e1!3m2!1sen!2s!4v1752047624438!5m2!1sen!2s"
         class="w-full h-full"
         style="border:0"
         allowfullscreen=""
@@ -109,15 +137,14 @@ rounded-2xl h-64 lg:h-full">
         aria-label="Yoshlar Ventures
 location on map"></iframe>
       <img
-        src={Marker.src}
-        alt=""
-        class="absolute top-1/2
-left-1/2 w-8 h-10 -translate-x-1/2 -translate-y-full pointer-events-none"
-      />
+       src={Marker.src}
+       alt=""
+       class="absolute top-1/2 left-1/2 w-8 h-10 -translate-x-1/2 -translate-y-full pointer-events-none z-10"
+    />
     </div>
   </div>
   <!-- Divider -->
-  <hr class="border-white pb-[18px] mt-[32px]" />
+ <hr class="mx-4 sm:mx-6 lg:mx-[40px] border-white mt-[32px] mb-[18px]" />
   <!-- Bottom section -->
   <div
     class="max-w-[1440px] container mx-auto px-4
