@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import Profile from "./Profile";
 import Steps from "./Steps";
-import Profile from "./Profile";
 import Stage from "./Stage";
 import Second from "./Second";
 import StageInfo from "./StageInfo";
