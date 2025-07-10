@@ -1,55 +1,52 @@
 import React from "react";
 
 const Contact = ({ formData, setFormData }) => {
+  const handleChange = (key, value) => {
+    setFormData({ ...formData, [key]: value });
+  };
+
   return (
-    <div className="flex flex-col w-full gap-6 mt-12 mb-10">
+    <div className="flex flex-col w-full gap-6 mt-12 mb-10 text-black dark:text-white">
       <p className="text-xl font-semibold">Aloqa Ma'lumotlari</p>
 
-      <div className="flex flex-col gap-1.5 w-full">
-        <p className="text-[12px] font-medium">Ismi</p>
-        <input
-          type="text"
-          value={formData.ismi}
-          onChange={(e) => setFormData({ ...formData, ismi: e.target.value })}
-          className="bg-[#F8F8F7] dark:bg-inherit dark:border dark:border-[#535862] dark:text-white rounded-[12px] h-[50px] w-full p-4 outline-none"
-        />
-      </div>
+      <InputField
+        label="Ismi"
+        value={formData.ismi}
+        onChange={(val) => handleChange("ismi", val)}
+      />
 
-      <div className="flex flex-col gap-1.5 w-full">
-        <p className="text-[12px] font-medium">Telefon raqami</p>
-        <input
-          type="text"
-          value={formData.telRaqami}
-          onChange={(e) =>
-            setFormData({ ...formData, telRaqami: e.target.value })
-          }
-          className="bg-[#F8F8F7] dark:bg-inherit dark:border dark:border-[#535862] dark:text-white rounded-[12px] h-[50px] w-full p-4 outline-none"
-        />
-      </div>
+      <InputField
+        label="Telefon raqami"
+        value={formData.telRaqami}
+        onChange={(val) => handleChange("telRaqami", val)}
+      />
 
-      <div className="flex flex-col gap-1.5 w-full">
-        <p className="text-[12px] font-medium">Elektron pochta manzili</p>
-        <input
-          type="email"
-          value={formData.email}
-          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-          className="bg-[#F8F8F7] dark:bg-inherit dark:border dark:border-[#535862] dark:text-white rounded-[12px] h-[50px] w-full p-4 outline-none"
-        />
-      </div>
+      <InputField
+        label="Elektron pochta manzili"
+        type="email"
+        value={formData.email}
+        onChange={(val) => handleChange("email", val)}
+      />
 
-      <div className="flex flex-col gap-1.5 w-full">
-        <p className="text-[12px] font-medium">Ijtimoiy tarmoqlar havolalari</p>
-        <input
-          type="text"
-          value={formData.ijtimoiyTarmoqlar}
-          onChange={(e) =>
-            setFormData({ ...formData, ijtimoiyTarmoqlar: e.target.value })
-          }
-          className="bg-[#F8F8F7] dark:bg-inherit dark:border dark:border-[#535862] dark:text-white rounded-[12px] h-[50px] w-full p-4 outline-none"
-        />
-      </div>
+      <InputField
+        label="Ijtimoiy tarmoqlar havolalari"
+        value={formData.ijtimoiyTarmoqlar}
+        onChange={(val) => handleChange("ijtimoiyTarmoqlar", val)}
+      />
     </div>
   );
 };
+
+const InputField = ({ label, type = "text", value, onChange }) => (
+  <div className="flex flex-col gap-1.5 w-full">
+    <p className="text-[12px] font-medium">{label}</p>
+    <input
+      type={type}
+      value={value}
+      onChange={(e) => onChange(e.target.value)}
+      className="bg-[#F8F8F7] dark:bg-inherit dark:border dark:border-[#535862] dark:text-white rounded-[12px] h-[50px] w-full p-4 outline-none"
+    />
+  </div>
+);
 
 export default Contact;

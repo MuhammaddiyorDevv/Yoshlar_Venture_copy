@@ -1,6 +1,4 @@
-import React, { useState } from "react";
-import Steps from "./Steps.jsx";
-import StageNow from "./StageNow.jsx";
+import React from "react";
 
 const StageAbout = ({ formData, setFormData }) => {
   const handleRadioChange = (field, value) => {
@@ -56,6 +54,7 @@ const StageAbout = ({ formData, setFormData }) => {
               className="bg-[#F8F8F7] dark:bg-inherit dark:border dark:border-[#535862] dark:text-white rounded-[12px] h-[50px] w-full p-4 outline-none"
             />
           </div>
+
           <div className="flex flex-col gap-1.5">
             <p className="text-[12px] font-medium">Yili</p>
             <input
@@ -242,6 +241,57 @@ const StageAbout = ({ formData, setFormData }) => {
               </div>
               <div className="flex flex-col gap-1.5">
                 <p className="text-[12px] font-medium">Hamta'sischilar soni</p>
+                <input
+                  type="text"
+                  value={formData.hamtasischilarSoni}
+                  onChange={(e) =>
+                    setFormData({
+                      ...formData,
+                      hamtasischilarSoni: e.target.value,
+                    })
+                  }
+                  className="bg-[#F8F8F7] dark:bg-inherit dark:border dark:border-[#535862] dark:text-white rounded-[12px] h-[50px] p-4 outline-none"
+                />
+              </div>
+            </div>
+            <p>Hamta’sislar haqida ma’lumot</p>
+
+            <div className="grid grid-cols-2 gap-2">
+              <div className="flex flex-col gap-1.5 mb-6">
+                <p className="text-[12px] font-medium">Hamta’sis ismi</p>
+                <input
+                  type="text"
+                  value={formData.yoshi}
+                  onChange={(e) =>
+                    setFormData({ ...formData, yoshi: e.target.value })
+                  }
+                  className="bg-[#F8F8F7] dark:bg-inherit dark:border dark:border-[#535862] dark:text-white rounded-[12px] h-[50px] p-4 outline-none"
+                />
+              </div>
+              <div className="flex flex-col gap-1.5">
+                <p className="text-[12px] font-medium">Ro'li</p>
+                <input
+                  type="text"
+                  value={formData.roli}
+                  onChange={(e) =>
+                    setFormData({ ...formData, roli: e.target.value })
+                  }
+                  className="bg-[#F8F8F7] dark:bg-inherit dark:border dark:border-[#535862] dark:text-white rounded-[12px] h-[50px] p-4 outline-none"
+                />
+              </div>
+              <div className="flex flex-col gap-1.5">
+                <p className="text-[12px] font-medium">Startupdagi yillari</p>
+                <input
+                  type="text"
+                  value={formData.vazifalar}
+                  onChange={(e) =>
+                    setFormData({ ...formData, vazifalar: e.target.value })
+                  }
+                  className="bg-[#F8F8F7] dark:bg-inherit dark:border dark:border-[#535862] dark:text-white rounded-[12px] h-[50px] p-4 outline-none"
+                />
+              </div>
+              <div className="flex flex-col gap-1.5">
+                <p className="text-[12px] font-medium">Yoshi</p>
                 <input
                   type="text"
                   value={formData.hamtasischilarSoni}
