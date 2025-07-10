@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
 import Profile from "./Profile";
 import Steps from "./Steps";
+import Profile from "./Profile";
 import Stage from "./Stage";
+import Second from "./Second";
 import StageInfo from "./StageInfo";
 import Contact from "./Contact";
 import Investment from "./Investment";
-import StageNow from "./StageNow";
-import StageAbout from "./StageAbout";
 
 const FormState = () => {
   const [step, setStep] = useState(1);
@@ -19,52 +19,35 @@ const FormState = () => {
 
   const isWithSubSteps = stageSelection.idea || stageSelection.mvpInProgress;
 
+  const isSecondStep = () => step === 3 && stageSelection.postMvp;
+  const isStageStep = () => (stageSelection.postMvp ? step === 4 : step === 3);
+  const isContactStep = () =>
+    stageSelection.postMvp ? step === 5 : step === 4;
+  const isInvestmentStep = () =>
+    stageSelection.postMvp ? step === 6 : step === 5;
+
   const handleBack = () => {
-    if (step === 3 && isWithSubSteps && subStep > 0) {
-      setSubStep(subStep - 1);
-    } else if (step > 1) {
+    if (isSecondStep()) {
+      setStep(2);
+      return;
+    }
+    if (step > 1) {
       setStep(step - 1);
-      setSubStep(0);
     }
   };
 
   const handleNext = () => {
     if (step === 2) {
-      if (!stageSelection.idea && !stageSelection.mvpInProgress && !stageSelection.postMvp) {
+      if (
+        !stageSelection.idea &&
+        !stageSelection.mvpInProgress &&
+        !stageSelection.postMvp
+      ) {
         alert("Iltimos, kamida bitta bosqichni tanlang!");
         return;
       }
     }
-
-    if (step === 3 && isWithSubSteps) {
-      if (subStep === 0) {
-        if (formData.rozilik === "yoq") {
-          setStep(4);
-          setSubStep(0);
-          return;
-        } else if (formData.rozilik === "ha") {
-          setSubStep(1);
-          return;
-        } else {
-          alert("Iltimos, Ha yoki Yo‘q ni tanlang.");
-          return;
-        }
-      }
-
-      if (subStep === 1) {
-        setSubStep(2);
-        return;
-      }
-
-      if (subStep === 2) {
-        setStep(4);
-        setSubStep(0);
-        return;
-      }
-    }
-
     setStep(step + 1);
-    setSubStep(0);
   };
 
   const handleStageSelectionChange = (selection) => {
@@ -79,20 +62,22 @@ const FormState = () => {
 
   const handleSubmit = () => {
     alert(
-      "Barcha kiritilgan ma'lumotlar:\n" + JSON.stringify(formData, null, 2)
+      "Barcha kiritilgan ma'lumotlar:\n" + JSON.stringify(formData, null, 2),
     );
-    window.location.href = "/";
   };
 
   const [formData, setFormData] = useState({
+    // 1-step
     startupNomi: "",
     startupTavsifi: "",
-    havolaFayl: null,
+    fayl: null,
 
-    bosqichIdea: false,
-    bosqichMvpJarayoni: false,
-    bosqichPostMvp: false,
+    // 2-step
+    idea: false,
+    mvpInProgress: false,
+    postMvp: false,
 
+    // 3-step (stageInfo)
     rozilik: "",
     dasturNomi: "",
     dasturYili: "",
@@ -102,22 +87,26 @@ const FormState = () => {
     tanlovYili: "",
     uchlikkaKirdingizmi: "",
 
-    arizachiIsmi: "",
+    // jamoa qismi
     arizachiToliqIsmi: "",
-
     yoshi: "",
     roli: "",
     vazifalar: "",
     hamtasischilarSoni: "",
-
+    hamtasisIsmi: "",
+    hamtasisRoli: "",
+    hamtasisYillari: "",
+    hamtasisYoshi: "",
     ishchilarBormi: "",
     nechtaIshchi: "",
 
+    // contact step
     ismi: "",
     telRaqami: "",
     email: "",
     ijtimoiyTarmoqlar: "",
 
+    // investment step
     investitsiyaMiqdori: "",
     mablagniSarflash: "",
   });
@@ -128,10 +117,21 @@ const FormState = () => {
 
   return (
     <div className="max-w-[628px] mx-auto w-full mb-[55px] sm:mb-20">
-      <Steps currentStep={step} />
+      <Steps
+        currentStep={
+          isSecondStep()
+            ? 2
+            : isStageStep()
+              ? 3
+              : isContactStep()
+                ? 4
+                : isInvestmentStep()
+                  ? 5
+                  : step
+        }
+      />
 
       {step === 1 && <Profile formData={formData} setFormData={setFormData} />}
-
       {step === 2 && (
         <Stage
           formData={formData}
@@ -140,22 +140,16 @@ const FormState = () => {
           onSelectionChange={handleStageSelectionChange}
         />
       )}
-
-      {step === 3 && isWithSubSteps && subStep === 0 && (
+      {isSecondStep() && (
+        <Second formData={formData} setFormData={setFormData} />
+      )}
+      {isStageStep() && (
         <StageInfo formData={formData} setFormData={setFormData} />
       )}
-      {step === 3 && isWithSubSteps && subStep === 1 && (
-        <StageNow formData={formData} setFormData={setFormData} />
+      {isContactStep() && (
+        <Contact formData={formData} setFormData={setFormData} />
       )}
-      {step === 3 && subStep === 2 && (
-        <StageAbout formData={formData} setFormData={setFormData} />
-      )}
-      {step === 3 && !isWithSubSteps && (
-        <StageAbout formData={formData} setFormData={setFormData} />
-      )}
-
-      {step === 4 && <Contact formData={formData} setFormData={setFormData} />}
-      {step === 5 && (
+      {isInvestmentStep() && (
         <Investment formData={formData} setFormData={setFormData} />
       )}
 
@@ -169,10 +163,10 @@ const FormState = () => {
           </button>
         )}
         <button
-          onClick={step === 5 ? handleSubmit : handleNext}
+          onClick={isInvestmentStep() ? handleSubmit : handleNext}
           className="bg-[#F28E46] text-white h-[50px] px-6 rounded-xl cursor-pointer flex-1 w-full mt-4"
         >
-          {step === 5 ? "Tugatish" : "Davom etish"}
+          {isInvestmentStep() ? "Tugatish" : "Davom etish"}
         </button>
       </div>
     </div>
