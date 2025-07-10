@@ -1,6 +1,10 @@
 @import "tailwindcss";
 @custom-variant dark (&:where(.dark, .dark *));
 
+html {
+  scroll-behavior: smooth;
+}
+
 * {
   box-sizing: border-box;
   font-family: "InterTight", sans-serif;
@@ -235,20 +239,22 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 32px; /* size of your marker */
+  width: 32px;
+  /* size of your marker */
   height: 40px;
   background: url("/assets/images/marker.svg") no-repeat center center;
   background-size: contain;
-  transform: translate(
-    -50%,
-    -100%
-  ); /* pull it up so the tip sits on the point */
-  pointer-events: none; /* let clicks go “through” to the map */
+  transform: translate(-50%,
+      -100%);
+  /* pull it up so the tip sits on the point */
+  pointer-events: none;
+  /* let clicks go “through” to the map */
 }
 
 .map-container {
   position: relative;
 }
+
 .map-container iframe {
   display: block;
   width: 100%;
