@@ -62,20 +62,52 @@ import Lamp from "../../assets/images/Frame 1000005242.svg";
 </style>
 
 <script type="module">
-  // Matn ichida \n bilan yangi qatordan boshlash
-  const fullText = `G'oyangiz bor, lekin hali hech
-kim eshitmaganmi?`;
-  const el = document.getElementById("typewriter");
-  let idx = 0;
+  const messages = [
+    `G'oyangiz bor, lekin hali hech\nkim eshitmaganmi?`,
+    `Global bozorga\nchiqmoqchimisiz?`,
+    `Investitsiya izlayapsizmi?`,
+    `Startapingiz tayyor, lekin hali\ntanilmaganmi?`
+  ];
 
-  function typeChar() {
-    if (idx < fullText.length) {
-      const ch = fullText[idx++];
-      el.innerHTML += ch === "\n" ? "<br/>" : ch;
-      // Harflar orasidagi kechikma 50 ms qilib o'zgartirildi
-      setTimeout(typeChar, 50);
+  const el = document.getElementById("typewriter");
+  const cursor = document.querySelector(".cursor");
+  const typingSpeed = 50;         // har bir harf uchun
+  const erasingSpeed = 30;        // o‘chirish tezligi
+  const pauseAfterType = 2000;    // to‘liq yozilgach qancha kutish
+  const pauseAfterErase = 500;    // o‘chirib bo‘lgach qancha kutish
+
+  let msgIndex = 0;
+  let charIndex = 0;
+  let isDeleting = false;
+
+  function typeLoop() {
+    const current = messages[msgIndex];
+    if (!isDeleting) {
+      // yozish
+      el.innerHTML = current.substring(0, charIndex + 1).replace(/\n/g, "<br/>");
+      charIndex++;
+      if (charIndex === current.length) {
+        // to‘liq yozildi
+        isDeleting = true;
+        setTimeout(typeLoop, pauseAfterType);
+      } else {
+        setTimeout(typeLoop, typingSpeed);
+      }
+    } else {
+      // o‘chirish
+      el.innerHTML = current.substring(0, charIndex - 1).replace(/\n/g, "<br/>");
+      charIndex--;
+      if (charIndex === 0) {
+        // o‘chirib bo‘ldi, keyingi matnga o‘tsin
+        isDeleting = false;
+        msgIndex = (msgIndex + 1) % messages.length;
+        setTimeout(typeLoop, pauseAfterErase);
+      } else {
+        setTimeout(typeLoop, erasingSpeed);
+      }
     }
   }
 
-  document.addEventListener("DOMContentLoaded", typeChar);
+  document.addEventListener("DOMContentLoaded", typeLoop);
 </script>
+
