@@ -18,8 +18,8 @@ const Navbar = () => {
   const menuLinks = [
     { label: "Asosiy", href: "/" },
     { label: "Biz haqimizda", href: "#" },
-    { label: "Tadbirlar", href: "/Event" },
-    { label: "Startuplar", href: "/Portfel" },
+    { label: "Tadbirlar", href: "#" },
+    { label: "Startuplar", href: "#" },
     { label: "Hamkorlar", href: "#" },
     { label: "Youtube blog", href: "#" },
     { label: "Kontaktlar", href: "/Contact" },
