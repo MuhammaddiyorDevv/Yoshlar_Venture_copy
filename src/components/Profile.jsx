@@ -1,4 +1,3 @@
-import React from "react";
 import downloadIcon from "../assets/downloadIcon.svg";
 
 const Profile = ({ formData, setFormData }) => {
@@ -22,20 +21,20 @@ const Profile = ({ formData, setFormData }) => {
           className="bg-[#F8F8F7] dark:bg-inherit dark:border dark:border-[#535862] dark:text-white rounded-[12px] h-[50px] w-full p-4 outline-none"
         />
       </div>
-<div className="flex flex-col gap-1.5 w-full">
-  <p className="text-[12px] font-medium text-black dark:text-white">
-    Startup tavsifi
-  </p>
-  <textarea
-    placeholder="100 - 150 ta belgi"
-    value={formData.startupTavsifi}
-    onChange={(e) =>
-      setFormData({ ...formData, startupTavsifi: e.target.value })
-    }
-    className="bg-[#F8F8F7] dark:bg-inherit dark:border dark:border-[#535862] dark:text-white rounded-xl h-[170px] p-4 w-full font-medium outline-none"
-  ></textarea>
-</div>
 
+      <div className="flex flex-col gap-1.5 w-full">
+        <p className="text-[12px] font-medium text-black dark:text-white">
+          Startup tavsifi
+        </p>
+        <textarea
+          placeholder="100 - 150 ta belgi"
+          value={formData.startupTavsifi}
+          onChange={(e) =>
+            setFormData({ ...formData, startupTavsifi: e.target.value })
+          }
+          className="bg-[#F8F8F7] dark:bg-inherit dark:border dark:border-[#535862] dark:text-white rounded-xl h-[170px] p-4 w-full font-medium outline-none"
+        ></textarea>
+      </div>
 
       <div className="flex flex-col w-full">
         <p className="text-[12px] text-[#020202] dark:text-[#FFFFFF] font-medium">

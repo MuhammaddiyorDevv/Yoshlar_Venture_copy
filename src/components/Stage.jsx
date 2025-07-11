@@ -1,3 +1,4 @@
+
 "use client";
 
 import CustomCheckbox from "./CustomCheckbox";
@@ -10,9 +11,16 @@ const Stage = ({ formData, setFormData, selection, onSelectionChange }) => {
     };
 
     onSelectionChange(newSelection);
+
+    const formDataKeyMap = {
+      idea: "bosqichIdea",
+      mvpInProgress: "bosqichMvpJarayoni",
+      postMvp: "bosqichPostMvp",
+    };
+
     setFormData({
       ...formData,
-      [key]: checked,
+      [formDataKeyMap[key]]: checked,
     });
   };
 
@@ -20,7 +28,7 @@ const Stage = ({ formData, setFormData, selection, onSelectionChange }) => {
     <div className="flex flex-col items-start w-[398px] sm:w-[628px]">
       <div className="mt-12 mb-[262px] text-black dark:text-white">
         <p className="font-semibold text-[20px]">
-          Startupingiz xozr qaysi bosqichda?
+          Startupingiz hozir qaysi bosqichda?
         </p>
         <div className="flex flex-col gap-4 mt-8">
           <CustomCheckbox
