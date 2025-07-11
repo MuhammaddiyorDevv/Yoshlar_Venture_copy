@@ -1,7 +1,7 @@
 ---
 import TelegramDark from "../../assets/images/telegramDark.svg";
 import darkTelegram from "../../assets/images/darkTelegram.svg";
-import darkInstagram from "../../assets/images/darkInstagram.svg"
+import darkInstagram from "../../assets/images/darkInstagram.svg";
 import darkYoutube from "../../assets/images/darkYoutube.svg";
 import InstagramDark from "../../assets/images/instagramDark.svg";
 import YouTubeDark from "../../assets/images/youtubeDark.svg";
@@ -27,7 +27,7 @@ import YouTubeDark from "../../assets/images/youtubeDark.svg";
   <div class="flex-1 w-full flex justify-center">
     <iframe
       class="w-full h-[250px] sm:h-[350px] lg:h-[415px] rounded-3xl shadow-lg"
-      src="https://www.youtube.com/embed/rBUtohoovP4?si=b_m1lYgvSphT348S"
+      src="https://www.youtube.com/embed/qVmt45sff3Q?start=26"
       title="Intro Video"
       frameborder="0"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -36,17 +36,56 @@ import YouTubeDark from "../../assets/images/youtubeDark.svg";
 
   <!-- Social Icons -->
   <div class="mt-6 flex justify-start space-x-4">
-    <a href="#" aria-label="Telegram" class="hover:opacity-75">
-      <img src={TelegramDark.src} alt="Telegram" class="w-8 h-8 flex dark:hidden" />
-      <img src={darkTelegram.src} alt="Telegram" class="w-8 h-8 hidden dark:flex" />
+    <a
+      href="https://t.me/yoshlarventures"
+      target="_blank"
+      aria-label="Telegram"
+      class="hover:opacity-75"
+    >
+      <img
+        src={TelegramDark.src}
+        alt="Telegram"
+        class="w-8 h-8 flex dark:hidden"
+      />
+      <img
+        src={darkTelegram.src}
+        alt="Telegram"
+        class="w-8 h-8 hidden dark:flex"
+      />
     </a>
-    <a href="#" aria-label="Instagram" class="hover:opacity-75">
-      <img src={InstagramDark.src} alt="Instagram" class="w-8 h-8 flex dark:hidden" />
-      <img src={darkInstagram.src} alt="Instagram" class="w-8 h-8 hidden dark:flex" />
+    <a
+      href="https://www.instagram.com/yoshlarventures"
+      target="_blank"
+      aria-label="Instagram"
+      class="hover:opacity-75"
+    >
+      <img
+        src={InstagramDark.src}
+        alt="Instagram"
+        class="w-8 h-8 flex dark:hidden"
+      />
+      <img
+        src={darkInstagram.src}
+        alt="Instagram"
+        class="w-8 h-8 hidden dark:flex"
+      />
     </a>
-    <a href="#" aria-label="YouTube" class="hover:opacity-75">
-      <img src={YouTubeDark.src} alt="YouTube" class="w-8 h-8 flex dark:hidden" />
-      <img src={darkYoutube.src} alt="YouTube" class="w-8 h-8 hidden dark:flex" />
+    <a
+      href="https://www.youtube.com/@yoshlarventures"
+      target="_blank"
+      aria-label="YouTube"
+      class="hover:opacity-75"
+    >
+      <img
+        src={YouTubeDark.src}
+        alt="YouTube"
+        class="w-8 h-8 flex dark:hidden"
+      />
+      <img
+        src={darkYoutube.src}
+        alt="YouTube"
+        class="w-8 h-8 hidden dark:flex"
+      />
     </a>
   </div>
 </section>
