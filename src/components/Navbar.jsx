@@ -21,14 +21,18 @@ const Navbar = () => {
     { label: "Tadbirlar", href: "#" },
     { label: "Startuplar", href: "#" },
     { label: "Hamkorlar", href: "#" },
-    { label: "Youtube blog", href: "#" },
+    { 
+      label: "Youtube blog", 
+      href: "https://www.youtube.com/@yoshlarventures", 
+      external: true 
+    },
     { label: "Kontaktlar", href: "/Contact" },
   ];
 
   const menuVariants = {
     hidden: { opacity: 0, y: -20 },
     visible: { opacity: 1, y: 0 },
-    exit: { opacity: 0, y: -20 },
+    exit:   { opacity: 0, y: -20 },
   };
 
   const handleLanguageSelect = (flag, label) => {
@@ -37,13 +41,12 @@ const Navbar = () => {
   };
 
   return (
-    <section className="sticky top-2  container z-50 px-[40px]">
-      <nav className="   bg-white dark:bg-[#111111] shadow-sm py-[15px] px-[38px] rounded-tl-3xl rounded-br-3xl dark:border border-[#535862]">
+    <section className="sticky top-2 container z-50 px-[40px]">
+      <nav className="bg-white dark:bg-[#111111] shadow-sm py-[15px] px-[38px] rounded-tl-3xl rounded-br-3xl dark:border border-[#535862]">
         <div className="mx-auto flex justify-between items-center h-16">
           {/* Logo */}
           <a href="/" className="flex items-center space-x-2">
             <img src={Logo.src} alt="Yoshlar Ventures" className="h-8 w-auto" />
-
             <span className="font-bold text-xs sm:text-sm text-black dark:text-white font-inter-tight">
               YOSHLAR
               <br />
@@ -57,6 +60,7 @@ const Navbar = () => {
               <a
                 key={item.label}
                 href={item.href}
+                {...(item.external && { target: "_blank", rel: "noopener noreferrer" })}
                 className="text-[#535862] dark:text-white px-[14px] py-[6px] rounded-lg font-semibold text-[16px] transition relative group font-inter-tight"
               >
                 <span className="relative z-10 group-hover:text-transparent bg-clip-text group-hover:bg-gradient-to-r group-hover:from-[#F9B513] group-hover:to-[#EA601E]">
@@ -76,11 +80,7 @@ const Navbar = () => {
                 className="rounded px-2 py-1 text-sm font-inter-tight flex items-center space-x-2 min-w-[80px] justify-between hover:border-gray-400 transition"
               >
                 <div className="flex items-center space-x-2">
-                  <img
-                    src={selectedLang.flag.src}
-                    alt="Flag"
-                    className="w-4 h-3"
-                  />
+                  <img src={selectedLang.flag.src} alt="Flag" className="w-4 h-3" />
                   <span>{selectedLang.label}</span>
                 </div>
                 <svg
@@ -97,7 +97,6 @@ const Navbar = () => {
                   />
                 </svg>
               </button>
-
               {isLangOpen && (
                 <div className="absolute top-full left-0 mt-1 w-full border border-gray-300 rounded shadow-lg z-10 bg-white dark:bg-gray-800">
                   <button
@@ -174,6 +173,7 @@ const Navbar = () => {
                 <a
                   key={item.label}
                   href={item.href}
+                  {...(item.external && { target: "_blank", rel: "noopener noreferrer" })}
                   className="block text-[#535862] dark:text-white px-4 py-2 rounded-lg transition hover:bg-[#FFF1E6] hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#F9B513] hover:to-[#EA601E] font-inter-tight"
                 >
                   {item.label}
