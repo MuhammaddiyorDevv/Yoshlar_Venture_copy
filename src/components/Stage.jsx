@@ -1,26 +1,23 @@
-
 "use client";
 
 import CustomCheckbox from "./CustomCheckbox";
 
 const Stage = ({ formData, setFormData, selection, onSelectionChange }) => {
-  const handleCheckboxChange = (key, checked) => {
+  const handleCheckboxChange = (key) => {
     const newSelection = {
-      ...selection,
-      [key]: checked,
+      idea: false,
+      mvpInProgress: false,
+      postMvp: false,
+      [key]: true,
     };
 
     onSelectionChange(newSelection);
 
-    const formDataKeyMap = {
-      idea: "bosqichIdea",
-      mvpInProgress: "bosqichMvpJarayoni",
-      postMvp: "bosqichPostMvp",
-    };
-
     setFormData({
       ...formData,
-      [formDataKeyMap[key]]: checked,
+      bosqichIdea: key === "idea",
+      bosqichMvpJarayoni: key === "mvpInProgress",
+      bosqichPostMvp: key === "postMvp",
     });
   };
 
@@ -34,21 +31,19 @@ const Stage = ({ formData, setFormData, selection, onSelectionChange }) => {
           <CustomCheckbox
             id="idea-checkbox"
             checked={selection.idea}
-            onChange={(checked) => handleCheckboxChange("idea", checked)}
+            onChange={() => handleCheckboxChange("idea")}
             label="Gʼoya ( Idea )"
           />
           <CustomCheckbox
             id="mvp-progress-checkbox"
             checked={selection.mvpInProgress}
-            onChange={(checked) =>
-              handleCheckboxChange("mvpInProgress", checked)
-            }
+            onChange={() => handleCheckboxChange("mvpInProgress")}
             label="MVP ishlab chiqilmoqda"
           />
           <CustomCheckbox
             id="post-mvp-checkbox"
             checked={selection.postMvp}
-            onChange={(checked) => handleCheckboxChange("postMvp", checked)}
+            onChange={() => handleCheckboxChange("postMvp")}
             label="Post MVP ( MVP ishlab chiqilgan )"
           />
         </div>
