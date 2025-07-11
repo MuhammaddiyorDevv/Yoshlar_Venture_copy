@@ -6,6 +6,7 @@ import Shahzodbek from "../../assets/images/Team/Shahzodbek.jpg";
 import Firdavs from "../../assets/images/Team/Firdavs.jpg";
 import Rustambek from "../../assets/images/Team/Rustambek.jpg";
 import Jamshid from "../../assets/images/Team/Jamshid.jpg";
+import Sabina from "../../assets/images/Team/Sabina.jpg";
 
 const members = [
   { name: "Firdavs Urinov", img: Abdulaziz },
@@ -14,6 +15,7 @@ const members = [
   { name: "Jamshid Shoimurodov", img: Firdavs },
   { name: "Rustambek Abakulov", img: Jamshid },
   { name: "Abdulaziz Yakubov", img: Rustambek },
+  { name: "Sabina Rojko", img: Sabina },
 ];
 
 export default function TeamCarousel() {
