@@ -162,7 +162,7 @@ body {
 
 /* Mobile uchun background responsive */
 .mobile-card-bg {
-  background-image: url("/public/BgImg.png");
+  background-image: url("/BgImg.png");
   background-size: 200% 100%;
   background-position: top center;
   background-repeat: repeat-y;
@@ -171,7 +171,7 @@ body {
 
 .dark .mobile-card-bg {
   background-color: black;
-  background-image: url("/public/PartnerBgimgDark.png");
+  background-image: url("/PartnerBgimgDark.png");
   background-size: 100% 100%;
   background-position: top center;
   background-repeat: repeat-y;
@@ -186,7 +186,7 @@ body {
 }
 
 .hero-background {
-  background-image: url("/public/BgImg.png");
+  background-image: url("/BgImg.png");
   background-size: 100% 66.67%;
   background-position: top center;
   background-repeat: repeat-y;
@@ -211,14 +211,14 @@ body {
 }
 
 .pattern-section {
-  background-image: url("/public/Background pattern.png");
+  background-image: url("/Background pattern.png");
   background-size: cover;
   background-repeat: repeat;
   background-position: center;
 }
 
 .dark .pattern-section {
-  background-image: url("/public/Background\ patternDark.png");
+  background-image: url("/Background patternDark.png");
 }
 
 /*footer*/

@@ -12,4 +12,12 @@ export default defineConfig({
   },
 
   integrations: [react()],
+  
+  // Ensure public assets are properly served
+  publicDir: "public",
+  
+  // Build configuration for Vercel
+  build: {
+    assets: "assets",
+  },
 });
