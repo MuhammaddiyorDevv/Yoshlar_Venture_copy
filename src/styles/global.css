@@ -213,7 +213,7 @@ body {
 .pattern-section {
   background-image: url("/public/Background pattern.png");
   background-size: cover;
-  background-repeat: repeat-x;
+  background-repeat: repeat;
   background-position: center;
 }
 

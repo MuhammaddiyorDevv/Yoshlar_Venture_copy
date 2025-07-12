@@ -46,6 +46,13 @@ const strings = await getStrings(lang);
 </Layout>
 
 <style>
-  .w-full { width: 100vw; margin-left: calc(-50vw + 50%); }
-  body { overflow-x: hidden; }
+  body { 
+    overflow-x: hidden; 
+  }
+  
+  /* Ensure full width sections work properly */
+  .w-screen {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+  }
 </style>

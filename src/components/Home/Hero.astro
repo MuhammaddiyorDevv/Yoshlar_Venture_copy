@@ -3,17 +3,19 @@ import Lamp from "../../assets/images/Frame 1000005242.svg";
 const { lang, strings } = Astro.props;
 ---
 
-<section class="pattern-section relative -mt-24 z-0 w-screen overflow-x-hidden text-center pt-[50px] sm:pt-[136px] pb-[50px] sm:pb-[220px] sm:mb-[130px]">
+<section class="hero-section relative -mt-24 z-0 w-screen overflow-x-hidden text-center pt-[50px] sm:pt-[136px] pb-[50px] sm:pb-[220px] sm:mb-[130px]">
   <div class="container mx-auto flex flex-col items-center space-y-6">
     <!-- Tagline -->
     <p class="bg-[#E0FF00] text-black rounded-[70px] mt-[80px] px-4 py-3 text-sm font-medium">
       {strings.tagline}
     </p>
 
-    <!-- Heading with typewriter effect -->
-    <h1 class="text-3xl sm:text-6xl font-semibold leading-tight text-black dark:text-white">
-      <span id="typewriter" data-messages={JSON.stringify(strings.typewriter)}></span><span class="cursor">&nbsp;</span>
-    </h1>
+    <!-- Heading with typewriter effect - fixed height container -->
+    <div class="h-[120px] sm:h-[240px] flex items-center justify-center">
+      <h1 class="text-3xl sm:text-6xl font-semibold leading-tight text-black dark:text-white">
+        <span id="typewriter" data-messages={JSON.stringify(strings.typewriter)}></span><span class="cursor">&nbsp;</span>
+      </h1>
+    </div>
 
     <!-- Button -->
     <a href={`/${lang}/form`} class="inline-flex items-center justify-center bg-gradient-to-r from-[#F9B513] to-[#EA601E] text-white text-[16px] sm:text-xl font-semibold rounded-2xl pl-8 pr-1.5 py-1.5 gap-4 shadow-lg hover:opacity-95 transition drop-shadow-2xl">
@@ -30,6 +32,21 @@ const { lang, strings } = Astro.props;
   #typewriter {
     white-space: pre-line;
     line-height: 1.2;
+  }
+
+  /* Hero section background */
+  .hero-section {
+    background-image: url("/Background pattern.png");
+    background-size: cover;
+    background-repeat: repeat;
+    background-position: center;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+  }
+
+  /* Dark mode */
+  :global(.dark) .hero-section {
+    background-image: url("/Background patternDark.png");
   }
 </style>
 
