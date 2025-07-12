@@ -1,113 +1,85 @@
 ---
 import Lamp from "../../assets/images/Frame 1000005242.svg";
+const { lang, strings } = Astro.props;
 ---
 
-<section
-  class="pattern-section relative -mt-24 z-0 left-1/2 -translate-x-1/2 w-screen overflow-x-hidden text-center
-         pt-[50px] sm:pt-[136px] pb-[50px] sm:pb-[220px] sm:mb-[130px]"
->
+<section class="pattern-section relative -mt-24 z-0 w-screen overflow-x-hidden text-center pt-[50px] sm:pt-[136px] pb-[50px] sm:pb-[220px] sm:mb-[130px]">
   <div class="container mx-auto flex flex-col items-center space-y-6">
     <!-- Tagline -->
-    <p
-      class="bg-[#E0FF00] text-black rounded-[70px] mt-[80px]
-             px-4 py-3 text-sm font-medium"
-    >
-      Siz yarating — biz qanot beramiz
+    <p class="bg-[#E0FF00] text-black rounded-[70px] mt-[80px] px-4 py-3 text-sm font-medium">
+      {strings.tagline}
     </p>
 
     <!-- Heading with typewriter effect -->
-    <h1
-      class="text-3xl sm:text-6xl font-semibold leading-tight text-black dark:text-white"
-    >
-      <span id="typewriter"></span><span class="cursor">&nbsp;</span>
+    <h1 class="text-3xl sm:text-6xl font-semibold leading-tight text-black dark:text-white">
+      <span id="typewriter" data-messages={JSON.stringify(strings.typewriter)}></span><span class="cursor">&nbsp;</span>
     </h1>
 
     <!-- Button -->
-    <a
-      href="/Form"
-      class="inline-flex items-center justify-center
-             bg-gradient-to-r from-[#F9B513] to-[#EA601E]
-             text-white text-[16px] sm:text-xl font-semibold
-             rounded-2xl pl-8 pr-1.5 py-1.5 gap-4 sm:gap-4
-             shadow-lg hover:opacity-95 transition drop-shadow-2xl"
-    >
-      Ariza yuborish
-      <img
-        src={Lamp.src}
-        alt="arrow icon"
-        class="w-[38px] h-[40px] sm:w-[50px] sm:h-[52px] rounded-2xl"
-      />
+    <a href={`/${lang}/form`} class="inline-flex items-center justify-center bg-gradient-to-r from-[#F9B513] to-[#EA601E] text-white text-[16px] sm:text-xl font-semibold rounded-2xl pl-8 pr-1.5 py-1.5 gap-4 shadow-lg hover:opacity-95 transition drop-shadow-2xl">
+      {strings.buttonText}
+      <img src={Lamp.src} alt="arrow icon" class="w-[38px] h-[40px] sm:w-[50px] sm:h-[52px] rounded-2xl" />
     </a>
   </div>
 </section>
 
 <style>
-  /* Blinking cursor */
-  .cursor {
-    display: inline-block;
-    width: 2px;
-    background-color: currentColor;
-    margin-left: 2px;
-    animation: blink 0.7s step-end infinite;
-  }
-  @keyframes blink {
-    from,
-    to {
-      opacity: 1;
-    }
-    50% {
-      opacity: 0;
-    }
+  .cursor { display: inline-block; width: 2px; background-color: currentColor; margin-left: 2px; animation: blink 0.7s step-end infinite; }
+  @keyframes blink { from, to { opacity: 1; } 50% { opacity: 0; } }
+  
+  #typewriter {
+    white-space: pre-line;
+    line-height: 1.2;
   }
 </style>
 
-<script type="module">
-  const messages = [
-    `G'oyangiz bor, lekin hali hech\nkim eshitmaganmi?`,
-    `Global bozorga\nchiqmoqchimisiz?`,
-    `Investitsiya izlayapsizmi?`,
-    `Startapingiz tayyor, lekin hali\ntanilmaganmi?`
-  ];
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const el = document.getElementById("typewriter");
+    if (!el) return;
+    
+    const messages = JSON.parse(el.getAttribute('data-messages') || '[]');
+    if (!messages.length) return;
+    
+    const typingSpeed = 50;
+    const erasingSpeed = 30;
+    const pauseAfterType = 2000;
+    const pauseAfterErase = 500;
+    let msgIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
 
-  const el = document.getElementById("typewriter");
-  const cursor = document.querySelector(".cursor");
-  const typingSpeed = 50;         // har bir harf uchun
-  const erasingSpeed = 30;        // o‘chirish tezligi
-  const pauseAfterType = 2000;    // to‘liq yozilgach qancha kutish
-  const pauseAfterErase = 500;    // o‘chirib bo‘lgach qancha kutish
-
-  let msgIndex = 0;
-  let charIndex = 0;
-  let isDeleting = false;
-
-  function typeLoop() {
-    const current = messages[msgIndex];
-    if (!isDeleting) {
-      // yozish
-      el.innerHTML = current.substring(0, charIndex + 1).replace(/\n/g, "<br/>");
-      charIndex++;
-      if (charIndex === current.length) {
-        // to‘liq yozildi
-        isDeleting = true;
-        setTimeout(typeLoop, pauseAfterType);
+    function typeLoop() {
+      const current = messages[msgIndex];
+      if (!isDeleting) {
+        if (el) {
+          const textToShow = current.substring(0, charIndex + 1);
+          el.innerHTML = textToShow.replace(/\n/g, '<br/>');
+        }
+        charIndex++;
+        if (charIndex === current.length) {
+          isDeleting = true;
+          setTimeout(typeLoop, pauseAfterType);
+        } else {
+          setTimeout(typeLoop, typingSpeed);
+        }
       } else {
-        setTimeout(typeLoop, typingSpeed);
-      }
-    } else {
-      // o‘chirish
-      el.innerHTML = current.substring(0, charIndex - 1).replace(/\n/g, "<br/>");
-      charIndex--;
-      if (charIndex === 0) {
-        // o‘chirib bo‘ldi, keyingi matnga o‘tsin
-        isDeleting = false;
-        msgIndex = (msgIndex + 1) % messages.length;
-        setTimeout(typeLoop, pauseAfterErase);
-      } else {
-        setTimeout(typeLoop, erasingSpeed);
+        if (el) {
+          const textToShow = current.substring(0, charIndex - 1);
+          el.innerHTML = textToShow.replace(/\n/g, '<br/>');
+        }
+        charIndex--;
+        if (charIndex === 0) {
+          isDeleting = false;
+          msgIndex = (msgIndex + 1) % messages.length;
+          setTimeout(typeLoop, pauseAfterErase);
+        } else {
+          setTimeout(typeLoop, erasingSpeed);
+        }
       }
     }
-  }
 
-  document.addEventListener("DOMContentLoaded", typeLoop);
+    // Botiri holda darhol ishga tushadi
+    typeLoop();
+  });
 </script>
-

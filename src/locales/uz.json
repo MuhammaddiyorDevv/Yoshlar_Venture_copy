@@ -1,0 +1,159 @@
+{
+  "navbar": {
+    "home": "Asosiy",
+    "about": "Biz haqimizda",
+    "events": "Tadbirlar",
+    "portfolio": "Portfel",
+    "partners": "Hamkorlar",
+    "blog": "YouTube blog",
+    "blogUrl": "https://www.youtube.com/@yoshlarventures",
+    "contact": "Kontaktlar",
+    "brandLine1": "YOSHLAR",
+    "brandLine2": "VENTURES"
+  },
+  "hero": {
+    "tagline": "Siz yarating — biz qanot beramiz",
+    "typewriter": [
+      "G'oyangiz bor, lekin hali hech\nkim eshitmaganmi?",
+      "Global bozorga\nchiqmoqchimisiz?",
+      "Investitsiya izlayapsizmi?",
+      "Startapingiz tayyor, lekin hali\ntanilmaganmi?"
+    ],
+    "buttonText": "Ariza yuborish"
+  },
+  "card": [
+    "Startapingiz uchun 500 million so'mgacha investitsiya.",
+    "Mahsulotingizni bozorga chiqarish uchun 1 milliard so'mgacha.",
+    "Savollar uchun AI-bot kecha-kunduz siz bilan.",
+    "Dunyo bozoriga chiqish uchun 2 milliard so‘mgacha."
+  ],
+  "feedback": {
+    "cards": [
+      "Xali tayyor emasman",
+      "Yolg'izman",
+      "Pul yo‘q"
+    ],
+    "messageLines": [
+      "Bu gaplar sizniki bo‘lishi mumkin.",
+      "Lekin biz uchun bu muhim emas.",
+      "Biz tayyor reja emas, rost fikrni kutamiz."
+    ],
+    "buttonText": "Ariza yuborish"
+  },
+  "partnersSection": {
+    "title": "Bizga ishongan hamkorlarimiz",
+    "buttonText": "Ko‘proq o‘qish"
+  },
+  "offeringsSection": {
+    "items": [
+      {
+        "title": "SheStars",
+        "description": "Ayollar uchun platforma. Startap qilgan ayollar o‘z tajribalari bilan o‘rtoqlashadi.",
+        "buttonText": "BARCHASINI O‘QISH"
+      },
+      {
+        "title": "Startup Arena",
+        "description": "Pitch va investitsiya kuni. Yoshlar o‘z loyihalarini investorlar oldida taqdim etadi.",
+        "buttonText": "BARCHASINI O‘QISH"
+      },
+      {
+        "title": "StartupTalks",
+        "description": "Pitch va investitsiya kuni. Yoshlar o‘z loyihalarini investorlar oldida taqdim etadi.",
+        "buttonText": "BARCHASINI O‘QISH"
+      }
+    ]
+  },
+  "storiesSection": {
+    "title": "Biz ishongan g'oyalar — hozir kompaniyaga aylangan",
+    "quotes": [
+      "Eng yaxshi loyihalar ideal holatda tug'ilmaydi.",
+      "Aksincha, hech narsasiz boshlanganlar eng uzoqqa boradi.",
+      "Siz “hali tayyor emasman” debaysizmi? Bu — normal. Biz aynan shundaylarni eshitamiz."
+    ]
+  },
+  "missionSection": {
+    "title": "Startaplaringizga birinchi ishonadigan — bizmiz.",
+    "subtitle": "Har bir katta g'oya — kichik ishonchdan boshlanadi",
+    "videoTitle": "Intro Video",
+    "social": {
+      "telegram": {
+        "url": "https://t.me/yoshlarventures",
+        "label": "Telegram"
+      },
+      "instagram": {
+        "url": "https://www.instagram.com/yoshlarventures",
+        "label": "Instagram"
+      },
+      "youtube": {
+        "url": "https://www.youtube.com/@yoshlarventures",
+        "label": "YouTube"
+      }
+    }
+  },
+  "highlightBanner": {
+    "logoAlt": "Logotip",
+    "part1": "Logotipimizdagi",
+    "part2": "harfi — bu qush. Sababi har bir g'oya uchishni xohlaydi. Sizga faqat ozgina ishonch va yo‘l ko‘rsatuvchi kerak — biz aynan shunday qanot bo‘lamiz."
+  },
+   "missionStatement": {
+    "part1": "Biz",
+    "highlight": "yoshlarga ishonamiz",
+    "part2": " Chunki g'oya har doim kichik bir ishonchdan boshlanadi",
+    "description": "Yoshlar Ventures — bu g'oyasi bor, lekin tayyor mahsuloti hali yo'q bo'lgan yoshlar uchun ochilgan fond. Biz sizni eshitamiz, qo'llaymiz va hukumat hamda investorlar va soha mutaxassislarini siz bilan bog'laymiz."
+  },
+   "promoSection": {
+    "quote": "\"Hali tayyor emasman\" deb o‘tirganingizda boshqalar g‘oyasi uchun investitsiya olyapti. Imkoniyatdan foydalaning!",
+    "buttonText": "Ariza yuborish",
+    "buttonIconAlt": "chiroqcha ikonkasi"
+  },
+  "footer": {
+    "logoAlt": "Yoshlar Ventures logotipi",
+    "contact": {
+      "email": "Yoshlarventures@gmail.com",
+      "emailIcon": "../assets/images/Email.svg",
+      "address": "American University of Technology Beshyogoch Street, 1",
+      "addressUrl": "https://yandex.uz/maps/-/CHsxYA4U",
+      "addressIcon": "../assets/images/company.svg",
+      "phone": "+998 90 820 74 15",
+      "phoneIcon": "../assets/images/call.svg"
+    },
+    "social": {
+      "telegram": {
+        "url": "https://t.me/yoshlarventures",
+        "label": "Telegram",
+        "icon": "../assets/images/Telegram.svg"
+      },
+      "instagram": {
+        "url": "https://www.instagram.com/yoshlarventures",
+        "label": "Instagram",
+        "icon": "../assets/images/instagram.svg"
+      },
+      "youtube": {
+        "url": "https://www.youtube.com/@yoshlarventures",
+        "label": "YouTube",
+        "icon": "../assets/images/youtube.svg"
+      }
+    },
+    "nav": {
+      "home": "Asosiy",
+      "about": "Biz haqimizda",
+      "events": "Tadbirlar",
+      "portfolio": "Portfel",
+      "partners": "Hamkorlar",
+      "blog": "YouTube blog",
+      "contact": "Kontaktlar"
+    },
+    "navBlogUrl": "https://www.youtube.com/@yoshlarventures",
+    "mapUrl": "https://yandex.uz/map-widget/v1/?ll=69.254844%2C41.306782&z=16&oid=24746486680",
+    "mapAria": "Yoshlar Ventures joylashuvi xaritada",
+    "bottom": {
+      "copyright": "© 2025 Yoshlar Ventures",
+      "partnerLabel": "Global Move",
+      "partnerUrl": "https://globalmove.uz/",
+      "privacyLabel": "Maxfiylik siyosati",
+      "privacyHref": "/privacy",
+      "termsLabel": "Shartlar va qoidalar",
+      "termsHref": "/terms"
+    }
+  }
+}

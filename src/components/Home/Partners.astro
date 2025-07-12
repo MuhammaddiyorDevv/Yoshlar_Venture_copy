@@ -1,14 +1,18 @@
 ---
-import Yoshlar from "../../assets/images/yoshlarlogo.svg";
+// src/components/Home/Partners.astro
+import Yoshlar     from "../../assets/images/yoshlarlogo.svg";
 import YoshlarDark from "../../assets/images/Dark-gerb.png";
-import Jamgarmasi from "../../assets/images/jamgarmasi.svg";
+import Jamgarmasi  from "../../assets/images/jamgarmasi.svg";
+
+const { lang, strings } = Astro.props;
+// strings === strings.partnersSection obyektini uzating
 ---
 
 <section>
   <div class="w-full mx-auto flex flex-col gap-[50px] sm:gap-10 mb-[50px] sm:mb-20">
     <!-- Section title -->
     <h2 class="max-w-[250px] text-2xl sm:text-3xl font-bold dark:text-white text-gray-900 mb-8 sm:mb-10 border-l-4 border-[#F28E46] pl-4 font-inter-tight">
-      Bizga ishongan hamkorlarimiz
+      {strings.title}
     </h2>
 
     <!-- Cards grid -->
@@ -17,19 +21,19 @@ import Jamgarmasi from "../../assets/images/jamgarmasi.svg";
       <div class="mobile-card-bg py-[50px] flex flex-col items-center gap-[31px] rounded-[32px]">
         <img
           src={Yoshlar.src}
-          alt="Yoshlar logotipi"
+          alt="Yoshlar logo"
           class="w-[236px] h-[204px] block dark:hidden"
         />
         <img
           src={YoshlarDark.src}
-          alt="Yoshlar logotipi (Dark mode)"
+          alt="Yoshlar logo (dark)"
           class="w-[236px] h-[202px] hidden dark:block"
         />
         <a
-          href="#"
+          href={`/${lang}/partners/yoshlar`}
           class="bg-white cursor-pointer text-[#F28E46] font-semibold rounded-[24px] text-xl border border-orange-200 px-6 py-2 hover:bg-orange-50 transition font-inter-tight custom-shadow"
         >
-          Ko'proq o'qish
+          {strings.buttonText}
         </a>
       </div>
 
@@ -37,14 +41,14 @@ import Jamgarmasi from "../../assets/images/jamgarmasi.svg";
       <div class="mobile-card-bg py-[50px] flex flex-col items-center gap-[31px] rounded-[32px]">
         <img
           src={Jamgarmasi.src}
-          alt="Jamg'armasi logotipi"
+          alt="Jamgarmasi logo"
           class="w-[204px] h-[204px]"
         />
         <a
-          href="#"
+          href={`/${lang}/partners/jamgarmasi`}
           class="bg-white text-[#F28E46] cursor-pointer font-semibold rounded-[24px] text-xl border border-orange-200 px-6 py-2 hover:bg-orange-50 transition font-inter-tight custom-shadow"
         >
-          Ko'proq o'qish
+          {strings.buttonText}
         </a>
       </div>
     </div>

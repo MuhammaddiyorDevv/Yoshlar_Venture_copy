@@ -2,23 +2,39 @@
 import "../styles/global.css";
 import Navbar from "../components/Navbar.jsx";
 import Footer from "../components/Footer.astro";
+import { getLang, getStrings } from "../utils/i18n.js";
 
+const lang = getLang(Astro.url.pathname);
+const strings = await getStrings(lang);
 const { title = "Yoshlar Venture", description } = Astro.props;
 ---
-
-<html lang="en">
+<html lang={lang}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
     {description && <meta name="description" content={description} />}
   </head>
-
   <body class="dark:bg-[#111111] dark:text-white bg-white text-black">
-    <Navbar client:load />
-    <main class="container">
+    <Navbar client:load lang={lang} strings={strings.navbar} />
+    <main class="container mx-auto px-4 sm:px-6 lg:px-8">
       <slot />
     </main>
-    <Footer />
+    <Footer strings={strings.footer} />
+    
+    <script>
+      // Restore scroll position after language change
+      document.addEventListener('DOMContentLoaded', function() {
+        const savedScrollPosition = sessionStorage.getItem('scrollPosition');
+        if (savedScrollPosition) {
+          // Clear the saved position
+          sessionStorage.removeItem('scrollPosition');
+          // Restore scroll position after a short delay to ensure page is fully loaded
+          setTimeout(() => {
+            window.scrollTo(0, parseInt(savedScrollPosition));
+          }, 100);
+        }
+      });
+    </script>
   </body>
 </html>

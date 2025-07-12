@@ -1,0 +1,160 @@
+{
+  "navbar": {
+    "home": "Главная",
+    "about": "О нас",
+    "events": "События",
+    "portfolio": "Портфолио",
+    "partners": "Партнеры",
+    "blog": "YouTube блог",
+    "blogUrl": "https://www.youtube.com/@yoshlarventures",
+    "contact": "Контакты",
+    "brandLine1": "МОЛОДЕЖЬ",
+    "brandLine2": "VENTURES"
+  },
+ "hero": {
+    "tagline": "Вы создаете — мы даем крылья",
+    "typewriter": [
+      "У вас есть идея, но никто еще\nее не слышал?",
+      "Готовы выйти на\nмировой рынок?",
+      "Ищете инвесторов?",
+      "Ваш стартап готов, но еще\nне известен?"
+    ],
+    "buttonText": "Подать заявку"
+  },
+   "card": [
+    "Инвестиция до 500 миллионов сумов для вашего стартапа.",
+    "До 1 миллиарда сумов для вывода вашего продукта на рынок.",
+    "AI-бот отвечает на ваши вопросы круглосуточно.",
+    "До 2 миллиардов сумов для выхода на мировой рынок."
+  ],
+  "feedback": {
+    "cards": [
+      "Я ещё не готов",
+      "Я одинок",
+      "Нет денег"
+    ],
+    "messageLines": [
+      "Это могут быть ваши слова.",
+      "Но для нас это не важно.",
+      "Мы ждём не готового плана, а честного мнения."
+    ],
+    "buttonText": "Подать заявку"
+  },
+  "partnersSection": {
+    "title": "Наши надежные партнёры",
+    "buttonText": "Узнать больше"
+  },
+  "offeringsSection": {
+    "items": [
+      {
+        "title": "SheStars",
+        "description": "Платформа для женщин. Стартаперы-женщины делятся своим опытом.",
+        "buttonText": "ЧИТАТЬ ДАЛЕЕ"
+      },
+      {
+        "title": "Startup Arena",
+        "description": "День питча и инвестиций. Молодые предприниматели представляют свои проекты.",
+        "buttonText": "ЧИТАТЬ ДАЛЕЕ"
+      },
+      {
+        "title": "StartupTalks",
+        "description": "День питча и инвестиций. Молодые предприниматели представляют свои проекты.",
+        "buttonText": "ЧИТАТЬ ДАЛЕЕ"
+      }
+    ]
+  },
+  "storiesSection": {
+    "title": "Идеи, во что мы верили — теперь ставшие компаниями",
+    "quotes": [
+      "Лучшие проекты не рождаются идеальными.",
+      "Наоборот, те, что начинались с нуля, достигают наибольших высот.",
+      "Вы говорите «я ещё не готов»? Это нормально. Мы именно это и слышим."
+    ]
+  },
+  "missionSection": {
+    "title": "Мы — первые, кто верит в ваши стартапы.",
+    "subtitle": "Любая большая идея начинается с малого доверия",
+    "videoTitle": "Вступительное видео",
+    "social": {
+      "telegram": {
+        "url": "https://t.me/yoshlarventures",
+        "label": "Телеграм"
+      },
+      "instagram": {
+        "url": "https://www.instagram.com/yoshlarventures",
+        "label": "Инстаграм"
+      },
+      "youtube": {
+        "url": "https://www.youtube.com/@yoshlarventures",
+        "label": "Ютуб"
+      }
+    }
+  },
+  "highlightBanner": {
+    "logoAlt": "Логотип",
+    "part1": "В нашем логотипе",
+    "part2": "буква — это птица. Потому что любая идея хочет взлететь. Вам нужно лишь немного доверия и направляющее крыло — и мы станем этим крылом."
+  },
+  "missionStatement": {
+    "part1": "Мы",
+    "highlight": "верим в молодёжь",
+    "part2": " Потому что идея всегда начинается с малого доверия",
+    "description": "Yoshlar Ventures — это фонд для молодых людей с идеей, но без готового продукта. Мы вас услышим, поддержим и свяжем с представителями власти, инвесторами и экспертами отрасли."
+  },
+  "promoSection": {
+    "quote": "Пока вы сидите и говорите «я ещё не готов», другие получают инвестиции для своих идей. Воспользуйтесь возможностью!",
+    "buttonText": "Отправить заявку",
+    "buttonIconAlt": "иконка лампочки"
+  },
+  "footer": {
+    "logoAlt": "Логотип Yoshlar Ventures",
+    "contact": {
+      "email": "Yoshlarventures@gmail.com",
+      "emailIcon": "../assets/images/Email.svg",
+      "address": "American University of Technology\nBeshyogoch Street, 1",
+      "addressUrl": "https://yandex.uz/maps/-/CHsxYA4U",
+      "addressIcon": "../assets/images/company.svg",
+      "phone": "+998 90 820 74 15",
+      "phoneIcon": "../assets/images/call.svg"
+    },
+    "social": {
+      "telegram": {
+        "url": "https://t.me/yoshlarventures",
+        "label": "Телеграм",
+        "icon": "../assets/images/Telegram.svg"
+      },
+      "instagram": {
+        "url": "https://www.instagram.com/yoshlarventures",
+        "label": "Инстаграм",
+        "icon": "../assets/images/instagram.svg"
+      },
+      "youtube": {
+        "url": "https://www.youtube.com/@yoshlarventures",
+        "label": "Ютуб",
+        "icon": "../assets/images/youtube.svg"
+      }
+    },
+    "nav": {
+      "home": "Главная",
+      "about": "О нас",
+      "events": "События",
+      "portfolio": "Портфель",
+      "partners": "Партнёры",
+      "blog": "YouTube блог",
+      "contact": "Контакты"
+    },
+    "navBlogUrl": "https://www.youtube.com/@yoshlarventures",
+    "mapUrl": "https://yandex.uz/map-widget/v1/?ll=69.254844%2C41.306782&z=16&oid=24746486680",
+    "mapAria": "Расположение Yoshlar Ventures на карте",
+    "bottom": {
+      "copyright": "© 2025 Yoshlar Ventures",
+      "partnerLabel": "Global Move",
+      "partnerUrl": "https://globalmove.uz/",
+      "privacyLabel": "Политика конфиденциальности",
+      "privacyHref": "/privacy",
+      "termsLabel": "Условия использования",
+      "termsHref": "/terms"
+    }
+  }
+
+}

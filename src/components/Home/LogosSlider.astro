@@ -7,6 +7,8 @@ import UR from "../../assets/images/UR.svg";
 import Lamp from "../../assets/images/Frame 1000005242.svg";
 import darkFamir from "../../assets/images/darkFamir.svg";
 import darkLab from "../../assets/images/darkLab.svg";
+
+const { lang } = Astro.props;
 ---
 
 <section id="portfolio-logos" class="w-ful mb-[50px] sm:mb-20">
@@ -110,7 +112,7 @@ import darkLab from "../../assets/images/darkLab.svg";
   <!-- CTA -->
   <div class="text-center mt-12">
     <a
-      href="/Form"
+      href={`/${lang}/form`}
       class="inline-flex items-center justify-center
              bg-gradient-to-r from-[#F9B513]
              to-[#EA601E] text-white text-[16px]
@@ -118,7 +120,9 @@ import darkLab from "../../assets/images/darkLab.svg";
              pl-8 pr-1.5 py-1.5 gap-4 sm:gap-4 tracking-[0.04em]
              hover:opacity-95 transition"
     >
-      PORTFEL BILAN TANISHISH
+      {lang === 'uz' && 'PORTFEL BILAN TANISHISH'}
+      {lang === 'ru' && 'ОЗНАКОМИТЬСЯ С ПОРТФЕЛЕМ'}
+      {lang === 'en' && 'VIEW PORTFOLIO'}
       <img
         src={Lamp.src}
         alt="arrow icon"

@@ -1,52 +1,11 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import Hero from ".././components/Home/Hero.astro";
-import Card from ".././components/Home/Card.astro";
-import Feedback from ".././components/Home/Feedback.astro";
-import Partners from ".././components/Home/Partners.astro";
-import ThreeOfferings from ".././components/Home/ThreeOfferings.astro";
-import Stories from ".././components/Home/Stories.astro";
-// import LogosSlider from ".././components/Home/LogosSlider.astro";
-import Mission from ".././components/Home/Mission.astro";
-import HighlightBanner from ".././components/Home/HighlightBanner.astro";
-import Team from "../components/Home/Team.jsx";
-import MissionStatement from ".././components/Home/MissionStatement.astro";
-import Featured from ".././components/Home/Featured.astro";
+import Page from './[lang]/index.astro';
+import { defaultLang, getStrings } from '../utils/i18n.js';
+
+// Determine default language and fetch strings
+const lang = defaultLang;
+const strings = await getStrings(lang);
 ---
 
-<Layout>
-  <!-- Container ichidagi componentlar -->
-  <Hero />
-  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-    <Card />
-    <Feedback />
-    <Partners />
-    <ThreeOfferings />
-    <Stories />
-  </div>
-
-  <!-- LogosSlider - to'liq ekran kengligi -->
-  <!-- <div class="w-full overflow-hidden">
-    <LogosSlider />
-  </div>
-   -->
-  <!-- Container ichidagi qolgan componentlar -->
-  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-    <Mission />
-    <HighlightBanner />
-    <Team client:load />
-    <MissionStatement />
-    <Featured />
-  </div>
-</Layout>
-
-<style>
-  .w-full {
-    width: 100vw;
-    margin-left: calc(-50vw + 50%);
-  }
-
-  body {
-    overflow-x: hidden;
-  }
-</style>
+<!-- Render the [lang] page at root with defaultLang -->
+<Page lang={lang} strings={strings} />

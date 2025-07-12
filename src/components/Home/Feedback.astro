@@ -1,15 +1,22 @@
 ---
 import No_Suitcase from "../../assets/images/no-suitcase 1.svg";
-import Alone from "../../assets/images/alone 1.svg";
-import No_Money from "../../assets/images/no-money.svg";
-import Lamp from "../../assets/images/Lamp.svg";
+import Alone        from "../../assets/images/alone 1.svg";
+import No_Money     from "../../assets/images/no-money.svg";
+import Lamp         from "../../assets/images/Lamp.svg";
+
+// Lang va tarjima obyektini o‘qiymiz
+// strings === allStrings.feedback ni o‘zini uzating
+const { lang, strings } = Astro.props;
+
+// Ikonalar matrisi cards[] tartibiga mos bo‘lsin
+const icons = [No_Suitcase, Alone, No_Money];
 ---
 
 <style>
   .mobile-background {
     position: relative;
     z-index: 0;
-    background: linear-gradient(to bottom right, #F9B513, #EA601E); /* gradient to‘liq fon */
+    background: linear-gradient(to bottom right, #F9B513, #EA601E);
     border-radius: 32px;
     overflow: hidden;
   }
@@ -55,90 +62,48 @@ import Lamp from "../../assets/images/Lamp.svg";
 <section
   class="mobile-background mx-auto w-full px-6 sm:px-12 lg:px-[80px] py-8 sm:py-12 lg:py-[60px] mb-[50px] sm:mb-20"
 >
-  <!-- Content -->
   <div class="relative z-10">
     <!-- Top cards -->
-    <div
-      class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8 sm:mb-14"
-    >
-      <!-- Card 1 -->
-      <div
-        class="bg-white rounded-[24px] flex flex-row sm:flex-col px-4 py-6 sm:p-6 space-x-3 sm:space-x-0 sm:space-y-3 items-center sm:items-start"
-      >
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8 sm:mb-14">
+      {strings.cards.map((text, i) => (
         <div
-          class="border-[#E3E3E3] border-[1px] rounded-[16px] p-[9px] w-fit flex-shrink-0"
+          key={i}
+          class="bg-white rounded-[24px] flex flex-row sm:flex-col px-4 py-6 sm:p-6 space-x-3 sm:space-x-0 sm:space-y-3 items-center sm:items-start"
         >
-          <img
-            src={No_Suitcase.src}
-            alt="tayyor emasman"
-            class="w-[30px] h-[30px]"
-          />
+          <div class="border-[#E3E3E3] border-[1px] rounded-[16px] p-[9px] w-fit flex-shrink-0">
+            <img src={icons[i].src} alt="" class="w-[30px] h-[30px]" />
+          </div>
+          <p class="text-gray-800 font-medium font-inter-tight text-[24px]">
+            {text}
+          </p>
         </div>
-        <p class="text-gray-800 font-medium font-inter-tight text-[24px]">
-          Xali tayyor emasman
-        </p>
-      </div>
-
-      <!-- Card 2 -->
-      <div
-        class="bg-white rounded-[24px] flex flex-row sm:flex-col px-4 py-6 sm:p-6 space-x-3 sm:space-x-0 sm:space-y-3 items-center sm:items-start"
-      >
-        <div
-          class="border-[#E3E3E3] border-[1px] rounded-[16px] p-[9px] w-fit flex-shrink-0"
-        >
-          <img src={Alone.src} alt="tayyor emasman" class="w-[30px] h-[30px]" />
-        </div>
-        <p class="text-gray-800 font-medium font-inter-tight text-[24px]">
-          Yolg’izman
-        </p>
-      </div>
-
-      <!-- Card 3 -->
-      <div
-        class="bg-white rounded-[24px] flex flex-row sm:flex-col px-4 py-6 sm:p-6 space-x-3 sm:space-x-0 sm:space-y-3 items-center sm:items-start"
-      >
-        <div
-          class="border-[#E3E3E3] border-[1px] rounded-[16px] p-[9px] w-fit flex-shrink-0"
-        >
-          <img
-            src={No_Money.src}
-            alt="tayyor emasman"
-            class="w-[30px] h-[30px]"
-          />
-        </div>
-        <p class="text-gray-800 font-medium font-inter-tight text-[24px]">
-          Pul yo'q
-        </p>
-      </div>
+      ))}
     </div>
 
     <!-- Big text & Button -->
     <div class="flex flex-col items-start mb-5 sm:mb-10">
       <div class="border-l-4 border-white pl-6">
-        <p
-          class="text-white text-xl sm:text-[40px] leading-tight font-medium font-inter-tight"
-        >
-          Bu gaplar sizniki bo'lishi mumkin.<br />
-          Lekin biz uchun bu muhim emas.<br />
-          Biz tayyor reja emas, rost fikrni kutamiz.
+        <p class="text-white text-xl sm:text-[40px] leading-tight font-medium font-inter-tight">
+          {strings.messageLines.map((line, idx) => (
+            <>
+              {line}
+              {idx < strings.messageLines.length - 1 ? <br /> : null}
+            </>
+          ))}
         </p>
       </div>
     </div>
 
+    <!-- Til bilan to‘g‘ri form sahifasiga yo‘naltirish -->
     <a
-      href="/Form"
-      class="inline-flex items-center justify-center
-             bg-white text-[#F28E46] text-[16px]
-             sm:text-xl font-semibold rounded-2xl
-             pl-8 pr-1.5 py-1.5 gap-4 sm:gap-4
-             shadow-lg hover:opacity-95 transition drop-shadow-2xl"
+      href={`/${lang}/form`}
+      class="inline-flex items-center justify-center bg-white text-[#F28E46] text-[16px] sm:text-xl font-semibold rounded-2xl pl-8 pr-1.5 py-1.5 gap-4 sm:gap-4 shadow-lg hover:opacity-95 transition drop-shadow-2xl"
     >
-      Ariza yuborish
+      {strings.buttonText}
       <img
         src={Lamp.src}
         alt="arrow icon"
-        class="w-[38px] h-[40px] sm:w-[50px] sm:h-[52px]
-               rounded-2xl"
+        class="w-[38px] h-[40px] sm:w-[50px] sm:h-[52px] rounded-2xl"
       />
     </a>
   </div>

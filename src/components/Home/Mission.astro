@@ -1,10 +1,14 @@
 ---
-import TelegramDark from "../../assets/images/telegramDark.svg";
-import darkTelegram from "../../assets/images/darkTelegram.svg";
-import darkInstagram from "../../assets/images/darkInstagram.svg";
-import darkYoutube from "../../assets/images/darkYoutube.svg";
-import InstagramDark from "../../assets/images/instagramDark.svg";
-import YouTubeDark from "../../assets/images/youtubeDark.svg";
+// src/components/Home/Mission.astro
+import TelegramDark   from "../../assets/images/telegramDark.svg";
+import DarkTelegram   from "../../assets/images/darkTelegram.svg";
+import InstagramDark  from "../../assets/images/instagramDark.svg";
+import DarkInstagram  from "../../assets/images/darkInstagram.svg";
+import YouTubeDark    from "../../assets/images/youtubeDark.svg";
+import DarkYouTube    from "../../assets/images/darkYoutube.svg";
+
+const { lang, strings } = Astro.props; 
+// expect strings === allStrings.missionSection
 ---
 
 <section id="mission" class="py-12 sm:py-14 mb-14">
@@ -13,13 +17,13 @@ import YouTubeDark from "../../assets/images/youtubeDark.svg";
     <h2
       class="max-w-[600px] text-[30px] sm:text-[40px] font-semibold text-[#000000] mb-6 border-l-4 border-[#F28E46] pl-4 dark:text-white"
     >
-      Startaplaringizga birinchi ishonadigan — bizmiz.
+      {strings.title}
     </h2>
     <!-- Supporting paragraph -->
     <h3
       class="max-w-[350px] leading-relaxed pt-8 sm:pt-[40px] text-2xl font-inter-tight"
     >
-      Har bir katta g'oya — kichik ishonchdan boshlanadi
+      {strings.subtitle}
     </h3>
   </div>
 
@@ -28,62 +32,63 @@ import YouTubeDark from "../../assets/images/youtubeDark.svg";
     <iframe
       class="w-full h-[250px] sm:h-[350px] lg:h-[415px] rounded-3xl shadow-lg"
       src="https://www.youtube.com/embed/qVmt45sff3Q?start=26"
-      title="Intro Video"
+      title={strings.videoTitle}
       frameborder="0"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen></iframe>
+      allowfullscreen
+    ></iframe>
   </div>
 
   <!-- Social Icons -->
   <div class="mt-6 flex justify-start space-x-4">
     <a
-      href="https://t.me/yoshlarventures"
+      href={strings.social.telegram.url}
       target="_blank"
-      aria-label="Telegram"
+      aria-label={strings.social.telegram.label}
       class="hover:opacity-75"
     >
       <img
         src={TelegramDark.src}
-        alt="Telegram"
+        alt={strings.social.telegram.label}
         class="w-8 h-8 flex dark:hidden"
       />
       <img
-        src={darkTelegram.src}
-        alt="Telegram"
+        src={DarkTelegram.src}
+        alt={strings.social.telegram.label}
         class="w-8 h-8 hidden dark:flex"
       />
     </a>
     <a
-      href="https://www.instagram.com/yoshlarventures"
+      href={strings.social.instagram.url}
       target="_blank"
-      aria-label="Instagram"
+      aria-label={strings.social.instagram.label}
       class="hover:opacity-75"
     >
       <img
         src={InstagramDark.src}
-        alt="Instagram"
+        alt={strings.social.instagram.label}
         class="w-8 h-8 flex dark:hidden"
       />
       <img
-        src={darkInstagram.src}
-        alt="Instagram"
+        src={DarkInstagram.src}
+        alt={strings.social.instagram.label}
         class="w-8 h-8 hidden dark:flex"
       />
     </a>
     <a
-      href="https://www.youtube.com/@yoshlarventures"
+      href={strings.social.youtube.url}
       target="_blank"
-      aria-label="YouTube"
+      aria-label={strings.social.youtube.label}
       class="hover:opacity-75"
     >
       <img
         src={YouTubeDark.src}
-        alt="YouTube"
+        alt={strings.social.youtube.label}
         class="w-8 h-8 flex dark:hidden"
       />
       <img
-        src={darkYoutube.src}
-        alt="YouTube"
+        src={DarkYouTube.src}
+        alt={strings.social.youtube.label}
         class="w-8 h-8 hidden dark:flex"
       />
     </a>

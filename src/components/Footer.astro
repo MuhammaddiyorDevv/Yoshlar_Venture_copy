@@ -1,4 +1,6 @@
 ---
+// src/components/Footer.astro
+
 import Logo from "../assets/images/Group.svg";
 import Email from "../assets/images/Email.svg";
 import Company from "../assets/images/company.svg";
@@ -6,19 +8,35 @@ import Call from "../assets/images/call.svg";
 import Telegram from "../assets/images/Telegram.svg";
 import Instagram from "../assets/images/instagram.svg";
 import YouTube from "../assets/images/youtube.svg";
+
+const { lang, strings } = Astro.props;
+
+// Footer nav keys & hrefs
+const navKeys = ["home","about","events","portfolio","partners","blog","contact"] as const;
+const hrefs = {
+  home:      `/${lang}`,
+  about:     `/${lang}/about`,
+  events:    `/${lang}/events`,
+  portfolio: `/${lang}/portfolio`,
+  partners:  `/${lang}/partners`,
+  blog:      strings.nav.blogUrl,
+  contact:   `/${lang}/contact`,
+};
+
+// Bottom links
+const privacyHref = `/${lang}${strings.bottom.privacyHref}`;
+const termsHref   = `/${lang}${strings.bottom.termsHref}`;
 ---
 
 <footer class="bg-[#020202] text-white py-[32px] px-4 sm:px-6 lg:px-[40px]">
   <!-- Top section -->
-  <div class="container py-8 grid grid-cols-1 lg:grid-cols-3
-gap-8 sm:gap-12">
+  <div class="container py-8 grid grid-cols-1 lg:grid-cols-3 gap-8 sm:gap-12">
     <!-- Left: Logo & Contact -->
-    <div class="space-y-6
-sm:space-y-[44px]">
-      <a href="/" class="flex items-center gap-2">
+    <div class="space-y-6 sm:space-y-[44px]">
+      <a href={`/${lang}`} class="flex items-center gap-2">
         <img
           src={Logo.src}
-          alt="Yoshlar Ventures logo"
+          alt={strings.logoAlt}
           class="h-[72px] w-[53px]"
         />
         <span
@@ -28,61 +46,58 @@ sm:space-y-[44px]">
       </a>
       <div class="flex flex-col gap-4 sm:gap-[24px] text-sm">
         <a
-          href="mailto:Yoshlarventures@gmail.com"
+          href={`mailto:${strings.contact.email}`}
           class="flex items-center gap-[15px] space-x-3 font-inter-tight cursor-auto"
         >
           <img src={Email.src} alt="Email" class="w-6 h-6 mt-1" />
           <span class="hover:underline cursor-pointer">
-            Yoshlarventures@gmail.com
+            {strings.contact.email}
           </span>
         </a>
 
         <address
-          class="flex items-center gap-[15px] space-x-3 not-italic font-inter-tight"
+          class="flex items-center gap-[15px] space-x-3 not-italic font-inter-tight w-[260px]"
         >
           <img src={Company.src} alt="Address" class="w-6 h-6 mt-1" />
           <a
-            href="https://yandex.uz/maps/-/CHsxYA4U"
+            href={strings.contact.addressUrl}
             target="_blank"
             rel="noopener noreferrer"
             class="cursor-pointer hover:underline"
           >
-            American University of Technology <br />
-            Beshyogoch Street, 1
+            {strings.contact.address}
           </a>
         </address>
 
         <a
-          href="tel:+998 90 820 74 15"
+          href={`tel:${strings.contact.phone}`}
           class="flex items-center gap-[15px] space-x-3 font-inter-tight cursor-auto"
         >
           <img src={Call.src} alt="Phone" class="w-6 h-6" />
-          <span class="hover:underline cursor-pointer"> +998 90 820 74 15 </span>
+          <span class="hover:underline cursor-pointer"> {strings.contact.phone} </span>
         </a>
       </div>
 
-      <div class="flex
-space-x-4 sm:space-x-[24px]">
+      <div class="flex space-x-4 sm:space-x-[24px]">
         <a
-          href="https://t.me/yoshlarventures"
-          aria-label="Telegram"
+          href={strings.social.telegram.url}
+          aria-label={strings.social.telegram.label}
           target="_blank"
           class="hover:text-gray-400"
         >
-          <img src={Telegram.src} alt="Telegram" class="w-8
-h-8" />
+          <img src={Telegram.src} alt="Telegram" class="w-8 h-8" />
         </a>
         <a
-          href="https://www.instagram.com/yoshlarventures"
-          aria-label="Instagram"
+          href={strings.social.instagram.url}
+          aria-label={strings.social.instagram.label}
           target="_blank"
           class="hover:text-gray-400"
         >
           <img src={Instagram.src} alt="Instagram" class="w-8 h-8" />
         </a>
         <a
-          href="https://www.youtube.com/@yoshlarventures"
-          aria-label="YouTube"
+          href={strings.social.youtube.url}
+          aria-label={strings.social.youtube.label}
           target="_blank"
           class="hover:text-gray-400"
         >
@@ -96,71 +111,47 @@ h-8" />
       class="flex flex-col gap-6 sm:gap-[53px] text-sm"
     >
       <div class="flex flex-col gap-3 sm:gap-[16px]">
-        <a href="/" class="inline-block w-fit hover:underline font-inter-tight">
-          Asosiy
-        </a>
-        <a href="#" class="inline-block w-fit hover:underline font-inter-tight">
-          Biz haqimizda
-        </a>
-        <a href="#" class="inline-block w-fit hover:underline font-inter-tight">
-          Tadbirlar
-        </a>
-        <a href="#" class="inline-block w-fit hover:underline font-inter-tight">
-          Startuplar (Portfel)
-        </a>
-        <a href="#" class="inline-block w-fit hover:underline font-inter-tight">
-          Hamkorlar
-        </a>
-        <a href="#" class="inline-block w-fit hover:underline font-inter-tight">
-          Youtube blog
-        </a>
-        <a href="/Contact" class="inline-block w-fit hover:underline font-inter-tight">
-          Kontaktlar
-        </a>
+        {navKeys.map(key => (
+          <a href={hrefs[key]} class="inline-block w-fit hover:underline font-inter-tight">
+            {strings.nav[key]}
+          </a>
+        ))}
       </div>
-    </nav>
-
+    </nav>    
     <!-- Right: Embedded Map -->
-    <div class="map-container overflow-hidden
-rounded-2xl h-64 lg:h-full">
+    <div class="map-container overflow-hidden rounded-2xl h-64 lg:h-full">
       <iframe
-        src="https://yandex.uz/map-widget/v1/?ll=69.254844%2C41.306782&z=16&oid=24746486680"
+        src={strings.mapUrl}
         class="w-full h-full"
         style="border:0"
         allowfullscreen=""
         loading="lazy"
         referrerpolicy="no-referrer-when-downgrade"
-        aria-label="Yoshlar Ventures
-location on map"></iframe>
+        aria-label={strings.mapAria}></iframe>
     </div>
   </div>
   <!-- Divider -->
   <hr class="mx-4 sm:mx-6 lg:mx-[40px] border-white mt-[32px] mb-[18px]" />
   <!-- Bottom section -->
   <div
-    class="max-w-[1440px] container mx-auto px-4
-sm:px-6 lg:px-[40px] py-6 flex flex-col lg:flex-row lg:items-center
-justify-between text-sm"
+    class="max-w-[1440px] container mx-auto px-4 sm:px-6 lg:px-[40px] py-6 flex flex-col lg:flex-row lg:items-center justify-between text-sm"
   >
     <div
-      class="flex gap-[32px] lg:items-center
-justify-start space-y-2 sm:items-start sm:space-y-0 sm:space-x-6"
+      class="flex gap-[32px] lg:items-center justify-start space-y-2 sm:items-start sm:space-y-0 sm:space-x-6"
     >
       <span class="hover:underline font-inter-tight cursor-pointer"
-        >© 2025 Yoshlar ventures</span
+        >{strings.bottom.copyright}</span
       >
       <a
-        href="https://globalmove.uz/"
+        href={strings.bottom.partnerUrl}
         target="_blank"
         class="hover:underline font-inter-tight cursor-pointer"
-        >Global Move
+        >{strings.bottom.partnerLabel}
       </a>
     </div>
-    <div class="flex gap-[32px] space-x-6 mt-4
-lg:mt-0 items-start">
-      <a href="#" class="hover:underline font-inter-tight">Privacy Policy</a>
-      <a href="#" class="hover:underline font-inter-tight">Terms & Conditions</a
-      >
+    <div class="flex gap-[32px] space-x-6 mt-4 lg:mt-0 items-start">
+      <a href={privacyHref} class="hover:underline font-inter-tight">{strings.bottom.privacyLabel}</a>
+      <a href={termsHref} class="hover:underline font-inter-tight">{strings.bottom.termsLabel}</a>
     </div>
   </div>
 </footer>

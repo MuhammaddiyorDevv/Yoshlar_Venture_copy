@@ -4,6 +4,9 @@ import Stars from "../../assets/images/Stars.svg";
 import Arena from "../../assets/images/Arena.svg";
 import Talks from "../../assets/images/Talks.svg";
 import Lamp from "../../assets/images/Lamp.svg";
+
+const { lang, strings } = Astro.props;
+
 ---
 
 <section
@@ -30,7 +33,7 @@ import Lamp from "../../assets/images/Lamp.svg";
           <h3
             class="text-xl font-semibold text-black font-inter-tight dark:text-white"
           >
-            SheStars
+           {strings.items[0].title}
           </h3>
         </div>
         <img src={Stars.src} alt="" class="w-6 h-6" />
@@ -39,18 +42,17 @@ import Lamp from "../../assets/images/Lamp.svg";
       <p
         class="text-gray-600 text-sm mb-6 font-inter-tight leading-relaxed dark:text-[#B5B5B5]"
       >
-        Ayollar uchun platforma. Startap qilgan ayollar o'z tajribalari bilan
-        o'rtoqlashadi.
+        {strings.items[0].description}
       </p>
       <a
         class="inline-flex items-center dark:bg-white text-[#F28E46] border border-[#F28E46] rounded-[12px] px-4 py-2 text-sm font-medium hover:bg-[#F28E46] hover:text-white transition font-inter-tight"
       >
-        BARCHASINI O'QISH
+        {strings.items[0].buttonText}
         <img src={Lamp.src} alt="" class="w-6 h-6 ml-2" />
       </a>
     </div>
 
-    <!-- 02 Startup Arena -->
+    <!-- 02 Startup Arena } -->
     <div class="rounded-2xl p-6 shadow-sm">
       <div class="flex items-start justify-between mb-4">
         <div class="flex items-center space-x-3">
@@ -61,7 +63,7 @@ import Lamp from "../../assets/images/Lamp.svg";
           <h3
             class="text-xl font-semibold text-black font-inter-tight dark:text-white"
           >
-            Startup Arena
+            {strings.items[1].title}
           </h3>
         </div>
         <img src={Arena.src} alt="" class="w-6 h-6" />
@@ -70,13 +72,12 @@ import Lamp from "../../assets/images/Lamp.svg";
       <p
         class="text-gray-600 text-sm mb-6 font-inter-tight leading-relaxed dark:text-[#B5B5B5]"
       >
-        Pitch va investitsiya kuni. Yoshlar o'z loyihalarini investorlar oldida
-        taqdim etadi.
+        {strings.items[1].description}
       </p>
       <a
         class="inline-flex items-center dark:bg-white text-[#F28E46] border border-[#F28E46] rounded-[12px] px-4 py-2 text-sm font-medium hover:bg-[#F28E46] hover:text-white transition font-inter-tight"
       >
-        BARCHASINI O'QISH
+        {strings.items[1].buttonText}
         <img src={Lamp.src} alt="" class="w-6 h-6 ml-2" />
       </a>
     </div>
@@ -92,7 +93,7 @@ import Lamp from "../../assets/images/Lamp.svg";
           <h3
             class="text-xl font-semibold text-black font-inter-tight dark:text-white"
           >
-            StartupTalks
+            {strings.items[2].title}
           </h3>
         </div>
         <img src={Talks.src} alt="" class="w-6 h-6" />
@@ -101,13 +102,12 @@ import Lamp from "../../assets/images/Lamp.svg";
       <p
         class="text-gray-600 text-sm mb-6 font-inter-tight leading-relaxed dark:text-[#B5B5B5]"
       >
-        Pitch va investitsiya kuni. Yoshlar o'z loyihalarini investorlar oldida
-        taqdim etadi.
+         {strings.items[2].description}
       </p>
       <a
         class="inline-flex items-center dark:bg-white text-[#F28E46] border border-[#F28E46] rounded-[12px] px-4 py-2 text-sm font-medium hover:bg-[#F28E46] hover:text-white transition font-inter-tight"
       >
-        BARCHASINI O'QISH
+        {strings.items[2].buttonText}
         <img src={Lamp.src} alt="" class="w-6 h-6 ml-2" />
       </a>
     </div>
@@ -147,7 +147,7 @@ import Lamp from "../../assets/images/Lamp.svg";
         <h3
           class="text-lg sm:text-xl lg:text-[24px] font-semibold text-black dark:text-white font-inter-tight"
         >
-          SheStars
+          {strings.items[0].title}
         </h3>
       </div>
       <img
@@ -158,19 +158,18 @@ import Lamp from "../../assets/images/Lamp.svg";
       <p
         class="text-gray-700 text-sm max-w-[240px] font-inter-tight dark:text-white"
       >
-        Ayollar uchun platforma. Startap qilgan ayollar o'z tajribalari bilan
-        o'rtoqlashadi.
+        {strings.items[0].description}
       </p>
       <a
         href="#"
         class="text-[#F28E46] inline-flex items-center text-brand-orange-start border border-[#F28E46] rounded-[12px] px-4 py-2 text-sm font-medium hover:bg-brand-orange-start hover:text-[#F28E46] transition font-inter-tight dark:bg-white dark:text-[#F28E46]"
       >
-        BARCHASINI O'QISH
+        {strings.items[0].buttonText}
         <img src={Lamp.src || "/placeholder.svg"} alt="" class="w-6 h-6 ml-2" />
       </a>
     </div>
 
-    <!-- 02 Startup Arena: left-center -->
+    <!-- 02 Startup Arena left-center -->
     <div
       class="absolute top-1/2 left-4 sm:left-8 lg:left-[0px] lg:top-[390px] transform -translate-y-1/2 flex flex-col items-start space-y-2 max-w-[300px]"
     >
@@ -183,7 +182,7 @@ import Lamp from "../../assets/images/Lamp.svg";
         <h3
           class="text-lg sm:text-xl lg:text-[24px] font-semibold dark:text-white font-inter-tight"
         >
-          Startup Arena
+          {strings.items[1].title}
         </h3>
       </div>
       <img
@@ -194,14 +193,13 @@ import Lamp from "../../assets/images/Lamp.svg";
       <p
         class="text-gray-700 text-sm max-w-[300px] dark:text-white font-inter-tight"
       >
-        Pitch va investitsiya kuni. Yoshlar o'z loyihalarini investorlar oldida
-        taqdim etadi.
+        {strings.items[1].description}
       </p>
       <a
         href="#"
         class="text-[#F28E46] inline-flex items-center text-brand-orange-start border border-[#F28E46] rounded-[12px] px-4 py-2 text-sm font-medium hover:bg-brand-orange-start hover:text-[#F28E46] transition font-inter-tight dark:bg-white dark:text-[#F28E46]"
       >
-        BARCHASINI O'QISH
+        {strings.items[1].buttonText}
         <img src={Lamp.src || "/placeholder.svg"} alt="" class="w-6 h-6 ml-2" />
       </a>
     </div>
@@ -219,7 +217,7 @@ import Lamp from "../../assets/images/Lamp.svg";
         <h3
           class="text-lg sm:text-xl lg:text-[24px] font-semibold dark:text-white font-inter-tight"
         >
-          StartupTalks
+          {strings.items[2].title}
         </h3>
       </div>
       <img
@@ -230,14 +228,13 @@ import Lamp from "../../assets/images/Lamp.svg";
       <p
         class="text-gray-700 text-sm max-w-[240px] font-inter-tight dark:text-white"
       >
-        Pitch va investitsiya kuni. Yoshlar o'z loyihalarini investorlar oldida
-        taqdim etadi.
+        {strings.items[2].description}
       </p>
       <a
         href="#"
         class="text-[#F28E46] inline-flex items-center text-brand-orange-start border border-[#F28E46] rounded-[12px] px-4 py-2 text-sm font-medium hover:bg-brand-orange-start hover:text-[#F28E46] transition font-inter-tight dark:bg-white dark:text-[#F28E46]"
       >
-        BARCHASINI O'QISH
+        {strings.items[2].buttonText}
         <img src={Lamp.src || "/placeholder.svg"} alt="" class="w-6 h-6 ml-2" />
       </a>
     </div>

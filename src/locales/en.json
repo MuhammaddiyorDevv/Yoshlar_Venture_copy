@@ -1,0 +1,161 @@
+{
+  "navbar": {
+    "home": "Home",
+    "about": "About Us",
+    "events": "Events",
+    "portfolio": "Portfolio",
+    "partners": "Partners",
+    "blog": "YouTube Blog",
+    "blogUrl": "https://www.youtube.com/@yoshlarventures",
+    "contact": "Contact",
+    "brandLine1": "YOUTH",
+    "brandLine2": "VENTURES"
+},
+"hero": {
+    "tagline": "You create — we give wings",
+    "typewriter": [
+      "Do you have an idea but nobody's\nheard it yet?",
+      "Ready to go\nglobal?",
+      "Looking for investment?",
+      "Your startup is ready but still\nundiscovered?"
+    ],
+    "buttonText": "Apply Now"
+  },
+   "card": [
+    "Investment up to 500 million UZS for your startup.",
+    "Up to 1 billion UZS to bring your product to market.",
+    "24/7 AI bot available for your questions.",
+    "Up to 2 billion UZS to enter the global market."
+  ],
+  "feedback": {
+    "cards": [
+      "Not ready yet",
+      "I’m alone",
+      "No money"
+    ],
+    "messageLines": [
+      "These words could be yours.",
+      "But that doesn’t matter to us.",
+      "We want real feedback, not a finished plan."
+    ],
+    "buttonText": "Apply Now"
+  },
+  "partnersSection": {
+    "title": "Our Trusted Partners",
+    "buttonText": "Learn More"
+  },
+  "offeringsSection": {
+    "items": [
+      {
+        "title": "SheStars",
+        "description": "A platform for women. Female founders share their experiences.",
+        "buttonText": "LEARN MORE"
+      },
+      {
+        "title": "Startup Arena",
+        "description": "Pitch & investment day. Young founders present their ideas to investors.",
+        "buttonText": "LEARN MORE"
+      },
+      {
+        "title": "StartupTalks",
+        "description": "Pitch & investment day. Young founders present their ideas to investors.",
+        "buttonText": "LEARN MORE"
+      }
+    ]
+  },
+  "storiesSection": {
+    "title": "Ideas we believed in — now grown into companies",
+    "quotes": [
+      "The best projects aren’t born perfect.",
+      "On the contrary, those that start from nothing go the farthest.",
+      "Do you say, “I’m not ready yet”? That’s normal. We hear it all the time."
+    ]
+  },
+  "missionSection": {
+    "title": "We’re the first to believe in your startups.",
+    "subtitle": "Every big idea starts with a little bit of trust",
+    "videoTitle": "Intro Video",
+    "social": {
+      "telegram": {
+        "url": "https://t.me/yoshlarventures",
+        "label": "Telegram"
+      },
+      "instagram": {
+        "url": "https://www.instagram.com/yoshlarventures",
+        "label": "Instagram"
+      },
+      "youtube": {
+        "url": "https://www.youtube.com/@yoshlarventures",
+        "label": "YouTube"
+      }
+    }
+  },
+  "highlightBanner": {
+    "logoAlt": "Logo",
+    "part1": "The letter in our logo is a bird.",
+    "part2": "Because every idea wants to take flight. All you need is a little trust and a guiding wing — and we’ll be that wing."
+  },
+    "missionStatement": {
+    "part1": "We",
+    "highlight": "believe in youth",
+    "part2": " Because an idea always starts with a small bit of trust",
+    "description": "Yoshlar Ventures is a fund for young people who have an idea but not yet a finished product. We listen to you, support you, and connect you with government bodies, investors, and industry experts."
+  },
+  "promoSection": {
+    "quote": "While you’re sitting there saying “I’m not ready yet,” others are getting investment for their ideas. Seize the opportunity!",
+    "buttonText": "Apply Now",
+    "buttonIconAlt": "lightbulb icon"
+  },
+  "footer": {
+    "logoAlt": "Yoshlar Ventures logo",
+    "contact": {
+      "email": "Yoshlarventures@gmail.com",
+      "emailIcon": "../assets/images/Email.svg",
+      "address": "American University of Technology\nBeshyogoch Street, 1",
+      "addressUrl": "https://yandex.uz/maps/-/CHsxYA4U",
+      "addressIcon": "../assets/images/company.svg",
+      "phone": "+998 90 820 74 15",
+      "phoneIcon": "../assets/images/call.svg"
+    },
+    "social": {
+      "telegram": {
+        "url": "https://t.me/yoshlarventures",
+        "label": "Telegram",
+        "icon": "../assets/images/Telegram.svg"
+      },
+      "instagram": {
+        "url": "https://www.instagram.com/yoshlarventures",
+        "label": "Instagram",
+        "icon": "../assets/images/instagram.svg"
+      },
+      "youtube": {
+        "url": "https://www.youtube.com/@yoshlarventures",
+        "label": "YouTube",
+        "icon": "../assets/images/youtube.svg"
+      }
+    },
+    "nav": {
+      "home": "Home",
+      "about": "About Us",
+      "events": "Events",
+      "portfolio": "Portfolio",
+      "partners": "Partners",
+      "blog": "YouTube Blog",
+      "contact": "Contact"
+    },
+    "navBlogUrl": "https://www.youtube.com/@yoshlarventures",
+    "mapUrl": "https://yandex.uz/map-widget/v1/?ll=69.254844%2C41.306782&z=16&oid=24746486680",
+    "mapAria": "Location of Yoshlar Ventures on map",
+    "bottom": {
+      "copyright": "© 2025 Yoshlar Ventures",
+      "partnerLabel": "Global Move",
+      "partnerUrl": "https://globalmove.uz/",
+      "privacyLabel": "Privacy Policy",
+      "privacyHref": "/privacy",
+      "termsLabel": "Terms & Conditions",
+      "termsHref": "/terms"
+    }
+  }
+
+
+}

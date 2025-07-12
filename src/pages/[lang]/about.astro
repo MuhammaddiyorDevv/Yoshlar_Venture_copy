@@ -1,0 +1,84 @@
+---
+export const prerender = true;
+export async function getStaticPaths() {
+  return [
+    { params: { lang: 'uz' } },
+    { params: { lang: 'en' } },
+    { params: { lang: 'ru' } },
+  ];
+}
+
+import Layout from "../../layouts/Layout.astro";
+import LabSearch from "../../assets/labSearchWhite.svg";
+import { getLang, getStrings } from "../../utils/i18n.js";
+
+const lang = Astro.params.lang;
+const strings = await getStrings(lang);
+---
+
+<Layout lang={lang} strings={strings} title="Yoshlar Venture">
+  <div
+    class="w-full h-[330px] rounded-3xl flex items-center justify-center text-white mt-[50px]"
+    style="
+              background-image: url('/public/BgImg.png');
+              background-size: 100% 100%;
+              background-repeat: repeat-y;
+              background-color: #fb9c27;
+            "
+  >
+    <img src={LabSearch.src} alt="LabSearch" />
+  </div>
+  <h2
+    class="max-w-[600px] text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-8 border-l-4 border-[#F28E46] pl-4 mt-[53px]"
+  >
+    {lang === 'uz' && 'Kompaniya haqida'}
+    {lang === 'ru' && 'О компании'}
+    {lang === 'en' && 'About Company'}
+  </h2>
+  <div
+    class="ml-[40px] px-6 max-w-[1269px] mb-[110px] text-[#535862] dark:text-white"
+  >
+    <p class="text-[16px] sm:text-[28px]">
+      {lang === 'uz' && 'Labsearch – Neyrotexnologiyalarga asoslangan aqlli qidiruv xizmati'}
+      {lang === 'ru' && 'Labsearch – Интеллектуальная поисковая служба на основе нейротехнологий'}
+      {lang === 'en' && 'Labsearch – Intelligent search service based on neurotechnologies'}
+    </p>
+    <p class="text-[16px] sm:text-[28px]">
+      {lang === 'uz' && 'Labsearch — bu sun\'iy intellekt va neyrosetlar asosida ishlaydigan innovatsion qidiruv platformasi. Bizning tizim murakkab algoritmlar yordamida siz izlayotgan mahsulot, xizmat yoki ma\'lumotni aniq va tez topishga yordam beradi.'}
+      {lang === 'ru' && 'Labsearch — это инновационная поисковая платформа, работающая на основе искусственного интеллекта и нейросетей. Наша система помогает быстро и точно находить нужные вам продукты, услуги или информацию с помощью сложных алгоритмов.'}
+      {lang === 'en' && 'Labsearch is an innovative search platform that works on the basis of artificial intelligence and neural networks. Our system helps you quickly and accurately find the products, services or information you need using complex algorithms.'}
+    </p>
+    <p class="text-[16px] sm:text-[28px]">
+      {lang === 'uz' && 'Asosiy afzalliklar:'}
+      {lang === 'ru' && 'Основные преимущества:'}
+      {lang === 'en' && 'Key advantages:'}
+    </p>
+    <ul class="list-disc pl-4">
+      <li class="text-[16px] sm:text-[28px]">
+        {lang === 'uz' && 'Aqlli qidiruv: So\'rovlarni kontekst asosida tushunadi va eng dolzarb natijalarni taqdim etadi'}
+        {lang === 'ru' && 'Умный поиск: Понимает запросы в контексте и предоставляет наиболее актуальные результаты'}
+        {lang === 'en' && 'Smart search: Understands queries in context and provides the most relevant results'}
+      </li>
+      <li class="text-[16px] sm:text-[28px]">
+        {lang === 'uz' && 'Tezkorlik: Ma\'lumotlar bazasi bilan real vaqt rejimida ishlaydi'}
+        {lang === 'ru' && 'Скорость: Работает с базой данных в режиме реального времени'}
+        {lang === 'en' && 'Speed: Works with the database in real-time mode'}
+      </li>
+      <li class="text-[16px] sm:text-[28px]">
+        {lang === 'uz' && 'Moslashtirilgan natijalar: Har bir foydalanuvchining ehtiyojiga mos tavsiyalar'}
+        {lang === 'ru' && 'Персонализированные результаты: Рекомендации, адаптированные к потребностям каждого пользователя'}
+        {lang === 'en' && 'Personalized results: Recommendations tailored to each user\'s needs'}
+      </li>
+      <li class="text-[16px] sm:text-[28px]">
+        {lang === 'uz' && 'Keng imkoniyatlar: Ilmiy ishlar, mahsulotlar, xizmatlar, kompaniyalar barchasini toping'}
+        {lang === 'ru' && 'Широкие возможности: Найдите научные работы, продукты, услуги, компании и многое другое'}
+        {lang === 'en' && 'Wide capabilities: Find scientific papers, products, services, companies and more'}
+      </li>
+    </ul>
+    <p class="text-[16px] sm:text-[28px]">
+      {lang === 'uz' && 'Labsearch — bu oddiy qidiruvdan ko\'ra ko\'proq narsa. Bu sizga vaqtni tejash, aniq ma\'lumotga ega bo\'lish va qaror qabul qilishni osonlashtiradigan sun\'iy intellekt yordamchisidir.'}
+      {lang === 'ru' && 'Labsearch — это больше, чем просто поиск. Это искусственный интеллект-помощник, который помогает экономить время, получать точную информацию и упрощает принятие решений.'}
+      {lang === 'en' && 'Labsearch is more than just a search. It\'s an AI assistant that helps you save time, get accurate information and simplifies decision making.'}
+    </p>
+  </div>
+</Layout> 

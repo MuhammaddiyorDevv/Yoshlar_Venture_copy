@@ -1,5 +1,9 @@
 ---
+// src/components/Home/Promo.astro
 import Lamp from "../../assets/images/Lamp.svg";
+
+// `lang` navigatsiya uchun, `strings` esa allStrings.promoSection
+const { lang, strings } = Astro.props;
 ---
 
 <section id="promo" class="mx-auto py-12 sm:py-16 mb-[60px] sm:mb-20">
@@ -7,31 +11,33 @@ import Lamp from "../../assets/images/Lamp.svg";
     <div
       class="bg-gradient-to-br from-brand-orange-start to-brand-orange-end rounded-[24px] p-[40px] sm:p-8 lg:p-10 overflow-hidden"
       style="
-              background-image: url('/public/BgImg.png'),linear-gradient(to bottom right , #F9B513, #EA601E);
-              background-size: 100% 100%;
-              background-position: top center;
-              background-repeat: repeat-y;
-              <!-- background-color: #f28e46; -->
-            "
+        background-image:
+          url('/public/BgImg.png'),
+          linear-gradient(to bottom right, #F9B513, #EA601E);
+        background-size: 100% 100%;
+        background-position: top center;
+        background-repeat: repeat-y;
+      "
     >
       <!-- Quote text -->
       <div class="max-w-2xl border-l-4 border-white pl-4 sm:pl-6 mb-8 sm:mb-10">
         <p
           class="text-white text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-semibold leading-tight font-inter-tight"
         >
-          "Hali tayyor emasman" deb o'tirganingizda boshqalar g'oyasi uchun
-          investitsiya olyapti. Imkoniyatdan foydalaning!
+          {strings.quote}
         </p>
       </div>
       <!-- CTA Button -->
       <a
-        href="/Form"
+        href={`/${lang}/form`}
         class="bg-white w-[270px] font-semibold cursor-pointer rounded-[16px] px-1 py-1 flex items-center justify-between space-x-3 shadow-lg hover:opacity-90 transition font-inter-tight"
       >
-        <span class="ml-[32px] text-[20px] dark:text-[#000]">ARIZA YUBORISH</span>
+        <span class="ml-[32px] text-[20px] dark:text-[#000]">
+          {strings.buttonText}
+        </span>
         <img
           src={Lamp.src}
-          alt="lightbulb icon"
+          alt={strings.buttonIconAlt}
           class="w-[48px] h-[48px] lg:w-10 lg:h-10"
         />
       </a>

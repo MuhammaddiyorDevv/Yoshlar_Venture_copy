@@ -1,0 +1,73 @@
+---
+export const prerender = true;
+export async function getStaticPaths() {
+  return [
+    { params: { lang: 'uz' } },
+    { params: { lang: 'en' } },
+    { params: { lang: 'ru' } },
+  ];
+}
+
+import Layout from "../../layouts/Layout.astro";
+import mail from "../../assets/mail.svg";
+import build from "../../assets/build.svg";
+import call from "../../assets/call.svg";
+import { getLang, getStrings } from "../../utils/i18n.js";
+
+const lang = Astro.params.lang;
+const strings = await getStrings(lang);
+---
+
+<Layout lang={lang} strings={strings} title="Yoshlar Venture">
+  <div class="flex justify-between items-center">
+    <h2
+      class="max-w-[600px] text-[30px] sm:text-[40px] font-bold dark:text-white text-gray-900 mb-8 border-l-4 border-[#F28E46] pl-4 mt-[53px]"
+    >
+      {lang === 'uz' && 'Kontakt'}
+      {lang === 'ru' && 'Контакты'}
+      {lang === 'en' && 'Contact'}
+    </h2>
+    <button
+      class="border-[2px] w-[50px] h-[50px] flex items-center justify-center rounded-full border-[#EBEBEB] dark:border-[#535862] dark:text-white text-black"
+      onclick="history.back()"
+      >&#8592;</button
+    >
+  </div>
+  <div
+    class="flex flex-col sm:flex-row gap-[58px] text-black dark:text-white mt-[50px] sm:mt-[84px] mb-[43px] sm:mb-[93px]"
+  >
+    <div
+      class="border rounded-3xl border-[#EBEBEB] p-[18px] h-[266px] flex flex-col gap-4"
+    >
+      <a href="mailto:support@yoshlarventures.com" class="flex items-center gap-3 p-4">
+        <img src={mail.src} alt="Mail" />
+        <p class="text-[18px]">support@yoshlarventures.com</p>
+      </a>
+      <div class="flex items-center gap-3 p-4">
+        <img src={build.src} alt="Address" />
+        <p class="text-[18px]">
+          {lang === 'uz' && '12720 Hillcrest Road Suite 980, Dallas, TX 75230'}
+          {lang === 'ru' && '12720 Hillcrest Road Suite 980, Dallas, TX 75230'}
+          {lang === 'en' && '12720 Hillcrest Road Suite 980, Dallas, TX 75230'}
+        </p>
+      </div>
+      <a href="tel:+998994455566" class="flex items-center gap-3 p-4">
+        <img src={call.src} alt="Phone" />
+        <p class="text-[18px]">+998 99 445 5566</p>
+      </a>
+    </div>
+
+    <div
+      class="map-container overflow-hidden max-w-[835px] w-full h-[347px] sm:h-[436px] rounded-2xl"
+    >
+      <iframe
+        src="https://yandex.uz/map-widget/v1/?ll=69.254844%2C41.306782&z=16&oid=24746486680"
+        class="w-full h-full"
+        style="border:0"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        aria-label="Yoshlar Ventures location on map"></iframe>
+    </div>
+  </div>
+</Layout> 
