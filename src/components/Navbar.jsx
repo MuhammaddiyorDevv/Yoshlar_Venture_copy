@@ -3,9 +3,13 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Logo from "../assets/images/Group.svg";
 import ToggleTheme from "./ToggleTheme";
+import FlagUzb from "../assets/images/FlagUzb.svg";
+import FlagRussia from "../assets/images/Flag_of_Russia.svg.webp";
+import FlagEng from "../assets/images/engFlag.webp";
 
 export default function Navbar({ lang, strings }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isLangDropdownOpen, setIsLangDropdownOpen] = useState(false);
 
   const handleLanguageChange = (newLang) => {
     // Save current scroll position
@@ -36,6 +40,12 @@ export default function Navbar({ lang, strings }) {
     exit:   { opacity: 0, y: -20 },
   };
 
+  const dropdownVariants = {
+    hidden: { opacity: 0, y: -10, scale: 0.95 },
+    visible: { opacity: 1, y: 0, scale: 1 },
+    exit:   { opacity: 0, y: -10, scale: 0.95 },
+  };
+
   // Compute current path segments after language code
   const path = typeof window !== 'undefined'
     ? '/' + window.location.pathname.split('/').slice(2).filter(Boolean).join('/')
@@ -43,12 +53,14 @@ export default function Navbar({ lang, strings }) {
   // Ensure root path is '/'
   const normalizedPath = path === '/' || path === '' ? '/' : path;
 
-  // Supported languages
+  // Supported languages with flags
   const langs = [
-    { code: 'uz', label: 'UZ' },
-    { code: 'ru', label: 'RU' },
-    { code: 'en', label: 'EN' },
+    { code: 'uz', label: 'UZ', flag: FlagUzb },
+    { code: 'ru', label: 'RU', flag: FlagRussia },
+    { code: 'en', label: 'EN', flag: FlagEng },
   ];
+
+  const currentLang = langs.find(l => l.code === lang);
 
   return (
     <section className="sticky top-2 container z-50 px-[40px]">
@@ -73,19 +85,70 @@ export default function Navbar({ lang, strings }) {
           </div>
 
           <div className="flex items-center space-x-4">
-            <div className="flex space-x-2 text-sm font-medium">
-              {langs.map(l => (
-                <button
-                  key={l.code}
-                  onClick={() => handleLanguageChange(l.code)}
-                  className={
-                    `px-2 ${l.code === lang ? 'text-[#F9B513] font-semibold' : 'text-[#535862]'} cursor-pointer`
-                  }
+            {/* Language Dropdown */}
+            <div className="relative">
+              <button
+                onClick={() => setIsLangDropdownOpen(!isLangDropdownOpen)}
+                className="flex items-center space-x-2 px-3 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+              >
+                <img 
+                  src={currentLang.flag.src} 
+                  alt={currentLang.label} 
+                  className="w-6 h-4 object-cover rounded-sm"
+                />
+                <span className="text-sm font-medium text-[#535862] dark:text-white">
+                  {currentLang.label}
+                </span>
+                <svg 
+                  className={`w-4 h-4 text-[#535862] dark:text-white transition-transform ${isLangDropdownOpen ? 'rotate-180' : ''}`} 
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24"
                 >
-                  {l.label}
-                </button>
-              ))}
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+
+              <AnimatePresence>
+                {isLangDropdownOpen && (
+                  <motion.div
+                    className="absolute right-0 mt-2 w-32 bg-white dark:bg-[#111111] border border-gray-200 dark:border-[#535862] rounded-lg shadow-lg py-1 z-50"
+                    initial="hidden"
+                    animate="visible"
+                    exit="exit"
+                    variants={dropdownVariants}
+                    transition={{ duration: 0.2 }}
+                  >
+                    {langs.map(l => (
+                      <button
+                        key={l.code}
+                        onClick={() => {
+                          handleLanguageChange(l.code);
+                          setIsLangDropdownOpen(false);
+                        }}
+                        className={`w-full flex items-center space-x-3 px-3 py-2 text-left hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors ${
+                          l.code === lang ? 'bg-[#FFF1E6] dark:bg-gray-700' : ''
+                        }`}
+                      >
+                        <img 
+                          src={l.flag.src} 
+                          alt={l.label} 
+                          className="w-6 h-4 object-cover rounded-sm"
+                        />
+                        <span className={`text-sm font-medium ${
+                          l.code === lang 
+                            ? 'text-[#F9B513]' 
+                            : 'text-[#535862] dark:text-white'
+                        }`}>
+                          {l.label}
+                        </span>
+                      </button>
+                    ))}
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
+
             <ToggleTheme />
             <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="lg:hidden p-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md transition-colors">
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -101,6 +164,36 @@ export default function Navbar({ lang, strings }) {
               {menuLinks.map(item => (
                 <a key={item.label} href={item.href} {...(item.external && { target: "_blank", rel: "noopener noreferrer" })} className="block text-[#535862] dark:text-white px-4 py-2 rounded-lg transition hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#F9B513] hover:to-[#EA601E] font-inter-tight">{item.label}</a>
               ))}
+              
+              {/* Mobile Language Switcher */}
+              <div className="border-t border-gray-200 dark:border-gray-700 pt-2 mt-2">
+                <div className="flex space-x-2">
+                  {langs.map(l => (
+                    <button
+                      key={l.code}
+                      onClick={() => handleLanguageChange(l.code)}
+                      className={`flex items-center space-x-2 px-3 py-2 rounded-lg transition-colors ${
+                        l.code === lang 
+                          ? 'bg-[#FFF1E6] dark:bg-gray-700' 
+                          : 'hover:bg-gray-100 dark:hover:bg-gray-800'
+                      }`}
+                    >
+                      <img 
+                        src={l.flag.src} 
+                        alt={l.label} 
+                        className="w-5 h-3 object-cover rounded-sm"
+                      />
+                      <span className={`text-sm font-medium ${
+                        l.code === lang 
+                          ? 'text-[#F9B513]' 
+                          : 'text-[#535862] dark:text-white'
+                      }`}>
+                        {l.label}
+                      </span>
+                    </button>
+                  ))}
+                </div>
+              </div>
             </motion.div>
           )}
         </AnimatePresence>
