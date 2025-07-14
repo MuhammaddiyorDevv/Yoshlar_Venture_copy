@@ -242,7 +242,7 @@ body {
   width: 32px;
   /* size of your marker */
   height: 40px;
-  background: url("/assets/images/marker.svg") no-repeat center center;
+  /* background: url("/assets/images/marker.svg") no-repeat center center; */
   background-size: contain;
   transform: translate(-50%,
       -100%);
